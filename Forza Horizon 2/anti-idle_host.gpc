@@ -26,15 +26,15 @@ if (turbo == 1) {
 combo TurboCombo {
 
 // Move the stick left and right and hit start
-set_val(15, 100);
+set_val(11, 100);
 wait(20);
-set_val(15, 0);
+set_val(11, 0);
 
 wait(500);
 
-set_val(16, 100);
+set_val(11, -100);
 wait(20);
-set_val(16, 0);
+set_val(11, 0);
 
 wait(500);
 
