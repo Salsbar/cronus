@@ -1,0 +1,37 @@
+/* GTAIV Happiness Island boosting
+
+Stand on the sniper ammo on the pier and aim in
+*/
+
+int turbo = 0; // Turbo on/off 
+
+main {
+
+// Start/stop turbo mode
+
+if (event_press(XB360_RS)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+}
+
+if (turbo == 1) {
+    set_val(XB360_LEFT, 100);
+    combo_run(TurboCombo);
+    else {
+        set_val(XB360_LEFT, 0);
+    }
+}
+
+// Turbo mode code runs in a loop
+combo TurboCombo {
+// Shoot the sniper every 2.7 seconds
+set_val(XB360_RIGHT, 100);
+wait(20);
+set_val(XB360_RIGHT, 0);
+wait(2700);
+    }
+}

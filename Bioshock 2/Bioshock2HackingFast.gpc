@@ -1,0 +1,29 @@
+// Bioshock 2 Turret Hacking Fast
+
+int turbo = 0; // Turbo on/off 
+
+main {
+
+if (event_press(XB360_RS)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+}
+
+if (turbo == 1) {
+    combo_run(TurboCombo);
+    }
+
+}
+
+// Turbo mode code runs in a loop
+combo TurboCombo {
+
+set_val(XB360_A, 100);
+wait(3500);
+set_val(XB360_A, 0);
+wait(60);
+}

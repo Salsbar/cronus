@@ -1,0 +1,28 @@
+int turbo = 0; // Turbo on/off 
+
+main {
+
+// Start/stop turbo mode
+
+if (event_press(XB360_RS)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+}
+
+if (turbo == 1) {
+    combo_run(TurboCombo);
+    }
+}
+
+// Turbo mode code runs in a loop
+combo TurboCombo {
+// Hold RT for 2 Seconds
+wait(20);
+set_val(XB360_RT, 100);
+wait(2000);
+set_val(XB360_RT, 0);
+}

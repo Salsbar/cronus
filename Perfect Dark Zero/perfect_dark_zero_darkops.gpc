@@ -1,0 +1,164 @@
+// GPC Online Library
+// perfect_dark_zero_darkops.gpc
+
+//  Credits go to Diego Knyte, token, CypherNova139, X-Dream
+//  TWO WIRED PADS NEEDED
+//  Perfect Dark Zero Xbox360
+//  Played 1000 DarkOps Games & 1000 Rounds Survived Achievements
+//
+//  MySetup Game installed on the Xbox360 HDD Save also uses Xbox360 HDD
+//  The profile getting the achievement put on PAD2!
+//  PAD1 Must be in Position 1 because it will be running the script, with a guest or dummy no gold needed.
+//  PAD1 Must be on top of the split screen when it the game starts.
+//      COMBAT ARENA > LOCAL > DARKOPS >
+//                          Scenario        ERADICATION
+//                          Level           TOWER
+//                          Level Variant   SMALL
+//                          Bot Count       0
+//      Dont limit any weapons
+//                          Points Limit    NONE
+//                          Round Limit     1
+//                          Round Time      2
+//                          Game Time       5
+//      ADVANCED OPTIONS    Start Money     15,000c //so the script can buy the rocket launcher
+//                          Friendly Fire   ON
+//      CREATE GAME > Should show your dummy account which will be running the script in the lobby.
+//      Press Start PAD2 so it joins the lobby.
+//      Press Start on PAD1 to run the game.
+//      First bit is manual, cause im not sure what im doing :)
+//      Let the game run ONCE let the dummy get killed what ever.
+//      When the game returns to the POST-GAME STATS screen HIT XB360_RB on PAD1(The script start button)
+//
+//      Watch the first few games tinker with the game start time if needed.
+//      Walk away for 9-10hrs, or check every now and then what ever.
+//      It went wrong in the night i suspect due to getting msgs on xbox live lagging the box a little
+
+data(48,117,1,1); 
+define StartButton = XB360_RB;
+define WLED = 1250;
+
+int run;
+main {
+    if(run > 0) {
+        combo_run(xBot);combo_run(CycleLED);
+    } else {
+        combo_stop(xBot);combo_stop(CycleLED);
+        reset_leds();
+    }
+
+    if(event_press(StartButton)) {
+        if(run == 1) {
+            run = 0;
+        } else {
+            run = 1;
+    }   }   }
+
+combo xBot {
+    set_val(XB360_B, 100);
+    wait(150);
+    set_val(XB360_B, 0);
+    wait(800);
+    set_val(XB360_START, 100);
+    wait(150);
+    set_val(XB360_START, 0);        
+
+    wait(dword(0)/(12-10));wait(1000); //game load time 16sec. Seems ok left it for a couple of hrs with no problem
+    set_val(XB360_LX, -37);
+    wait(20);
+    set_val(XB360_LX, -63);
+    wait(10);
+    set_val(XB360_LX, -88);
+    wait(20);
+    set_val(XB360_LX, -100);
+    wait(340);
+    set_val(XB360_LX, -100);
+    set_val(XB360_A, 100);
+    wait(120);
+    set_val(XB360_LX, -100);
+    set_val(XB360_A, 0);
+    wait(130);
+    set_val(XB360_LX, -74);
+    wait(10);
+    set_val(XB360_LX, -44);
+    wait(20);
+    set_val(XB360_LX, 0);
+    wait(80);
+    set_val(XB360_LX, 48);
+    wait(20);
+    set_val(XB360_LX, 85);
+    wait(20);
+    set_val(XB360_LX, 100);
+    wait(340);
+    set_val(XB360_LX, 100);
+    set_val(XB360_A, 100);
+    wait(120);
+    set_val(XB360_LX, 100);
+    set_val(XB360_A, 0);
+    wait(150);
+    set_val(XB360_LX, 69);
+    wait(20);
+    set_val(XB360_LX, 34);
+    wait(10);
+    set_val(XB360_LX, 0);
+    wait(270);
+    set_val(XB360_B, 100);
+    wait(150);
+    set_val(XB360_B, 0);
+    wait(310);
+    set_val(XB360_B, 100);
+    wait(150);
+    set_val(XB360_B, 0);
+    wait(280);
+    set_val(XB360_B, 100);
+    wait(130);
+    set_val(XB360_B, 0);
+    wait(330);
+    set_val(XB360_DOWN, 100);
+    wait(170);
+    set_val(XB360_DOWN, 0);
+    wait(50);
+    set_val(XB360_RY, -36);
+    wait(20);
+    set_val(XB360_RY, -67);
+    wait(20);
+    set_val(XB360_RY, -100);
+    wait(1420);
+    set_val(XB360_RY, -74);
+    wait(30);
+    set_val(XB360_RY, -37);
+    wait(20);
+    set_val(XB360_RY, 0);
+    wait(3000);
+    set_val(XB360_RT, 100);
+    wait(1000);
+    set_val(XB360_RT, 0);
+    wait(4000);
+    set_val(XB360_START, 100);//if pad1 is not in position 1 ie logged in on the top left light first it cant press this start!
+    wait(150);
+    set_val(XB360_START, 0); 
+    wait(dword(0)/(16-10));wait(1000); //6sec
+ }
+//notification that the script is running
+combo CycleLED {
+    set_led(LED_1, 1);
+    set_led(LED_2, 0);
+    set_led(LED_3, 0);
+    set_led(LED_4, 0);
+    wait(WLED);
+    set_led(LED_1, 0);
+    set_led(LED_2, 0);
+    set_led(LED_3, 0);
+    set_led(LED_4, 1);
+    wait(WLED);
+    set_led(LED_1, 0);
+    set_led(LED_2, 1);
+    set_led(LED_3, 0);
+    set_led(LED_4, 0);
+    wait(WLED);
+    set_led(LED_1, 0);
+    set_led(LED_2, 0);
+    set_led(LED_3, 1);
+    set_led(LED_4, 0);
+    wait(WLED);
+}
+// what a mess :D

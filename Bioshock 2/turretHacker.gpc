@@ -1,0 +1,16 @@
+main { // < main > block start
+                                                                              
+  if( event_press(XB360_DOWN) ) combo_run (turretHacker );
+                                                                              
+  if( event_press(XB360_DOWN) ) combo_stop (turretHacker );
+} // end of < main > block
+                                                                              
+//////////////////////////////////////////////////////////////////
+///  COMBO BLOCKS  ///////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+combo turretHacker {
+set_val(XB360_X,100); // 
+wait(4000); // 
+set_val(XB360_X,0); // 
+wait(4000); // 
+}

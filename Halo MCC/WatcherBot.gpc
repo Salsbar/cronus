@@ -1,0 +1,54 @@
+/* Halo MCC Watcher Kills
+    Uses the auto-sentry armor ability to grind out watcher kills. Used markyshizzles solution on TA.
+    https://www.youtube.com/watch?v=uZY3XzPoLGc
+*/
+
+int turbo = 0; // Turbo on/off 
+main {
+// Start/stop turbo mode
+if (event_press(XB1_RS)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+}
+if (turbo == 1) {
+    combo_run(TurboCombo);
+    }
+}
+// Turbo mode code runs in a loop
+combo TurboCombo {
+// Hit LB every 13 Seconds
+wait(20);
+set_val(XB1_LB, 100);
+wait(20);
+set_val(XB1_LB, 0);
+wait(4000);
+wait(4000);
+wait(4000);
+wait(1000);
+//Reload Checkpoint
+wait(20);
+set_val(XB1_MENU, 100);
+wait(20);
+set_val(XB1_MENU, 0);
+wait(1000);
+set_val(XB1_RIGHT, 100);
+wait(20);
+set_val(XB1_RIGHT, 0);
+wait(1000);
+set_val(XB1_A, 100);
+wait(20);
+set_val(XB1_A, 0);
+wait(1000);
+set_val(XB1_LEFT, 100);
+wait(20);
+set_val(XB1_LEFT, 0);
+wait(1000);
+set_val(XB1_A, 100);
+wait(20);
+set_val(XB1_A, 0);
+wait(1000);
+}

@@ -1,0 +1,67 @@
+/* Guitar Hero World Tour Bling, Bling Achievement Script
+
+On the initial setlist, a few manual inputs are required:
+- Select quickplay
+- Press Y twice to sort by career
+- Press RS to begin the script
+- When the difficulty selection window appears, scroll down to Expert
+*/
+
+int turbo = 0; // Turbo on/off 
+
+main {
+
+// Start/stop turbo mode
+
+if (event_press(XB1_RS)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+}
+
+if (turbo == 1) {
+    combo_run(TurboCombo);
+    }
+}
+
+// Turbo mode code runs in a loop
+combo TurboCombo {
+// Resume the workout at Drill 13
+wait(20);
+set_val(XB1_A, 100);
+wait(20);
+set_val(XB1_A, 0);
+// Wait until Drill 15 starts
+wait(4000);
+wait(4000);
+wait(4000);
+wait(1000);
+// Pause and rewind to Drill 13
+set_val(XB1_MENU, 100);
+wait(20);
+set_val(XB1_MENU, 0);
+wait(20);
+set_val(XB1_LEFT, 100);
+wait(20);
+set_val(XB1_LEFT, 0);
+wait(20);
+set_val(XB1_A, 100);
+wait(20);
+set_val(XB1_A, 0);
+wait(20);
+set_val(XB1_A, 100);
+wait(20);
+set_val(XB1_A, 0);
+wait(20);
+set_val(XB1_A, 100);
+wait(20);
+set_val(XB1_A, 0);
+wait(20);
+set_val(XB1_RIGHT, 100);
+wait(20);
+set_val(XB1_RIGHT, 0);
+wait(20);
+}

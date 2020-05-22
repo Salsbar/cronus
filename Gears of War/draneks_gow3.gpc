@@ -1,0 +1,201 @@
+// GPC Online Library
+// draeneks_gow_3_gpc.gpc
+
+// GPC Online Library
+// Draenek's_GOW_3_Script.gpc
+/*************************************************************************************************
+ ____                      _ _        _____                        ___    _ _ _            ___ 
+|    \ ___ ___ ___ ___ ___| | |___   |   __|___ ___ ___ ___    ___|  _|  | | | |___ ___   |_  |
+|  |  |  _| .'| -_|   | -_| | / .'   |  |  | -_| .'|  _|_ -|  | . |  _|  | | | | .'|  _|  |_  |
+|____/|_| |__,|___|_|_|___|_,_\__,   |_____|___|__,|_| |___|  |___|_|    |_____|__,|_|    |___|
+                                                                                 
+
+                                         
+ _____         _     _            
+|   __|___ ___|_|___| |_     
+|__   |  _|  _| | . |  _|    
+|_____|___|_| |_|  _|_|    
+                |_|                      
+
+
+    Gears of War 3 script for XBOX 360
+    This script includes:
+    *Active Reloads
+    *Anti-Idle
+    *Auto Spot
+    *Auto Wallbounce with increased sensitivity
+    *Rapid Fire
+    
+    
+
+    -Setup
+    1. This script is used for alternate control scheme in GOW3.
+    2. If you are more comfortable playing default control scheme (which you shouldn't since pros 
+    use alternate for fluid and controlable wallbouncing) then:
+        Delete the line commands under section "Auto WallBounce setting" and "combo AutoCover" 
+        (with default scheme, voiding this will cause your player to roll instead 
+        of sliding into cover).
+        
+    -How to use
+    Once in game set your GPP profile to the profile the script is on.
+    Holding down the fire button (Right Trigger), if you have pistol or HammerBurst
+    Equiped (down or right on D-PAD) will rapid fire.
+    To active reload tap the reload button once (Right-Back), active reloads will
+    only work with RetroLancer, Lancer, HammerBurst, Pistol and Gnasher.
+    *In order to switch to the current starting rifle, hold the BACK button and press Left
+    for Lancer), or DOWN (for HammeBurst), or Left (for RetroLancer). You should know that
+    the game default order of start weapons is Lancer>Hammerburst>RetroLancer and this GPC 
+    matches that. i.e. while holding BACK and pressing (LEFT;Lancer)>(DOWN;HammerBurst)
+    >(RIGHT;RetroLancer).
+    Auto spoting will work when LS is held down (tests show this is the most effective remap
+    than holding down left stick).
+    *Rapid Fire and Auto Reload can be unnecessary under certain conditions so I added a on/off
+     switch, HOLD LEFT TRIGGER and PRESS BACK to turn it off (You can change On/Off button to 
+     desired button by changing the button in "event_press" under the "Toggle RapidFire On or off" 
+     section)
+    *Anti-Idle also added (Hold down the B button and press Back to turn on/off)
+
+    -Warning/Notice
+    This script does not know when you die, so when you respawn TAP Right on your D-PAD
+    to reset the script to the starting weapon.
+    Sometimes active will miss on weapons like the gnasher, this is due to the animation
+    of the gun still playing. Practice pressing reload once the gun fire animation has
+    stopped. Also there is no way to turn off the auto reload animation once weapon clip
+    is empty, its just the way they made the game. So in order to avoid this reload ONLY
+    when there is no more than four to three bullets left in your gun.
+
+    Thanks DualFever for active reload and KittyDawn for toggle switch.
+    Enjoy!!!
+
+    
+***************************************************************************************/
+        //Best to leave the defines.
+        define Lancer       = 750;
+        define HammerBurst  = 575;
+        define RetroLancer  = 1400;
+        define Pistol       = 500;
+        define Gnasher      = 850;
+
+        define RAPIDFIRE_BUTTON = XB360_RT;
+        //Change this value in the range
+        define RATE_OF_FIRE = 7.6;   // Range: 1 to 25 RPS (Round/s)
+        // Values higher than 25 would be so fast that the
+        // game probably will not detect 100% of the events.
+        // No need to make changes in the hold and rest time Rapid Fire codes below.
+
+        int StartWeapon = HammerBurst;
+
+        int CurrentWeapon;
+        int cDelay = 100;
+        int Rapid_Fire=FALSE;
+        int hold_time, rest_time;
+        
+        int Anti_Idle=FALSE;
+        int wait_time;
+          init {
+            CurrentWeapon = StartWeapon;
+            hold_time = 500 / RATE_OF_FIRE;
+            rest_time = hold_time - 32;
+            if(rest_time < 0) rest_time = 0;
+            wait_time = 20000;}
+        
+        main {
+            //Left Stick and Cover Button Sensitivity Settings
+            sensitivity(XB360_A, NOT_USE, 327);
+            sensitivity(XB360_LS, NOT_USE, 327);
+            sensitivity(XB360_LX, NOT_USE, 250);
+            sensitivity(XB360_LY, NOT_USE, 250);
+           
+            //When XB360_Back and XB360_LB is pressed, Rapid_Fire and Auto_Reload is on.
+            //Led 4 will be on when Rapid_Fire and Auto_Reload is on
+            if((event_press(XB360_BACK)) && (get_val(XB360_LT))) {Rapid_Fire = !Rapid_Fire;}
+            if (Rapid_Fire) {combo_run (RapidFire);set_ledx (LED_2,1);} 
+            
+            //When XB360_Back and XB360 B is pressed, XB360 B will continue to be pressed every 20 seconds (.2 minutes)until pressed again.
+            //Led 3 will be on when Anti Idle is on
+            if((event_press(XB360_BACK)) && (get_val(XB360_B))) {Anti_Idle = !Anti_Idle;}
+            if (Anti_Idle) {combo_run (AntiIdle);set_ledx (LED_3,2);}
+                else if(combo_running(AntiIdle)) {
+                    combo_stop(AntiIdle);}
+    
+            // Auto WallBounce setting
+            if(get_val(XB360_A)) {
+            combo_run(AutoCover);}
+           
+            // AutoSpot
+            if(get_val(XB360_LS)) {
+                combo_run(AutoSpot);
+            } else {}
+
+            // Reload weapon setting
+            if((Rapid_Fire) && (event_press(XB360_RB))) {
+                combo_run(ReloadGun);}
+            if(CurrentWeapon == Gnasher){
+                cDelay = 800;}
+                    else {
+                        cDelay = 100;}
+           
+            // Switch weapon reload timing settings
+            if(get_val(XB360_BACK)) {
+            if(event_press(XB360_RIGHT)) {
+            StartWeapon = RetroLancer;
+            } else if(event_press(XB360_LEFT)) {
+            StartWeapon = Lancer;
+            } else if(event_press(XB360_DOWN)) {
+            StartWeapon = HammerBurst;}
+            
+            CurrentWeapon = StartWeapon;
+            } else if(event_press(XB360_RIGHT)) {
+            CurrentWeapon = StartWeapon;
+            } else if(event_press(XB360_LEFT)) {
+            CurrentWeapon = Gnasher;
+            } else if(event_press(XB360_DOWN)) {
+            CurrentWeapon = Pistol;}
+
+            //RapidFire Settings
+             if((Rapid_Fire) && (get_val(XB360_RT))) {
+                combo_run(RapidFire);
+            } else if(combo_running(RapidFire)) {
+                combo_stop(RapidFire);}
+        }
+        
+        combo AntiIdle {
+            set_val(XB360_B, 100);
+            wait(100);
+            set_val(XB360_B, 0);
+            wait(wait_time);
+        }
+
+        combo AutoCover {
+            set_val(XB360_A, 100);
+            wait(70);
+            set_val(XB360_A, 0);
+            wait(70); // repeat
+        }
+
+        combo AutoSpot {
+            set_val(XB360_LS, 100);
+            wait(60);
+            set_val(XB360_LS, 0);
+            wait(60); // repeat
+        }
+
+        combo RapidFire {
+            set_val(RAPIDFIRE_BUTTON, 100);
+            wait(hold_time);
+            set_val(RAPIDFIRE_BUTTON, 0);
+            wait(rest_time);
+            set_val(RAPIDFIRE_BUTTON, 0);
+        }
+
+        combo ReloadGun {
+            set_val(XB360_RB, 0);
+            wait(cDelay);
+            set_val(XB360_RB, 100);
+            wait(60);
+            set_val(XB360_RB, 0);
+            wait(CurrentWeapon);
+            set_val(XB360_RB, 100);
+            wait(60);
+            set_val(XB360_RB, 0);
+}

@@ -1,0 +1,64 @@
+/* Jetpac Fuel Script
+*/
+
+int turbo = 0; // Turbo on/off 
+
+main {
+
+// Start/stop turbo mode
+
+if (event_press(XB1_RS)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+}
+
+if (turbo == 1) {
+    combo_run(TurboCombo);
+    }
+}
+
+// Turbo mode code runs in a loop
+combo TurboCombo {
+// Hit A every 2 Seconds
+wait(20);
+set_val(XB1_MENU, 100);
+wait(2000);
+set_val(XB1_MENU, 0);
+wait(2000);
+set_val(XB1_DOWN, 100);
+wait(40);
+set_val(XB1_DOWN, 0);
+wait(1500);
+set_val(XB1_DOWN, 100);
+wait(40);
+set_val(XB1_DOWN, 0);
+wait(1500);
+set_val(XB1_DOWN, 100);
+wait(40);
+set_val(XB1_DOWN, 0);
+wait(1500);
+set_val(XB1_A, 100);
+wait(40);
+set_val(XB1_A, 0);
+wait(1500);
+set_val(XB1_A, 100);
+wait(40);
+set_val(XB1_A, 0);
+wait(1500);
+set_val(XB1_A, 100);
+wait(40);
+set_val(XB1_A, 0);
+wait(1500);
+set_val(XB1_MENU, 100);
+wait(40);
+set_val(XB1_MENU, 0);
+wait(1500);
+set_val(XB1_MENU, 100);
+wait(40);
+set_val(XB1_MENU, 0);
+wait(1500);
+}

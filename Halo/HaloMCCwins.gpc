@@ -1,0 +1,55 @@
+// Halo MCC Wins Achievement Script
+
+int turbo = 0; // Turbo on/off 
+
+main {
+
+if (event_press(XB1_RS)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+}
+
+if (turbo == 1) {
+    combo_run(TurboCombo);
+    }
+
+}
+
+// Turbo mode code runs in a loop
+combo TurboCombo {
+
+wait(1000);
+set_val(XB1_A, 100);
+wait(60);
+set_val(XB1_A, 0);
+wait(1000*30);
+set_val(XB1_MENU, 100);
+wait(60);
+set_val(XB1_MENU, 0);
+wait(2000);
+set_val(XB1_RIGHT, 100);
+wait(60);
+set_val(XB1_RIGHT, 0);
+wait(2000);
+set_val(XB1_A, 100);
+wait(60);
+set_val(XB1_A, 0);
+wait(2000);
+set_val(XB1_LEFT, 100);
+wait(60);
+set_val(XB1_LEFT, 0);
+wait(2000);
+set_val(XB1_A, 100);
+wait(60);
+set_val(XB1_A, 0);
+wait(1000*30);
+wait(1000*15);
+set_val(XB1_B, 100);
+wait(60);
+set_val(XB1_B, 0);
+wait(2000);
+}

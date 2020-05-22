@@ -1,0 +1,67 @@
+// Halo MCC 2500 headshots
+
+int turbo = 0; // Turbo on/off 
+
+main {
+
+if (event_press(XB1_LS)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+}
+
+if (turbo == 1) {
+    combo_run(TurboCombo);
+    }
+
+}
+
+// Turbo mode code runs in a loop
+combo TurboCombo {
+
+wait(1200);
+
+set_val(XB1_LY, -100);
+wait(2500);
+set_val(XB1_LY, 0);
+wait(20);
+
+set_val(XB1_RY, 100);
+wait(500);
+set_val(XB1_RY, 0);
+wait(20);
+
+set_val(XB1_RT, 100);
+wait(40);
+set_val(XB1_RT, 0);
+wait(2000);
+
+set_val(XB1_MENU, 100);
+wait(40);
+set_val(XB1_MENU, 0);
+wait(1200);
+
+set_val(XB1_RIGHT, 100);
+wait(40);
+set_val(XB1_RIGHT, 0);
+wait(1200);
+
+set_val(XB1_A, 100);
+wait(40);
+set_val(XB1_A, 0);
+wait(1200);
+
+set_val(XB1_LEFT, 100);
+wait(40);
+set_val(XB1_LEFT, 0);
+wait(1200);
+
+set_val(XB1_A, 100);
+wait(40);
+set_val(XB1_A, 0);
+wait(1200);
+
+}

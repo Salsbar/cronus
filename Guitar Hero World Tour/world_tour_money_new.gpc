@@ -1,0 +1,172 @@
+/* Guitar Hero World Tour Bling, Bling Achievement Script
+
+On the initial setlist, a few manual inputs are required:
+- Select quickplay
+- Press Y twice to sort by career
+- Press RS to begin the script
+- When the difficulty selection window appears, scroll down to Expert
+*/
+
+int turbo = 0; // Turbo on/off 
+
+main {
+
+// Start/stop turbo mode
+
+if (event_press(XB360_RS)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+}
+
+if (turbo == 1) {
+    combo_run(TurboCombo);
+    }
+}
+
+// Turbo mode code runs in a looop
+combo TurboCombo {
+
+// Scroll 2 times
+wait(500);
+set_val(XB360_DOWN, 100);
+wait(20);
+set_val(XB360_DOWN, 0);
+wait(500);
+set_val(XB360_DOWN, 100);
+wait(20);
+set_val(XB360_DOWN, 0);
+wait(500);
+
+// Selects No Sleep til Brooklyn
+set_val(XB360_A, 100);
+wait(20);
+set_val(XB360_A, 0);
+wait(500);
+set_val(XB360_X, 100);
+wait(20);
+set_val(XB360_X, 0);
+wait(500);
+set_val(XB360_DOWN, 100);
+wait(20);
+set_val(XB360_DOWN, 0);
+wait(500);
+
+// Selects On Broken Trash
+set_val(XB360_A, 100);
+wait(20);
+set_val(XB360_A, 0);
+wait(500);
+set_val(XB360_X, 100);
+wait(20);
+set_val(XB360_X, 0);
+wait(500);
+set_val(XB360_UP, 100);
+wait(20);
+set_val(XB360_UP, 0);
+wait(500);
+
+// Selects Grave of Opp
+set_val(XB360_A, 100);
+wait(20);
+set_val(XB360_A, 0);
+wait(500);
+// Starts playlist
+set_val(XB360_START, 100);
+wait(20);
+set_val(XB360_START, 0);
+wait(4000);
+set_val(XB360_A, 100);
+wait(20);
+set_val(XB360_A, 0);
+set_led(LED_1, 0);
+set_led(LED_2, 1);
+set_led(LED_3, 0);
+set_led(LED_4, 0);
+
+// Wait for 5:30
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+
+// Hit A to go to next song
+set_val(XB360_A, 100);
+wait(20);
+set_val(XB360_A, 0);
+set_led(LED_1, 0);
+set_led(LED_2, 0);
+set_led(LED_3, 1);
+set_led(LED_4, 0);
+
+// Wait for 4:30
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+
+// Hit A to go to next song
+set_val(XB360_A, 100);
+wait(20);
+set_val(XB360_A, 0);
+set_led(LED_1, 0);
+set_led(LED_2, 0);
+set_led(LED_3, 0);
+set_led(LED_4, 1);
+
+// Wait for 5:00
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+wait(1000*30);
+
+// Hit A to go to next song
+set_val(XB360_A, 100);
+wait(20);
+set_val(XB360_A, 0);
+
+wait(4000);
+
+// Hit A to go to back to playlist
+set_val(XB360_A, 100);
+wait(20);
+set_val(XB360_A, 0);
+reset_leds();
+
+// Wait for the playlist screen to return
+wait(4000);
+wait(4000);
+wait(4000);
+wait(4000);
+
+// Hit X twice to get back to career
+set_val(XB360_X, 100);
+wait(20);
+set_val(XB360_X, 0);
+wait(500);
+set_val(XB360_X, 100);
+wait(20);
+set_val(XB360_X, 0);
+wait(500);
+}

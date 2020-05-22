@@ -1,0 +1,117 @@
+int turbo = 0;
+int Scroll_1 = 5;
+int Scroll_2 = 10;
+int Scroll_3 = 15;
+int Duration_1 = 10000;
+int Duration_2 = 10000;
+int Duration_3 = 10000;
+int i = 0;
+int t = 0;
+
+main {
+
+// Enter program mode
+
+
+if (event_press(XB360_RS)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+    }
+
+if (turbo == 1) {
+    combo_run(TurboCombo);
+    }
+
+}
+
+// Enter turbo mode
+combo TurboCombo {
+
+// Select Song 1
+i = 0;
+while (i < Scroll_1) {
+    combo_run(ScrollDown);
+    i = i + 1;
+    }
+combo_run(PressA);
+
+// Select Song 2
+i = 0;
+while (i < Scroll_2) {
+    combo_run(ScrollDown);
+    i = i + 1;
+    }
+combo_run(PressA);
+
+// Select Song 3
+i = 0;
+while (i < Scroll_3) {
+    combo_run(ScrollDown);
+    i = i + 1;
+    }
+combo_run(PressA);
+
+// ************  Insert code for playing songs *********** 
+while (t < Duration_1) {
+    combo_run(WaitDuration);
+    }
+
+// Select Song 3
+i = 0;
+while (i < Scroll_3) {
+    combo_run(ScrollUp);
+    i = i + 1;
+    }
+combo_run(PressA);
+
+// Select Song 2
+i = 0;
+while (i < Scroll_2) {
+    combo_run(ScrollUp);
+    i = i + 1;
+    }
+combo_run(PressA);
+
+// Select Song 1
+i = 0;
+while (i < Scroll_1) {
+    combo_run(ScrollUp);
+    i = i + 1;
+    }
+combo_run(PressA);
+
+
+
+// ************  Copy code for playing songs *********** 
+
+
+}
+
+combo ScrollDown {
+set_val(XB360_DOWN, 100);
+wait(20);
+set_val(XB360_DOWN, 0);
+wait(20);
+}
+
+combo ScrollUp {
+set_val(XB360_UP, 100);
+wait(20);
+set_val(XB360_UP, 0);
+wait(20);
+}
+
+combo PressA {
+set_val(XB360_A, 100);
+wait(20);
+set_val(XB360_A, 0);
+wait(20);
+}
+
+combo WaitDuration {
+wait(1000);
+}

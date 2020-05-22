@@ -1,0 +1,100 @@
+// GPC Online Library
+// perfect_dark_zero_deathmatch.gpc
+
+// Credits go to Diego Knyte, token, CypherNova139, X-Dream
+//
+//          Perfect Dark Zero Xbox360
+//      Played 1000 Multiplayer Deathmatch Game
+//
+//    My Game Setup with help from xX EL DlABLO Xx and SYGR Prometheus on trueachievements.com solution
+//      
+//      Game installed on the Xbox360 HDD
+//        COMBAT ARENA > LOCAL > DEATHMATCH > 
+//        Scenario        TEAM KILL COUNT
+//      Level            TOWER
+//      Level Variant    SMALL
+//        Weapons            Custom 1 (press x to customize to ALL Heavy Weapon JACKAL Snipers)
+//      Bot Count        15
+//      Bot Options        Max Bot        15
+//                        Bot Difficulty    DARK AGENT
+//                        Bot Teams        BALANCED TEAMS
+//                        Bot Distributon    FIXED BOTS
+//                        Bot Personality    FUED
+//      Team Setup        No Change needed
+//      Time Limit        NONE
+//        Points Limit    5
+//        Advanced opt    Base Assignment     FIXED BASES
+//                      Spawn Type            RANDOMSPAWN (important don't change)
+//                      Join Progress        NOT ALLOWED
+//                      Model Assignment    LOCKED
+//                      Team AutoBal        OFF
+//                      Friendly Fire       OFF
+//        Press Start to Create 
+//        Scroll down players list changing the bots with X to your side apart from the last FIVE (you could try 6 but you only need 5 for the win)
+//      On the last FIVE bots click on them with A and change Skill to SECRET AGENT
+//      
+//      Finally START the game let it run once. 
+//
+//        When it returns to the POST-GAME STATS screen HIT XB360_RB (The script start button)
+//
+//        Walk away for a while does need checking every now and then ive had it stop a couple of times,
+//      probably because the game took longer than the time allowed between button presses
+//      It will take anywhere from 11hrs to 14hrs depending on the interval time you set that works for you
+
+data(48,117,1,1); 
+define StartButton = XB360_RB; 
+define WLED = 750;
+
+int run;
+main {
+    if(run > 0) {
+        combo_run(xBot);combo_run(CycleLED);
+    } else {
+        combo_stop(xBot);combo_stop(CycleLED);
+        reset_leds();
+    }
+
+    if(event_press(StartButton)) {
+        if(run == 1) {
+            run = 0;
+        } else {
+            run = 1;
+    }   }   }
+
+combo xBot {
+    set_val(XB360_B, 100);
+    wait(150);
+    set_val(XB360_B, 0);
+    wait(1000); 
+    set_val(XB360_START, 100);
+    wait(150);
+    set_val(XB360_START, 0);
+    wait(dword(0)); wait(dword(0)/(13 - 10));wait(dword(0)/(13 - 10));wait(dword(0)/(13 - 10)); } // added 2 wait 10 sec. 60 sec right now
+//^^This gives space for the game to run. Increase or decrease at will. I went for 40sec after several attempts and getting an average. 
+// its still not 100% safe if you have to leave it unattended I would bump the time up 
+
+//next bit is just notification that the script is running
+combo CycleLED {
+    set_led(LED_1, 1);
+    set_led(LED_2, 0);
+    set_led(LED_3, 0);
+    set_led(LED_4, 0);
+    wait(WLED);
+    set_led(LED_1, 0);
+    set_led(LED_2, 0);
+    set_led(LED_3, 0);
+    set_led(LED_4, 1);
+    wait(WLED);
+    set_led(LED_1, 0);
+    set_led(LED_2, 0);
+    set_led(LED_3, 1);
+    set_led(LED_4, 0);
+    wait(WLED);
+    set_led(LED_1, 0);
+    set_led(LED_2, 1);
+    set_led(LED_3, 0);
+    set_led(LED_4, 0);
+    wait(WLED);
+}
+
+// Complete mashup of stolen code no idea what I'm doing :D 

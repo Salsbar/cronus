@@ -1,0 +1,135 @@
+// GPC Online Library
+// halo_mcc_quad_shot_bxr_rapid_fire.gpc
+
+// HALO MCC - Halo 2 Classic// RAPID FIRE - switchable (ON/OFF: hold DPAD_LEFT and press A)
+// QUAD SHOT - Tap RB or Hold RB
+// BXR - Tap A
+// LAYOUT - Universal Bumper Jumper
+// AUTHOR = LEXLOST, KITTYDAWN, STEELPIRATE (Modifications)
+//--------------------------------------------------------------
+
+
+// REMAPS
+//--------------------------------------------------------------
+
+
+remap XB1_B -> XB1_RB;
+remap XB1_X -> XB1_B;
+remap XB1_RB -> XB1_X;
+
+
+// DECLARARATIONS - define
+//--------------------------------------------------------------
+
+
+define RATE_OF_FIRE = 10;//Range: 1 to 25 RPS (Round/s)
+define fire_button = XB1_RT;
+define Left = XB1_LEFT;    //Change if you want different button
+define RIGHT_BUTTON = XB1_RB; // change this with the desired one
+define BXRbutton = XB1_A; // Change for different layout
+define Melee = XB1_B; // Change for different layout
+define Reload = XB1_X; // Change for different layout
+
+
+// VARIABLES - int
+//--------------------------------------------------------------
+
+
+int double_shot_enabled = FALSE;
+int rapid_onoff = TRUE;
+int hold_time;
+int rest_time;
+
+
+// INITIALIZATION - init
+//--------------------------------------------------------------
+
+
+init {
+hold_time = 500 / RATE_OF_FIRE;
+rest_time = hold_time - 20;
+if(rest_time < 0) rest_time=0;
+}
+
+
+// MAIN BLOCK RUTINES
+//--------------------------------------------------------------
+
+
+main {// Start of MAIN BLOCK
+// Time to RB button Double click (Thanks to CronusTECH for the 'timer')
+
+
+if (get_val(XB1_RB)) {combo_run (double_double_shot);}
+       
+// BXR
+if (event_press(BXRbutton)){combo_run(BXR);}
+
+
+// RAPID FIRE  (to ON/OFF hold BACK and press START)
+if(event_press(BXRbutton)&& get_val(Left)) {rapid_onoff =!rapid_onoff;set_val(2,0);}
+
+
+// RAPIDFIRE
+if(get_val(fire_button) && rapid_onoff) {combo_run(RAPID_FIRE);}
+else if(combo_running(RAPID_FIRE)) {combo_stop(RAPID_FIRE);}
+
+
+}// End of MAIN BLOCK
+
+
+//COMBO BLOCKS
+//--------------------------------------------------------------
+
+
+//Rapidfire
+combo RAPID_FIRE {
+    set_val(fire_button, 100);
+    wait(hold_time);
+    set_val(fire_button, 0);
+    wait(rest_time);
+    set_val(fire_button, 0);
+}
+
+
+// BXR
+combo BXR {
+    set_val(Melee,100);
+    wait(350);
+    set_val(Melee,0);
+    set_val(fire_button,100);
+    set_val(Reload,100);
+    wait(150);
+}
+
+
+// Double Shot
+combo double_shot {
+    set_val(4,100);
+    wait(100);
+    set_val(4,0);
+    wait(60);
+    set_val(4,100);
+    wait(60);
+    set_val(4,0);
+    set_val(20,100);
+    wait(70);
+    set_val(20,0);
+}
+
+
+// Double Double Shot
+combo double_double_shot {
+    call (double_shot);
+    wait(100);
+    set_val(17,100);
+    wait(50);
+    set_val(17,0);
+    wait(60);
+    set_val(17,100);
+    wait(50);
+    set_val(17,0);
+    wait(60);
+    wait(100);
+    call (double_shot);
+}

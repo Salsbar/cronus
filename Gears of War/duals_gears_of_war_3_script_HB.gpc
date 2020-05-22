@@ -1,0 +1,137 @@
+// GPC Online Library
+// duals_gears_of_war_3_script.gpc
+
+/**************************************************************************************
+ ____          _        _____                        ___    _ _ _            ___ 
+|    \ _ _ ___| |___   |   __|___ ___ ___ ___    ___|  _|  | | | |___ ___   |_  |
+|  |  | | | .'| |_ -|  |  |  | -_| .'|  _|_ -|  | . |  _|  | | | | .'|  _|  |_  |
+|____/|___|__,|_|___|  |_____|___|__,|_| |___|  |___|_|    |_____|__,|_|    |___|
+                                                                                 
+
+                                         
+ _____         _     _             ___   
+|   __|___ ___|_|___| |_    _ _   |_  |  
+|__   |  _|  _| | . |  _|  | | |   _| |_ 
+|_____|___|_| |_|  _|_|     \_/   |_____|
+                |_|                      
+
+
+    Gears of War 3 script for XBOX 360
+    This script includes:
+    +Active Reloads
+    +Auto Tag
+    +Rapid Fire
+
+    -Setup
+    You MUST use the default control scheme in GOW3.
+    Change the line below (int CurrentWeapon = HammerBurst;) with your START WEAPON.
+    Default is HammerBurst. The options are:
+    RetroLancer
+    Lancer
+    HammerBurst
+
+    -How to use
+    Once in game set your GPP profile to the profile the script is on.
+    Holding down the fire button (Right Trigger), if you have pistol or HammerBurst
+    Equiped (down or right on D-PAD) will rapid fire.
+    To active reload tap the reload button once (Right-Back), active reloads will
+    only work with RetroLancer, Lancer, HammerBurst, Pistol and Gnasher.
+    Auto tagging will work when aiming down your sights on any weapon
+    (holding left trigger).
+
+    -Warning/Notice
+    This script does not know when you die, so when you respawn TAP Right on your D-PAD
+    to reset the script to the starting weapon.
+    Sometimes active will miss on weapons liek the gnasher, this is due to the animation
+    of the gun still playing. Practice pressing reload once the gun fire animation has
+    stopped.
+
+    GPP - FW v0101 SW v0106
+
+    
+***************************************************************************************/
+
+//Best to leave the defines.
+define RetroLancer  = 1400;
+define Lancer       = 750;
+define HammerBurst  = 1100;
+define Pistol       = 500;
+define Gnasher      = 850;
+
+//START WEAPON on the line below
+define StartWeapon = HammerBurst;
+
+int CurrentWeapon = StartWeapon;
+int cDelay = 100;
+
+
+main {
+
+     if(get_val(XB360_LT)) {
+        combo_run(Tag);
+    } else {
+    } 
+
+    // Reload weapon
+    if(event_press(XB360_RB)) {
+        combo_run(ReloadGun);
+    }
+    set_val(XB360_RB, 0);
+
+    // Switch weapon reload timing
+    if(event_press(XB360_RIGHT)) {
+        CurrentWeapon = StartWeapon;
+    }
+    if(event_press(XB360_LEFT)) {
+        CurrentWeapon = Gnasher;
+    }
+    if(event_press(XB360_DOWN)) {
+        CurrentWeapon = Pistol;
+    }
+
+    if(get_val(XB360_RT)) {
+    if(CurrentWeapon == HammerBurst || CurrentWeapon == Pistol){
+    combo_run(Rapido);
+    }
+    }
+
+    if(CurrentWeapon == Gnasher){
+    cDelay = 800;
+    }else{
+    cDelay = 100;
+    }
+    
+}
+
+combo Rapido {
+    set_val(XB360_RT, 100);
+    wait(60);
+    set_val(XB360_RT, 0);
+    wait(70);
+    set_val(XB360_RT, 100);
+    wait(60);
+    set_val(XB360_RT, 0);
+    wait(70);
+}
+
+combo ReloadGun {
+    wait(cDelay);
+    set_val(XB360_RB, 100);
+    wait(60);
+    set_val(XB360_RB, 0);
+    wait(CurrentWeapon);
+    set_val(XB360_RB, 100);
+    wait(60);
+    set_val(XB360_RB, 0);
+}
+
+combo Tag {
+    set_val(XB360_LS, 100);
+   wait(100);
+   set_val(XB360_LS,  0);
+   wait(300);
+    set_val(XB360_LS, 100);
+   wait(100);
+   set_val(XB360_LS,  0);
+   wait(300);
+}

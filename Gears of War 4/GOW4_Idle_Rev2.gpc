@@ -1,0 +1,126 @@
+// GPC Online Library
+// destiny_anti_idle_script.gpc
+
+/*
+    ___          __  _    ____    ____   
+   /   |  ____  / /_(_)  /  _/___/ / /__ 
+  / /| | / __ \/ __/ /   / // __  / / _ \
+ / ___ |/ / / / /_/ /  _/ // /_/ / /  __/
+/_/  |_/_/ /_/\__/_/  /___/\__,_/_/\___/ 
+                                         
+
+
+*/ 
+///////////////////////////////////////////////////////////
+//  Game : DESTINY
+//  Author: EXCALIBUR
+//  ver. 1.00
+//  Platform : Multi
+//  Instructions: To start the script, press L3 
+/*
+-10 sec Tap up 
+after
+-10 sec Tap down 
+after
+-10 sec Tap right
+after
+-10 sec Tap left
+after
+-10 sec jump
+after
+-10 sec LT + RT
+
+Then all again that repeat itself
+the left stick for move the char  and i mean, tap left then 10 second tap right, 
+then after 10 sec tap up, then after 10 sec tap down, then after 10 sec jump,
+and then after 10 sec aim + shotting. 
+
+*/
+int timelimit=0;
+int seconds=0;
+int minutes=0;
+int hours=0;
+int SCA_Anti_Idle=FALSE;
+int Not_moving=1;
+int num=0;
+
+
+main {// start main block
+set_val(TRACE_1,seconds);  // Seconds
+
+
+  // Start counting time press LS/L3
+  if(event_press(8)){SCA_Anti_Idle=!SCA_Anti_Idle;timelimit=0;}
+
+
+  if(SCA_Anti_Idle ) 
+  {//=========================================================
+    
+   // Timer count seconds, minutes, hour
+   timelimit=timelimit+ get_rtime();
+   if( timelimit>=1000) {seconds=seconds+1;timelimit=0; }
+   
+   if( seconds>=3 && Not_moving) 
+                   {//-----------------
+                    Not_moving=0; 
+                    seconds=0;
+                    num=num +1;
+                    if(num>6)num=1;
+                    timelimit=0;
+                    combo_run(Anti_Idle);
+                   }//--------------------  
+
+  }//======================================================== 
+  
+
+}// end of main block
+
+combo Anti_Idle {
+  // -----------------------------
+  if(num==1)combo_run(TapUP);
+  if(num==2)combo_run(TapRight);
+  if(num==3)combo_run(TapDown);
+  if(num==4)combo_run(TapLeft);
+  if(num==5)combo_run(TapJump);
+  if(num==6)combo_run(TapShoot);
+  //------------------------------
+}
+
+combo TapUP {
+ set_val(12,-100);
+ wait(750);
+ Not_moving=1;
+}
+combo TapRight {
+ set_val(11,100);
+ wait(750);
+ Not_moving=1;
+}
+combo TapDown {
+ set_val(12,100);
+ wait(750);
+ Not_moving=1;
+}
+combo TapLeft {
+ set_val(11,-100);
+ wait(750);
+ Not_moving=1;
+}
+combo TapJump {
+ set_val(19,100); // 19 = index for XB1_A
+ wait(100);
+wait(400);
+ Not_moving=1;
+}
+combo TapShoot {
+ set_val(7,100);
+ wait(300);
+ set_val(7,100); 
+ set_val(4,100);
+ wait(70);
+ set_val(7,0); 
+ set_val(4,0);
+set_val(3,100);
+wait(100);
+ Not_moving=1;
+}  
