@@ -14,10 +14,12 @@ if (event_press(6)) {
     }
     else {
     turbo = 0;
+    reset_leds();
     }
 }
 
 if (turbo == 1) {
+    set_led(LED_1, 3);
     combo_run(TurboCombo);
     }
 }

@@ -14,10 +14,12 @@ if (event_press(6)) {
     }
     else {
     turbo = 0;
+    reset_leds();
     }
 }
 
 if (turbo == 1) {
+    set_led(LED_1, 3);
     combo_run(TurboCombo);
     }
 }
@@ -27,25 +29,11 @@ combo TurboCombo {
 
 // Move the stick left and right every 1/2 sec
 
-set_led(LED_1, 1);
-set_led(LED_1, 0);
-
-wait(500);
-
-set_led(LED_4, 1);
-set_led(LED_4, 0);
-
 set_val(11, 100);
 wait(20);
 set_val(11, 0);
 
-set_led(LED_3, 1);
-set_led(LED_3, 0);
-
 wait(500);
-
-set_led(LED_2, 1);
-set_led(LED_2, 0);
 
 set_val(11, -100);
 wait(20);
