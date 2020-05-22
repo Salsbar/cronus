@@ -1,0 +1,47 @@
+/* Forza Horizon 2 Multiplayer anti-idle for Host
+Hit LB to toggle the anti-idle on and off
+*/
+
+int turbo = 0; // Turbo on/off 
+
+main {
+
+// Start/stop turbo mode
+
+if (event_press(6)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+}
+
+if (turbo == 1) {
+    combo_run(TurboCombo);
+    }
+}
+
+// Turbo loop
+combo TurboCombo {
+
+// Move the stick left and right and hit start
+set_val(15, 100);
+wait(20);
+set_val(15, 0);
+
+wait(500);
+
+set_val(16, 100);
+wait(20);
+set_val(16, 0);
+
+wait(500);
+
+set_val(2, 100);
+wait(20);
+set_val(2, 0);
+
+wait(500);
+
+}
