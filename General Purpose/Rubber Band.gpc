@@ -1,8 +1,10 @@
+//FOR TITAN TWO USERS, UNCOMMENT LINES 2 AND 2 (REMOVE THE DOUBLE SLASHES).
 //#include <titanone.gph>
-
 //#pragma METAINFO("Rubber Banding", 1, 0, "XxFrAsZeRxX")
 
-/* ****UNTESTED/WIP****
+//Created by XxFrAsZeRxX
+//If there are issues with the script message me on Discord (XxFrAsZeRxX#8948).
+
 INSTRUCTIONS
 1) Press the button that is desired to be rubber banded for at least 1 second.
 2) To rubber band the sticks, press and hold the direction on the D-Pad you wish to rubber band a stick, and then press the stick you wish to rubber band.
