@@ -5,9 +5,9 @@
 /* ****UNTESTED/WIP****
 INSTRUCTIONS
 1) Press the button that is desired to be rubber banded for at least 1 second.
-2) To rubber band the sticks, click and hold the stick you wish to rubber band and press the direction you wish to rubber band it with the D-Pad.
+2) To rubber band the sticks, press and hold the direction on the D-Pad you wish to rubber band a stick, and then press the stick you wish to rubber band.
 3) Both sticks and any single button can be rubber banded simaltenously or seperately.
-To stop the macro from turboing a button, simply press the same button again once or click both sticks at the same time.
+To stop the macro from turboing a button, simply press the same button again once or click both sticks at the same time which will stop the sticks rubber banding and also the buttons.
 */
 int input,i=1,j,k,m;
 int delay=50;
