@@ -19,18 +19,16 @@ if (turbo == 1) {
 // Turbo mode code runs in a loop
 combo TurboCombo {
 
-set_val(XB1_LEFT, 100);
-wait(500);
-set_val(XB1_X, 100);
-wait(20);
-set_val(XB1_X, 100);
-wait(20);
-set_val(XB1_X, 100);
-wait(20);
-set_val(XB1_LEFT, 0);
-wait(20);
-set_val(XB1_RIGHT, 100);
-wait(500);
-set_val(XB1_RIGHT, 0);
-wait(80);
+	set_val(XB1_LY , 0);
+	set_val(XB1_LY , -100);
+	wait(500);
+	set_val(XB1_LY , 0);
+	wait(500);
+	set_val(XB1_LY , 0);
+	set_val(XB1_LY , 100);
+	wait(500);
+	set_val(XB1_LY , 0);
+	wait(4000);
+	wait(4000);
+	wait(2000);
 }
