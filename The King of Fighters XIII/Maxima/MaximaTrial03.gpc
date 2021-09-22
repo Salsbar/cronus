@@ -1,0 +1,64 @@
+//Trail 03 for Maxima in Kof13. Stand next to target and press LS to start the combo (Push computer to the edge of the right screen).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Maxima03); 
+        if(get_val(XB360_RS)) combo_stop(Maxima03);
+}
+
+//Main Script
+combo Maxima03 {
+	
+	
+//M-4 Vapor Cannon Light
+	set_val(XB360_DOWN, 100);
+	wait(100);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(50);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(70);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 100);
+	wait(70);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(1100);
+
+//Directional Down HP
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_Y, 100);
+	wait(120);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(10);
+	
+//M-19 Blitz Cannon
+	set_val(XB360_LEFT, 100);
+	wait(60);
+	set_val(XB360_LEFT, 0);
+	wait(60);
+	set_val(XB360_DOWN, 100);
+	wait(90);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(70);
+	set_val(XB360_LEFT, 100):
+	set_val(XB360_A, 100);
+	wait(10);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_A, 100);
+	wait(20);
+	set_val(XB360_A, 0);
+	
+}

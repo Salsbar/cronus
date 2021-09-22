@@ -1,0 +1,292 @@
+//Trail 10 for Ryo in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Ryo10); 
+        if(get_val(XB360_RS)) combo_stop(Ryo10);
+}
+
+//Main Script
+combo Ryo10 {
+	
+//Jumping HP
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(200);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	wait(200);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(350);
+	
+//Standing HK
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_B, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Forward LP
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//HD Dash Cancel
+	set_val(XB360_A, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_A, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(150);
+
+//Standing HK
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_B, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Kohou EX
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(100);
+	
+//Ko-Ou Ken LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(700);
+	
+//Ko-Ou Ken LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+
+//Combo Wait
+	wait(600);
+
+
+//Kohou HEAVY
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(100);
+	
+//Ko-Ou Ken LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(600);
+	
+//Ko-Ou Ken LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(650);
+
+//Kohou HEAVY
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(100);
+	
+//Ko-Ou Ken LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(600);
+	
+//Ko-Ou Ken LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(500);
+	
+//Ryuuko Ranbu LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(30);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(2000);
+	
+//Shin Tenchi Haoh Ken
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+
+}

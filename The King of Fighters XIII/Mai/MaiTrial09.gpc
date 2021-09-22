@@ -1,0 +1,262 @@
+//Trail 09 for Mai in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Mai09); 
+        if(get_val(XB360_RS)) combo_stop(Mai09);
+}
+
+//Main Script
+combo Mai09 {
+	
+
+//Crouching LK
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Crouching LK
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Standing LK
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(150);
+	
+//HD Dash Cancel
+	set_val(XB360_A, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_A, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(150);
+	
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(50);
+	
+//Hissatsu Shinobi-Bachi Light
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(500);
+	
+//Musasabi no Mai (Air) Light
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_X, 0);
+	set_val(XB360_LEFT, 0);
+	
+//Combo Wait
+	wait(750);
+	
+//Hissatsu Shinobi-Bachi Heavy
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_B, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Ryuuenbu Heavy
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(1200);
+	
+//Hissatsu Shinobi-Bachi Light
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(250);
+	
+//Ryuuenbu Heavy
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(1000);
+	
+//Hissatsu Shinobi-Bachi Heavy
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_B, 0);
+	
+//Combo Wait
+	wait(250);
+	
+//Ryuuenbu Light
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(600);
+	
+//Shiranui-Ryuu Kunoichi-No-Mai
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 0);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(30);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+
+
+}

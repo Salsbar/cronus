@@ -1,0 +1,73 @@
+//Trail 04 for Andy in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Andy04); 
+        if(get_val(XB360_RS)) combo_stop(Andy04);
+}
+
+//Main Script
+combo Andy04 {
+
+//Crouching LK
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(200);
+
+//Crouching LP
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(150);
+	
+//Forward LP
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Kuuha Dan EX
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	set_val(XB360_B, 0);
+	
+//Combo Wait
+	wait(1700);
+	
+//Crouching HK
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_B, 0);
+	
+}

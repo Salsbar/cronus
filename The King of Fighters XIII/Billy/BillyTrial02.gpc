@@ -1,0 +1,82 @@
+//Trail 02 for Billy in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Billy02); 
+        if(get_val(XB360_RS)) combo_stop(Billy02);
+}
+
+//Main Script
+combo Billy02 {
+	
+
+//Jumping HK
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(450);
+	set_val(XB360_B, 100);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	wait(70);
+	set_val(XB360_B, 0);
+	
+	
+//Combo Wait
+	wait(320);
+	
+//Crouching HP
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_Y, 100);
+	wait(90);
+	set_val(XB360_Y, 0);
+	set_val(XB360_DOWN, 0);
+	
+//Combo Wait
+	wait(10);
+	
+//Sansetsu Kon Chuudan Uchi Heavy
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(350);
+
+//Kaen Sansetsu Kon Chuudan Uchi (Sansetsu Kon Chuudan Uchi Follow-Up)
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+
+
+	
+	
+}

@@ -1,0 +1,117 @@
+//Trail 06 for Benimaru in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Benimaru06); 
+        if(get_val(XB360_RS)) combo_stop(Benimaru06);
+}
+
+//Main Script
+combo Benimaru06 {
+
+//Benimaru Colider EX
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(1500);
+	
+//Benimaru Lancer EX
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(800);
+	
+//Air Raijinken LIGHT
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(150);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(550);
+	
+//Raijinken HEAVY
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Benimaru Rolling Thunder LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_LEFT, 0);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(30);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	
+}

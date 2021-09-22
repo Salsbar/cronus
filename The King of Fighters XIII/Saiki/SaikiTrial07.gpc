@@ -1,0 +1,113 @@
+//Trail 07 for Saiki in Kof13. Stand next to target and press LS to start the combo (Start combo at the start at starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Saiki07); 
+        if(get_val(XB360_RS)) combo_stop(Saiki07);
+}
+
+//Main Script
+combo Saiki07 {
+	
+
+//Crouching LK x2
+	set_val(XB360_DOWN, 100);
+	wait(540);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_A, 100);
+	wait(120);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_A, 0);
+	wait(220);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_A, 100);
+	wait(20);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_A, 0);
+	
+//Kiyoku-no-Tsuki EX
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo wait
+	wait(800);
+	
+//Hiori-no-Kusabi Heavy + H Teleport
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_B, 0);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_B, 100);
+	wait(500);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_B, 0);
+	
+//Combo wait
+	wait(350);
+	
+//Air Back LK
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo wait
+	wait(650);
+	
+//Hanetsurube-no-Nata Heavy + Teleport
+	set_val(XB360_RIGHT, 100);
+	wait(10);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(10);
+	set_val(XB360_DOWN, 100);
+	wait(10);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_B, 100);
+	wait(10);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_B, 0);
+	wait(500);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_X, 100);
+	wait(500);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_X, 0);
+	
+
+	
+
+	
+
+
+
+	
+	
+}

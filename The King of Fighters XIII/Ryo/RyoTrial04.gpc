@@ -1,0 +1,119 @@
+//Trail 04 for Ryo in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Ryo04); 
+        if(get_val(XB360_RS)) combo_stop(Ryo04);
+}
+
+//Main Script
+combo Ryo04 {
+	
+
+//Jumping LK
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(200);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	wait(200);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(350);
+	
+//Crouching LK
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Standing LP
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_X, 0);
+
+//Combo Wait
+	wait(100);
+	
+//Hien Shippuu Kyaku EX
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_DOWN, 100):
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_A, 100);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_A, 0);
+	set_val(XB360_B, 0);
+	
+//Combo Wait
+	wait(1100);
+	
+//Kohou HEAVY
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(100);
+	
+//Haoh Shoukou Ken HEAVY
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+
+
+
+	
+	
+}

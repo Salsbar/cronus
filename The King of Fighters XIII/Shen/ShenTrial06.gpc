@@ -1,0 +1,211 @@
+//Trail 06 for Shen in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Shen06); 
+        if(get_val(XB360_RS)) combo_stop(Shen06);
+}
+
+//Main Script
+combo Shen06 {
+	
+
+//Zetsu Gekiken LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(1350);
+	
+//Fukkogeki LIGHT - reverse
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Kouryuugeki LIGHT - reverse
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Fukkogeki EX - reverse
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Kouryuugeki LIGHT - reverse
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(600);
+	
+//Gekiken EX - reverse
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(865);
+	
+//Gekiken LIGHT - reverse
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(30);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Tenrenken HEAVY - reverse
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_B, 100);
+	wait(30);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_B, 0);
+	
+//Combo Wait
+	wait(750);
+	
+//Tenrenken LIGHT - reverse
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_A, 100);
+	wait(30);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(650);
+	
+//Bakushin
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_X, 0);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_A, 0);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+	
+
+
+
+
+	
+	
+	
+	
+}

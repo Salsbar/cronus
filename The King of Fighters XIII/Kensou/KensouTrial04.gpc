@@ -1,0 +1,168 @@
+//Trail 04 for Kensou in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Kensou04); 
+        if(get_val(XB360_RS)) combo_stop(Kensou04);
+}
+
+//Main Script
+combo Kensou04 {
+	
+
+//Jumping HP
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(200);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	wait(300);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+
+//Combo Wait
+	wait(300);
+	
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+	
+//Ryuu Touda
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Ryuu Touda
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Ryuu Touda EX
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Ryuu Touda EX
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+
+//Combo Wait
+	wait(200);
+	
+//Ryuu Touda EX
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Ryuu Touda EX
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Ryuu Touda EX - KICK
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	set_val(XB360_B, 0);
+	
+	
+	
+	
+}

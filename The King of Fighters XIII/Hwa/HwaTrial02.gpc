@@ -1,0 +1,49 @@
+//Trail 02 for Hwa in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Hwa02); 
+        if(get_val(XB360_RS)) combo_stop(Hwa02);
+}
+
+//Main Script
+combo Hwa02 {
+
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+
+//Combo Wait
+	wait(200);
+	
+//Directional Down LK
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Dragon Kick HEAVY
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_B, 0);
+
+	
+
+	
+}

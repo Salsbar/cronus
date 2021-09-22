@@ -1,0 +1,61 @@
+//Trail 01 for Terry in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Terry01); 
+        if(get_val(XB360_RS)) combo_stop(Terry01);
+}
+
+//Main Script
+combo Terry01 {
+	
+
+//Crouching LK
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Crouching LP
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Directional Down HP
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(100);
+	
+//Power Wave
+	set_val(PS4_DOWN, 100);
+	wait(40);
+	set_val(PS4_DOWN, 100);
+	set_val(PS4_RIGHT, 100);
+	wait(40);
+	set_val(PS4_DOWN, 0);
+	set_val(PS4_RIGHT, 100);
+	wait(40);
+	set_val(PS4_RIGHT, 100);
+	set_val(PS4_TRIANGLE, 100);
+	wait(40);
+	set_val(PS4_RIGHT, 0);
+	set_val(PS4_TRIANGLE, 0);
+	
+	
+}

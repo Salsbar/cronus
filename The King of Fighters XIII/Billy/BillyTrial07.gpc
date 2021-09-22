@@ -1,0 +1,103 @@
+//Trail 07 for Billy in Kof13. Stand next to target and press LS to start the combo (Push computer into the right corner).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Billy07); 
+        if(get_val(XB360_RS)) combo_stop(Billy07);
+}
+
+//Main Script
+combo Billy07 {
+	
+
+//Jumping HP
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(450);
+	set_val(XB360_Y, 100);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	wait(70);
+	set_val(XB360_Y, 0);
+	
+	
+//Combo Wait
+	wait(320);
+	
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(90);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(320);
+	
+//Sansetsu Kon Chuudan Uchi Heavy
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(120);
+	
+//Chou Kaen Senpuu Kon EX
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+
+	
+
+
+	
+	
+	
+
+	
+
+
+	
+	
+}

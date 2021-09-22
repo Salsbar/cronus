@@ -1,0 +1,132 @@
+//Trail 07 for Ryo in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Ryo07); 
+        if(get_val(XB360_RS)) combo_stop(Ryo07);
+}
+
+//Main Script
+combo Ryo07 {
+	
+
+//Jumping HK
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(200);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	wait(200);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_B, 0);
+	
+//Combo Wait
+	wait(400);
+	
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(10);
+	
+//Zanretsuken EX
+	set_val(PS4_RIGHT, 100);
+	wait(90);
+	set_val(PS4_RIGHT, 0);
+	wait(60);
+	set_val(PS4_LEFT, 100);
+	wait(110);
+	set_val(PS4_LEFT, 0);
+	wait(10);
+	set_val(PS4_RIGHT, 100);
+	wait(40);
+	set_val(PS4_L1, 100);
+	set_val(PS4_RIGHT, 100);
+	wait(130);
+	set_val(PS4_L1, 100);
+	set_val(PS4_RIGHT, 0);
+	wait(20);
+	set_val(PS4_L1, 0);
+	
+	
+//Combo Wait
+	wait(2600);
+	
+//Dash Forward
+	set_val(PS4_RIGHT, 100);
+	wait(40);
+	set_val(PS4_RIGHT, 0);
+	wait(40);
+	set_val(PS4_RIGHT, 100);
+	wait(30);
+	set_val(PS4_RIGHT, 0);
+	
+//Combo Wait
+	wait(100);
+
+//Kohou HEAVY
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(50);
+	
+//Zanretsuken EX
+	set_val(PS4_RIGHT, 100);
+	wait(70);
+	set_val(PS4_RIGHT, 0);
+	wait(40);
+	set_val(PS4_LEFT, 100);
+	wait(40);
+	set_val(PS4_LEFT, 0);
+	wait(10);
+	set_val(PS4_RIGHT, 100);
+	wait(40);
+	set_val(PS4_L1, 100);
+	set_val(PS4_RIGHT, 100);
+	wait(130);
+	set_val(PS4_L1, 100);
+	set_val(PS4_RIGHT, 0);
+	wait(20);
+	set_val(PS4_L1, 0);
+	
+//Combo Wait
+	wait(2400);
+	
+//Zenretsuken LIGHT
+	set_val(PS4_RIGHT, 100);
+	wait(50);
+	set_val(PS4_RIGHT, 0);
+	wait(100);
+	set_val(PS4_LEFT, 100);
+	wait(90);
+	set_val(PS4_LEFT, 0);
+	wait(50);
+	set_val(PS4_RIGHT, 100);
+	wait(30);
+	set_val(PS4_RIGHT, 100);
+	set_val(PS4_SQUARE, 100);
+	wait(20);
+	set_val(PS4_RIGHT, 0);
+	set_val(PS4_SQUARE, 100);
+	wait(50);
+	set_val(PS4_SQUARE, 0);
+	
+
+}

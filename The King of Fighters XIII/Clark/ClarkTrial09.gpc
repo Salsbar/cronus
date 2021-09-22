@@ -1,0 +1,199 @@
+//Trail 09 for Clark in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Clark09); 
+        if(get_val(XB360_RS)) combo_stop(Clark09);
+}
+
+//Main Script
+combo Clark09 {
+
+
+//Standing LK
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(320);
+	
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(100);
+	
+//Directional Down LP
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_LEFT, 100);
+	
+//Combo Wait
+	wait(400);
+	
+//HD Dash Cancel
+	set_val(XB360_A, 100);
+	set_val(XB360_Y, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_A, 0);
+	set_val(XB360_Y, 0);
+	set_val(XB360_LEFT, 100);
+	
+//Combo Wait
+	wait(150);
+	
+//Standing HP
+	set_val(XB360_Y, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+	set_val(XB360_LEFT, 100);
+	
+//Combo Wait
+	wait(300);
+	
+//Gatling Attack HEAVY - CHARGE MOVE - RELEASE
+	set_val(XB360_LEFT, 0);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	set_val(XB360_LEFT, 100);
+
+	
+//Combo Wait
+	wait(900);
+	
+//Gatling Attack EX - CHARGE MOVE - RELEASE
+	set_val(XB360_LEFT, 0);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_LEFT, 100);
+	
+//Combo Wait
+	wait(1100);
+	
+//Gatling Attack HEAVY - CHARGE MOVE - RELEASE
+	set_val(XB360_LEFT, 0);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	set_val(XB360_LEFT, 100);
+	
+//Combo Wait
+	wait(1480);
+	
+//Gatling Attack LIGHT - CHARGE MOVE - RELEASE
+	set_val(XB360_LEFT, 0);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_LEFT, 100);
+	
+//Combo Wait
+	wait(600);
+	
+//Gatling Attack EX - CHARGE MOVE - RELEASE
+	set_val(XB360_LEFT, 0);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_DOWN, 100);
+	
+//Combo Wait
+	wait(1000);
+	
+//Gatling Attack HEAVY - CHARGE MOVE - RELEASE
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_DOWN, 0);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	set_val(XB360_LEFT, 100);
+	
+//Combo Wait
+	wait(1550);
+	
+//Gatling Attack LIGHT - CHARGE MOVE - RELEASE
+	set_val(XB360_LEFT, 0);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_LEFT, 100);
+	
+//Combo Wait
+	wait(10);
+	
+//Ultra Clark Buster
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_A, 100);
+	set_val(XB360_B, 100);
+	wait(30);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_A, 0);
+	set_val(XB360_B, 0);	
+	
+	
+}

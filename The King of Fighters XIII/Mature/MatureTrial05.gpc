@@ -1,0 +1,173 @@
+//Trail 05 for Mature in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Mature05); 
+        if(get_val(XB360_RS)) combo_stop(Mature05);
+}
+
+//Main Script
+combo Mature05 {
+	
+
+//Jumping LP
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(150);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	wait(300);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(400);
+	
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(100);
+	
+//Deathrow EX
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 100);
+	
+//Combo Wait
+	wait(300);
+	
+//Deathrow - Follow Up EX
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Deathrow - Follow Up EX
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Deathrow - Follow Up EX
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(50);
+	
+//Metal Massacre HEAVY
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_B, 0);
+	
+//Combo Wait
+	wait(800);
+	
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(50);
+	
+//Nocturnal Rites LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+
+	
+	
+
+
+
+	
+	
+}

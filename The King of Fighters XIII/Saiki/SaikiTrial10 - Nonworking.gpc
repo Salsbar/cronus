@@ -1,0 +1,255 @@
+//Trail 10 for Saiki in Kof13. Stand next to target and press LS to start the combo (Start combo at the start at starting position).
+
+//PLEASE READ!!! - THIS SCRIPT IS UNFINISHED AS I COULD NOT GET THE TIMMING DOWNS BUT UPLOADED IF SOMEONE WANTS TO GO IN AND FIX THE ISSUE PREVENTING IT.
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Saiki10); 
+        if(get_val(XB360_RS)) combo_stop(Saiki10);
+}
+
+//Main Script
+combo Saiki10 {
+	
+
+//Jumping LP
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(450);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Air Forward LK
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(550);
+	
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(150);
+	
+//HD Dash Cancel
+	set_val(XB360_A, 100);
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_A, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(100);
+
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+
+//Combo wait
+	wait(10);
+
+//Hiori-no-Kusabi EX + Heavy Teleport
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_B, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_B, 0);
+	set_val(XB360_A, 0);
+	wait(200);
+	set_val(XB360_B, 100);
+	wait(450);
+	set_val(XB360_B, 0);
+
+//Combo wait
+	wait(400);
+	
+//Air Back LK
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo wait
+	wait(560);
+	
+//Kiyoku-no-Tsuki Light
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo wait
+	wait(560);
+	
+//Hanetsurube-no-Nata Light
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo wait
+	wait(40);
+	
+//Kiyoku-no-Tsuki Heavy
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo wait
+	wait(700);
+	
+//Kiyoku-no-Tsuki Light
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo wait
+	wait(500);
+	
+//Jumping Air Back LK
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(195);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	wait(50);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_A, 100);
+	wait(20);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo wait
+	wait(525);
+	
+//Kiyoku-no-Tsuki Light
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo wait
+	wait(575);
+	
+//Hanetsurube-no-Nata Light
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo wait
+	//wait(20);
+	
+//Washiba Otoshi
+	set_val(XB360_DOWN, 100);
+	wait(15);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(15);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(15);
+	set_val(XB360_RIGHT, 0);
+	wait(15);
+	set_val(XB360_DOWN, 100);
+	wait(15);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(15);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(15);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(15);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	
+
+
+
+
+	
+	
+}

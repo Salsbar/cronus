@@ -1,0 +1,124 @@
+//Trail 05 for Vice in Kof13. Stand next to target and press LS to start the combo (Do from the starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Vice05); 
+        if(get_val(XB360_RS)) combo_stop(Vice05);
+}
+
+//Main Script
+combo Vice05 {
+	
+
+//Jumping LP
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(550);
+	set_val(XB360_X, 100);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	wait(70);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Crouching LK
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_A, 100);
+	wait(90);
+	set_val(XB360_A, 0);
+	set_val(XB360_DOWN, 100);
+	
+//Combo Wait
+	wait(145);
+	
+//Crouching LK
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_A, 100);
+	wait(90);
+	set_val(XB360_A, 0);
+	set_val(XB360_DOWN, 100);
+	
+//Combo Wait
+	wait(120);
+	
+//Mayhem
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(10);
+	
+//Deicide Heavy
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_B, 0);
+	set_val(XB360_RIGHT, 0);
+	
+//Combo Wait
+	wait(600);
+	
+//Mayhem
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(250);
+	
+//Mayhem Follow Up - (Derivation) Splash
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+
+}

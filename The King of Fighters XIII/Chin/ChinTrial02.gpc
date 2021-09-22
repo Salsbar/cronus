@@ -1,0 +1,105 @@
+//Trail 02 for Chin in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Chin02); 
+        if(get_val(XB360_RS)) combo_stop(Chin02);
+}
+
+//Main Script
+combo Chin02 {
+	
+
+//Directional Down HK
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_B, 0);
+	
+//Combo Wait
+	wait(700);
+	
+	
+//Getsuga Soushu LIGHT (Follow-Up)
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Zabantetsu LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Getsuga Soushu LIGHT (Follow-Up)
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Zabantetsu LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Getsuga Soushu LIGHT (Follow-Up)
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(300);
+	
+//Directional Down LK
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(600);
+	
+//Getsuga Chougeki LIGHT
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	
+}

@@ -1,0 +1,97 @@
+//Trail 05 for Billy in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Billy05); 
+        if(get_val(XB360_RS)) combo_stop(Billy05);
+}
+
+//Main Script
+combo Billy05 {
+	
+
+//Jumping HK
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(450);
+	set_val(XB360_B, 100);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	wait(70);
+	set_val(XB360_B, 0);
+	
+	
+//Combo Wait
+	wait(320);
+	
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(90);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(145);
+	
+//Kyoushuu Hishou Kon Light
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(1200);
+	
+//Chou Kaen Senpuu Kon
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_X, 0);
+	
+
+	
+
+
+	
+	
+	
+
+	
+
+
+	
+	
+}

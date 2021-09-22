@@ -1,0 +1,194 @@
+//Trail 08 for Saiki in Kof13. Stand next to target and press LS to start the combo (Start combo at the start at starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Saiki08); 
+        if(get_val(XB360_RS)) combo_stop(Saiki08);
+}
+
+//Main Script
+combo Saiki08 {
+	
+
+//Jumping LP
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(450);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Air Forward LK
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(550);
+	
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(40);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(10);
+	
+//Hiori-no-Kusabi + H Teleport
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_B, 0);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_B, 100);
+	wait(500);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_B, 0);
+
+//Combo wait
+	wait(500);
+	
+//Air Back LK
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo wait
+	wait(600);
+	
+//Hanetsurube-no-Nata Light
+	set_val(XB360_RIGHT, 100);
+	wait(20);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(20);
+	set_val(XB360_DOWN, 100);
+	wait(20);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	wait(20);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	wait(10);
+
+//Tokoyami-no-Fune
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(1500);
+	
+//Kiyoku-no-Tsuki Heavy
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(500);
+	
+//Kiyoku-no-Tsuki Light
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(750);
+	
+//Hanetsurube-no-Nata EX + Teleport and Attack
+	set_val(XB360_RIGHT, 100);
+	wait(20);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(20);
+	set_val(XB360_DOWN, 100);
+	wait(20);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	set_val(XB360_B, 100);
+	wait(20);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_A, 0);
+	set_val(XB360_B, 0);
+	wait(100);
+	set_val(XB360_Y, 100);
+	wait(500);
+	set_val(XB360_Y, 0);
+
+
+	
+
+	
+
+	
+
+
+
+	
+	
+}

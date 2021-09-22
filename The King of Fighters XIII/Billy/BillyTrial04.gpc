@@ -1,0 +1,65 @@
+//Trail 04 for Billy in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Billy04); 
+        if(get_val(XB360_RS)) combo_stop(Billy04);
+}
+
+//Main Script
+combo Billy04 {
+	
+
+//Jumping HK
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(450);
+	set_val(XB360_B, 100);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	wait(70);
+	set_val(XB360_B, 0);
+	
+	
+//Combo Wait
+	wait(320);
+	
+//Crouching HP
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_Y, 100);
+	wait(90);
+	set_val(XB360_Y, 0);
+	set_val(XB360_DOWN, 0);
+	
+//Combo Wait
+	wait(145);
+	
+//Forward LK
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_A, 100);
+	wait(90);
+	set_val(XB360_A, 0);
+	set_val(XB360_RIGHT, 0);
+	
+//Combo Wait
+	wait(750);
+	
+//Crouching LP
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_X, 100);
+	wait(90);
+	set_val(XB360_X, 0);
+	set_val(XB360_DOWN, 0);
+	
+
+
+	
+	
+	
+
+	
+
+
+	
+	
+}

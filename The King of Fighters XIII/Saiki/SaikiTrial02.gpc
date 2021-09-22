@@ -1,0 +1,51 @@
+//Trail 02 for Saiki in Kof13. Stand next to target and press LS to start the combo (Push computer to the edge of the right screen).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Saiki02); 
+        if(get_val(XB360_RS)) combo_stop(Saiki02);
+}
+
+//Main Script
+combo Saiki02 {
+	
+
+//Crouching LP
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_X, 100);
+	wait(220);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(120);
+	
+//Standing HP
+	set_val(XB360_Y, 100);
+	wait(220);
+	set_val(XB360_Y, 0);
+	
+//Combo Wait
+	wait(30);
+	
+//Kiyoku-no-Tsuki Light
+	set_val(XB360_DOWN, 100);
+	wait(30);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_RIGHT, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(30);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+
+
+
+	
+	
+}

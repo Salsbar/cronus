@@ -1,0 +1,93 @@
+//Trail 04 for Kim in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Kim04); 
+        if(get_val(XB360_RS)) combo_stop(Kim04);
+}
+
+//Main Script
+combo Kim04 {
+	
+//Jumping LP
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(200);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	wait(100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(50);
+	
+//Hishou Kyaku
+	wait(140);
+	set_val(PS4_DOWN, 100);
+	wait(60);
+	set_val(PS4_DOWN, 100);
+	set_val(PS4_RIGHT, 100);
+	wait(60);
+	set_val(PS4_DOWN, 0);
+	set_val(PS4_RIGHT, 100);
+	wait(40);
+	set_val(PS4_RIGHT, 100);
+	set_val(PS4_CROSS, 100);
+	wait(70);
+	set_val(PS4_RIGHT, 0);
+	set_val(PS4_CROSS, 100);
+	wait(40);
+	set_val(PS4_CROSS, 0);
+	wait(70);
+	set_val(PS4_DOWN, 100);
+	wait(70);
+	set_val(PS4_DOWN, 100);
+	set_val(PS4_CROSS, 100);
+	wait(50);
+	set_val(PS4_DOWN, 100);
+	set_val(PS4_LEFT, 100);
+	set_val(PS4_CROSS, 100);
+	wait(40);
+	set_val(PS4_DOWN, 0);
+	set_val(PS4_LEFT, 100);
+	set_val(PS4_CROSS, 100);
+	wait(50);
+	set_val(PS4_LEFT, 100);
+	set_val(PS4_CROSS, 0);
+	wait(100);
+	set_val(PS4_DOWN, 100);
+	set_val(PS4_LEFT, 100);
+	wait(10);
+	set_val(PS4_DOWN, 100);
+	set_val(PS4_LEFT, 100);
+	set_val(PS4_CROSS, 100);
+	wait(10);
+	set_val(PS4_DOWN, 100);
+	set_val(PS4_LEFT, 0);
+	set_val(PS4_CROSS, 100);
+	wait(30);
+	set_val(PS4_DOWN, 100);
+	set_val(PS4_RIGHT, 100);
+	set_val(PS4_CROSS, 100);
+	wait(60);
+	set_val(PS4_DOWN, 0);
+	set_val(PS4_RIGHT, 100);
+	set_val(PS4_CROSS, 100);
+	wait(30);
+	set_val(PS4_RIGHT, 100);
+	set_val(PS4_CROSS, 0);
+	wait(100);
+	set_val(PS4_RIGHT, 100);
+	set_val(PS4_CROSS, 100);
+	wait(10);
+	set_val(PS4_RIGHT, 0);
+	set_val(PS4_CROSS, 100);
+	wait(40);
+	set_val(PS4_CROSS, 0);
+
+
+	
+	
+}

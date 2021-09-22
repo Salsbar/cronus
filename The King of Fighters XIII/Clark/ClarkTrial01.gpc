@@ -1,0 +1,87 @@
+//Trail 01 for Clark in Kof13. Stand next to target and press LS to start the combo (Start combo from starting position).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Clark01); 
+        if(get_val(XB360_RS)) combo_stop(Clark01);
+}
+
+//Main Script
+combo Clark01 {
+
+//Combo Charge
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(500);
+
+//Crouching LK
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_A, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_A, 0);
+	
+//Combo Wait
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(300);
+	
+//Crouching LP
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(100);
+	
+//Gatling Attack LIGHT - CHARGE - RELEASE
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 0);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	set_val(XB360_LEFT, 100);
+	wait(1100);
+	
+//Gatling Attack LIGHT - CHARGE - RELEASE
+	set_val(XB360_LEFT, 0);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+	
+//Combo Wait
+	wait(1000);
+	
+//Jumping HK
+	set_val(XB360_UP, 100);
+	set_val(XB360_RIGHT, 100);
+	wait(200);
+	set_val(XB360_UP, 0);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_B, 100);
+	wait(40);
+	set_val(XB360_B, 0);
+	
+	
+	
+
+	
+}

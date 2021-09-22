@@ -1,0 +1,60 @@
+//Trail 01 for Vice in Kof13. Stand next to target and press LS to start the combo (Push computer to the edge of the right screen).
+
+
+//Start Combo
+main {  if(get_val(XB360_LS)) combo_run(Vice01); 
+        if(get_val(XB360_RS)) combo_stop(Vice01);
+}
+
+//Main Script
+combo Vice01 {
+	
+
+//Crouching LK
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_A, 100);
+	wait(70);
+	set_val(XB360_A, 0);
+	set_val(XB360_DOWN, 0);
+	
+//Combo Wait
+	wait(200);
+	
+//Crouching LK
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_A, 100);
+	wait(70);
+	set_val(XB360_A, 0);
+	set_val(XB360_DOWN, 0);
+	
+//Combo Wait
+	wait(10);
+	
+//Gorefest LP
+	set_val(XB360_RIGHT, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_DOWN, 100);
+	wait(40);
+	set_val(XB360_DOWN, 100);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_DOWN, 0);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 100);
+	wait(40);
+	set_val(XB360_LEFT, 0);
+	wait(40);
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_X, 100);
+	wait(40);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_X, 0);
+
+	
+	
+}
