@@ -1,0 +1,91 @@
+int onoff;
+int comboA;
+int comboB;
+int comboC;
+int stage;
+
+main {
+
+if(event_press(XB1_LS)) {
+stage = 1;
+comboA = 1;
+comboB = 20;
+comboC = 1;
+onoff = !onoff;
+}
+
+if( onoff ) {
+if (stage == 1) {
+if(comboA) combo_run(START);
+}
+else if (stage == 2) {
+if(comboB) combo_run(LOOP);
+}
+else if (stage == 3) {
+if(comboC) combo_run(END);
+}
+}
+}
+
+combo START {
+// select Free Play from menu
+set_val(XB1_A, 100);
+wait(50);
+set_val(XB1_A, 0);
+wait(2000);
+comboA = comboA - 1;
+if (comboA <= 0) stage = stage + 1;
+}
+
+combo LOOP {
+// the bulk of the macro that will repeat
+set_val(XB1_DOWN, 100);
+wait(50);
+set_val(XB1_DOWN, 0);
+wait(500);
+set_val(XB1_RIGHT, 100);
+wait(50);
+set_val(XB1_RIGHT, 0);
+wait(500);
+set_val(XB1_DOWN, 100);
+wait(50);
+set_val(XB1_DOWN, 0);
+wait(500);
+set_val(XB1_LEFT, 100);
+wait(50);
+set_val(XB1_LEFT, 0);
+wait(500);
+comboB = comboB - 1 ;
+if (comboB <= 0) stage = stage + 1;
+}
+
+combo END {
+// Quit out to the menu. Also reset all variables
+set_val(XB1_B, 100);
+wait(50);
+set_val(XB1_B, 0);
+wait(1000);
+set_val(XB1_RIGHT, 100);
+wait(50);
+set_val(XB1_RIGHT, 0);
+wait(500);
+set_val(XB1_A, 100);
+wait(50);
+set_val(XB1_A, 0);
+wait(1500);
+set_val(XB1_A, 100);
+wait(50);
+set_val(XB1_A, 0);
+wait(6000);
+set_val(XB1_A, 100);
+wait(50);
+set_val(XB1_A, 0);
+wait(2000);
+comboC = comboC - 1;
+if (comboC <= 0) {
+stage = 1;
+comboA = 1;
+comboB = 20;
+comboC = 1;
+}
+}
