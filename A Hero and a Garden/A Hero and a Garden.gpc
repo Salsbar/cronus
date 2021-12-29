@@ -1,0 +1,51 @@
+/* A Hero and a Garden */
+
+int turbo = 0; // Turbo on/off 
+
+main {
+
+// Start/stop turbo mode -- LS
+
+if (event_press(XB1_LS)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+}
+
+if (turbo == 1) {
+    combo_run(TurboCombo);
+    }
+}
+
+// Turbo loop
+combo TurboCombo {
+
+set_val(XB1_B, 100);
+wait(60);
+set_val(XB1_B, 0);
+wait(500);
+
+set_val(XB1_Y, 100);
+wait(60);
+set_val(XB1_Y, 0);
+wait(500);
+
+set_val(XB1_X, 100);
+wait(60);
+set_val(XB1_X, 0);
+wait(500);
+
+set_val(XB1_LB, 100);
+wait(60);
+set_val(XB1_LB, 0);
+wait(500);
+
+set_val(XB1_RB, 100);
+wait(60);
+set_val(XB1_RB, 0);
+wait(500);
+
+}
