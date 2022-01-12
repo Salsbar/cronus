@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Desperados III</Game>
+    <Title>Quickload Grind</Title>
+    <Description>Difficulty: Beginner
+Level: Devil’s Canyon (Chapter 3), since there are 5 characters.
+Cheats: Can be enabled if needed. Kate will need to be visible to lure enemies.
+Setup Showdown with all characters, as needed.
+Quicksave while leaving the showdown menu activated.
+Script should work even if showndown is minimized, but this effectively pauses the game.
+Wait times can be adjusted based on length of showdown activities.</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Wait Delay="500" />
+      <Press Controller="1" ButtonMask="4096" Hold="150" Wait="1500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="2500" Repeat="2" />
+      <Press Controller="1" ButtonMask="128" Hold="150" Wait="5000" Repeat="1" />
+      <Loop Target="0" Repeat="80" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
