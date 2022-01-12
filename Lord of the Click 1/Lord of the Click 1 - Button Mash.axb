@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Lord of the Click 1</Game>
+    <Title>Button Mash</Title>
+    <Description>This script will alternate purchasing squads and fire balls. 
+Move the cursor selector over the first option (squads) and start the script.
+At the start of each new level, the unit selector will move somewhere to the middle of the screen, so you'll need to end the script and move the selector back to the first option (squads). Then restart the script.
+Make sure to purchase the upgrade for auto coin pickups. However, I didn't updgrade my mines, so that I could get the extra clicks from RT. </Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" ButtonMask="19" LT="255" RT="255" Hold="150" Wait="300" Repeat="10" />
+      <Press Controller="1" ButtonMask="2048" Hold="150" Wait="300" Repeat="1" />
+      <Press Controller="1" ButtonMask="19" LT="255" RT="255" Hold="150" Wait="300" Repeat="10" />
+      <Press Controller="1" ButtonMask="1024" Hold="150" Wait="300" Repeat="1" />
+      <Loop Target="0" Repeat="1000" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
