@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Pukan Bye-Bye</Game>
+    <Title>Jump</Title>
+    <Description>Script can be used to automate the 500 jumps. Timing was off so I included more jumps than needed.</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" ButtonMask="16" Hold="80" Wait="200" Repeat="1200" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>

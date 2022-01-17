@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Pukan</Game>
+    <Title>Cheat Code Level Skip</Title>
+    <Description>Script can be used to automate the 30 level clears.</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Wait Delay="4000" />
+      <Press Controller="1" ButtonMask="256" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="256" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="256" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="256" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="1024" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="1024" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="120" Wait="200" Repeat="1" />
+      <Wait Delay="500" />
+      <Press Controller="1" ButtonMask="16" Hold="120" Wait="200" Repeat="1" />
+      <Loop Target="0" Repeat="30" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
