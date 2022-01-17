@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Farm Frenzy Refreshed</Game>
+    <Title>Cheat Code Level Skip</Title>
+    <Description>Script can be used to automate the 50 level clears.
+The delays may be off in this script. It got stuck in the menu a few times. Restart it if needed.</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="256" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="256" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="256" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="256" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="1024" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="1024" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="120" Wait="200" Repeat="1" />
+      <Wait Delay="500" />
+      <Press Controller="1" ButtonMask="16" Hold="120" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="120" Wait="1000" Repeat="15" />
+      <Loop Target="0" Repeat="50" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
