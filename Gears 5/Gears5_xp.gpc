@@ -1,0 +1,226 @@
+// Your current variables, modify to match your data
+int re =  59;  // Your Current Re-up
+int lv =  1;  // Your Current Level
+int xp =  0;  // Your Current XP
+
+// Only change when TC updates game via XP event
+int xv = 1000; // Base XP value/run
+int bt = 300;  // Boost Percentage (Default 100)
+
+// Re-Up XP Requirements Array
+int rx[62];
+
+// Script variables
+int f = 0; // Function Switch
+int r = 0; // Runs to Re-Up
+int e = 0; // XP earned/run
+
+// Persistent variables
+int re_val, lv_val, xp_val;  
+
+init {
+  // Initialize Array for each Re-ups XP.
+  rx[0]  = 1000;  rx[1]  = 1025;  rx[2]  = 1050;  rx[3]  = 1075;  rx[4]  = 1100;
+  rx[5]  = 1125;  rx[6]  = 1150;  rx[7]  = 1175;  rx[8]  = 1200;  rx[9]  = 1225;
+  rx[10] = 1500;  rx[11] = 1300;  rx[12] = 1350;  rx[13] = 1400;  rx[14] = 1450;
+  rx[15] = 1875;  rx[16] = 1575;  rx[17] = 1650;  rx[18] = 1725;  rx[19] = 1800;
+  rx[20] = 2375;  rx[21] = 1975;  rx[22] = 2075;  rx[23] = 2175;  rx[24] = 2275;
+  rx[25] = 3000;  rx[26] = 2500;  rx[27] = 2675;  rx[28] = 2750;  rx[29] = 2875;
+  rx[30] = 3750;  rx[31] = 3150;  rx[32] = 3300;  rx[33] = 3450;  rx[34] = 3600;
+  rx[35] = 4625;  rx[36] = 3925;  rx[37] = 4100;  rx[38] = 4275;  rx[39] = 4450;
+  rx[40] = 5625;  rx[41] = 4825;  rx[42] = 5025;  rx[43] = 5225;  rx[44] = 5425;
+  rx[45] = 5625;  rx[46] = 5875;  rx[47] = 6125;  rx[48] = 6375;  rx[49] = 6625;
+  rx[50] = 6875;  rx[51] = 7175;  rx[52] = 7475;  rx[53] = 7775;  rx[54] = 8075;
+  rx[55] = 8375;  rx[56] = 8725;  rx[57] = 9075;  rx[58] = 9425;  rx[59] = 9775;
+  rx[60] = 10125; rx[61] = 32767; 
+  
+  // Calculate XP earned per run
+  e = ((bt / 100) * xv) + xv;
+  
+  // Get variables from memory
+  re_val = get_pvar(SPVAR_1, 0, 62, 0);
+  lv_val = get_pvar(SPVAR_2, 1, 100, 1);
+  xp_val = get_pvar(SPVAR_3, 0, 32767, 0);
+  
+  // Built in memory reset
+  if(re == 0 && lv == 1 && xp == 0) {
+    set_pvar(SPVAR_1, re);
+    set_pvar(SPVAR_2, lv);
+    set_pvar(SPVAR_3, xp);
+  } else {  
+    // If not set or variables are higher then store them to memory
+    if(re_val < re) { set_pvar(SPVAR_1, re); }
+    else { set_pvar(SPVAR_1, re_val); }
+  
+    if(lv_val < lv) { set_pvar(SPVAR_2, lv); }
+    else { set_pvar(SPVAR_2, lv_val); }
+  
+    if(xp == 0) { set_pvar(SPVAR_3, xp); }
+    else if(xp_val < xp) { set_pvar(SPVAR_3, xp); }
+    else { set_pvar(SPVAR_3, xp_val); }
+  }
+}
+
+main {
+  if(get_val(XB1_LS)) { f = 1; } // Begin Combo
+  if(get_val(XB1_RS)) { f = 0; } // Stop Combo
+  
+  // Script switch
+  if(f == 0){ combo_run(stop); }
+  else if(f == 1){ combo_run(begin); }
+  else if(f == 2){ combo_run(buttons); }
+  else if(f == 3){ combo_run(restart); }
+  else if(f == 4){ combo_run(reup); }
+}
+
+// Begin the script
+combo begin {
+  // Load variables from memory
+  re = get_pvar(SPVAR_1, 0, 51, 0);
+  lv = get_pvar(SPVAR_2, 1, 99, 1);
+  xp = get_pvar(SPVAR_3, 0, 32767, 0);
+  
+  // Calculate number of rounds to perform
+  r = ((((100 - lv) * rx[re]) - xp) / e) + 1;
+  set_val(TRACE_1, r);
+  
+  // If max re-up obtained stop the script
+  if(rx[re] == 32767) { f = 0; }
+  else { f = 2; }
+}
+
+// Tap X, LT, RT, B repeatedly
+combo buttons {
+  // Press X to Break out of the Pod
+  set_val(XB1_X, 100); wait(25); set_val(XB1_X, 0); wait(25);
+  
+  // Press LT to prevent backing out of lobby using Tour of Duty page
+  set_val(XB1_LT, 100); wait(25); set_val(XB1_LT, 0);
+  
+  // If rumble detected go to restart function
+  set_val(XB1_RT, 100);
+  if(get_rumble(RUMBLE_A) || get_rumble(RUMBLE_B) ||
+     get_rumble(RUMBLE_LT) || get_rumble(RUMBLE_RT)) { f = 3; }
+  wait(75); set_val(XB1_RT, 0);
+  
+  // Back out of results screen
+  set_val(XB1_B, 100); wait(25); set_val(XB1_B, 0);
+}
+
+// Restart Act, Return to Lobby
+combo restart {
+  wait(500);
+  
+  // Pause > "Restart Act"
+  set_val(XB1_MENU, 100); wait(25); set_val(XB1_MENU, 0); wait(250);
+  set_val(XB1_LY, 100); wait(25); set_val(XB1_LY, 0); wait(25);
+  set_val(XB1_LY, 100); wait(25); set_val(XB1_LY, 0); wait(25);
+  set_val(XB1_A, 100); wait(25); set_val(XB1_A, 0); wait(25);
+  
+  // Fade to Black
+  wait(1700);
+  
+  // Pause > "Return to Lobby"
+  set_val(XB1_MENU, 100); wait(25); set_val(XB1_MENU, 0); wait(250);
+  set_val(XB1_LY, 100); wait(25); set_val(XB1_LY, 0); wait(25);
+  set_val(XB1_LY, 100); wait(25); set_val(XB1_LY, 0); wait(25);
+  set_val(XB1_LY, 100); wait(25); set_val(XB1_LY, 0); wait(25);
+  set_val(XB1_A, 100); wait(25); set_val(XB1_A, 0); wait(25);
+  set_val(XB1_A, 100); wait(25); set_val(XB1_A, 0); wait(10);
+   
+  // Increase xp count, decrease run count
+  xp = xp + e; r--;
+  set_val(TRACE_1, r);
+  
+  // If xp requirement reached, increase level and roll over remaineder
+  if(rx[re] <= xp) { xp = xp - rx[re]; lv++; }
+  
+  // Save variables to memory
+  set_pvar(SPVAR_1, re);
+  set_pvar(SPVAR_2, lv);
+  set_pvar(SPVAR_3, xp);
+  
+  // If number of runds 0 re-up, otherwise go back to buttons
+  if(r == 0) { f = 4;}
+  else { f = 2; }
+}
+
+// Re-Up
+combo reup {
+  // wait for loading screen & results
+  wait(3000); wait(3000); wait(3000); wait(3000); wait(3000);
+  wait(3000); wait(3000); wait(3000); wait(3000); wait(3000);
+  
+  // Extra wait for XBox, comment out for PC
+  wait(1600); wait(1600); wait(1600); wait(1600); wait(1600);
+  
+  // Leave results screen
+  set_val(XB1_B, 100); wait(25); set_val(XB1_B, 0); wait(25);
+  
+  // Leave Escape Section and confirm leaving
+  set_val(XB1_B, 100); wait(25); set_val(XB1_B, 0); wait(75);
+  set_val(XB1_A, 100); wait(25); set_val(XB1_A, 0); wait(800);
+  
+  // Re-up, rewards/gifts, loading, and extra wait for communication errors
+  set_val(XB1_X, 100); wait(4000); set_val(XB1_X, 0); wait(4000); wait(4000);
+  set_val(XB1_B, 100); wait(25); set_val(XB1_B, 0); wait(800);
+  set_val(XB1_B, 100); wait(25); set_val(XB1_B, 0); wait(200);
+  set_val(XB1_B, 100); wait(25); set_val(XB1_B, 0); wait(200);
+  
+  // Increase the re, reset the lv and xp
+  re++; lv = 1; xp = 0;
+  
+  // Save new re, lv and xp to memory
+  set_pvar(SPVAR_1, re);
+  set_pvar(SPVAR_2, lv);
+  set_pvar(SPVAR_3, xp);
+  
+  // Re-enter Multiplayer from main menu
+  set_val(XB1_DOWN, 100); wait(25); set_val(XB1_DOWN, 0); wait(25);
+  set_val(XB1_A, 100); wait(25); set_val(XB1_A, 0); wait(800);
+  
+  // Enter Escape
+  set_val(XB1_DOWN, 100); wait(25); set_val(XB1_DOWN, 0); wait(25);
+  set_val(XB1_DOWN, 100); wait(25); set_val(XB1_DOWN, 0); wait(25);
+  set_val(XB1_A, 100); wait(25); set_val(XB1_A, 0); wait(800);
+  
+  // Select Custom Escape
+  set_val(XB1_RIGHT, 100); wait(25); set_val(XB1_RIGHT, 0); wait(25);
+  set_val(XB1_RIGHT, 100); wait(25); set_val(XB1_RIGHT, 0); wait(25);
+  set_val(XB1_RIGHT, 100); wait(25); set_val(XB1_RIGHT, 0); wait(25);
+  set_val(XB1_A, 100); wait(25); set_val(XB1_A, 0); wait(800);
+  
+  // Choose Host Private, wait for load
+  set_val(XB1_RIGHT, 100); wait(30); set_val(XB1_RIGHT, 0); wait(30);
+  set_val(XB1_A, 100); wait(30); set_val(XB1_A, 0); wait(4000); wait(2000);
+  
+  // Game now remembers your last map now
+  /* Change to "LETHAL ENGAGEMENTS" map
+  set_val(XB1_A, 100); wait(25); set_val(XB1_A, 0); wait(800);
+  set_val(XB1_UP, 100); wait(25); set_val(XB1_UP, 0); wait(25);
+  set_val(XB1_UP, 100); wait(25); set_val(XB1_UP, 0); wait(25);
+  set_val(XB1_UP, 100); wait(25); set_val(XB1_UP, 0); wait(25);
+  set_val(XB1_UP, 100); wait(25); set_val(XB1_UP, 0); wait(25);
+  set_val(XB1_LEFT, 100); wait(25); set_val(XB1_LEFT, 0); wait(25);
+  set_val(XB1_A, 100); wait(25); set_val(XB1_A, 0); wait(25);
+  */
+  
+  // Go back and recalculate number of runs
+  f = 1;
+}
+
+// Stop all scripts being executed
+combo stop {
+  combo_stop(begin);
+  combo_stop(buttons);
+  combo_stop(restart);
+  combo_stop(reup);
+  
+  // Save variables to memory
+  set_pvar(SPVAR_1, re);
+  set_pvar(SPVAR_2, lv);
+  set_pvar(SPVAR_3, xp);
+  
+  // Reset rounds
+  r = 0; f = 5;
+}

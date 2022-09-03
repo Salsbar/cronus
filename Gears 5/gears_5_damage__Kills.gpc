@@ -1,0 +1,118 @@
+/******************************************************************************************************************************
+Gears 5 Idle Versus Kills and Versus Damage
+Created by Anonymous
+
+This script is an idle method of boosting kills and damage in versus for Gears 5.
+
+Requirements:
+- You must have vibration for your controller turned on
+- Two consoles that can run Gears 5 and two extra controllers
+
+Set up:
+1. On a second Xbox, load up two dummy profiles and have them join your squad on your other Xbox with you main account.
+2. Select Versus -> Custom -> Online Game -> Host Private
+3. Select Game Setup and make the following changes:
+a. Game Mode: 2V2 Gnashers
+b. 2V2 Gnasher Options:
+i. Fill with bots: Off
+ii. Rounds to win: 99
+4. Back in the lobby, change the map to "2V2 Boxes"
+5. Make sure you are on the COG team by yourself and move your dummy accounts onto the Swarm team together.
+6. Lock the second COG slot (this prevents one of your friends from randomly joining you and messing things up)
+
+Note: You can turn your dummy controllers off to save batteries!
+
+With everything done, you can now start the script. You will earn 2 kills per round, with rounds last approximately 30 second,
+including load times.
+
+Start script: Press LS
+Stop script: Press RS
+
+Change log
+JUL 14 2020 -Initial code published
+******************************************************************************************************************************/
+int x = 0;
+
+main
+{
+//Buttons to X values
+if(get_val(XB1_RS)) {x = 0;}
+if(get_val(XB1_LS)) {x = 1;}
+
+//X values to combos
+if(x==0)
+{
+combo_stop(buttons);
+combo_stop(rungun);
+}
+
+if(x==1)
+{
+combo_stop(rungun);
+combo_run(buttons);
+}
+
+if(x==2)
+{
+combo_stop(buttons);
+combo_run(rungun);
+}
+}
+
+combo buttons
+{
+//Begin countdown
+set_val(XB1_X, 100); wait(25); set_val(XB1_X, 0); wait(300);
+
+//Shoot gun to vibrate the controller and initiate combo switch
+set_val(XB1_RT, 100);
+if (
+get_rumble(RUMBLE_A) > 0 ||
+get_rumble(RUMBLE_B) > 0 ||
+get_rumble(RUMBLE_RT) > 0 ||
+get_rumble(RUMBLE_LT) > 0
+)
+{x = 2;}
+wait(250); set_val(XB1_RT, 0); wait(200);
+
+//Close out Xbox profile screen
+set_val(XB1_B, 100); wait(25); set_val(XB1_B, 0); wait(200);
+}
+
+combo rungun
+{
+//Let the Gnasher finish firing
+wait(200);
+
+//Roadie run to first barrier
+set_val(XB1_A, 100); wait(4250); set_val(XB1_A, 0); wait(100);
+
+//Move from first to second barrier
+set_val(XB1_LY, -100); wait(100);
+set_val(XB1_A, 100); wait(1250);
+set_val(XB1_LY, 0);
+set_val(XB1_A, 0);
+wait(50);
+
+//Turn left
+set_val(XB1_LX, -100); wait(100); set_val(XB1_LX, 0);
+
+//Move from second barrier to enemies
+set_val(XB1_LY, -100); wait(100);
+set_val(XB1_A, 100); wait(2900);
+set_val(XB1_LY, 0);
+set_val(XB1_A, 0);
+wait(200);
+
+//Move right, kill #1
+set_val(XB1_LX, 100); wait(225); set_val(XB1_LX, 0); wait(150);
+set_val(XB1_RT, 100); wait(75); set_val(XB1_RT, 0);
+wait(200);
+
+//Move left, kill #2
+set_val(XB1_LX, -100); wait(625); set_val(XB1_LX, 0); wait(150);
+set_val(XB1_RT, 100); wait(75); set_val(XB1_RT, 0); wait(150);
+
+//Start over
+x = 1;
+}
