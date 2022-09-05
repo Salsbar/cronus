@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Idle Champions</Game>
+    <Title>Farm Free Play</Title>
+    <Description>Setup party is the funky part that might need changing.
+It will depend on your characters and gold find.
+In my case heroes in 6/8 don't reach their spec choice.
+All others choose the default (leftmost) and the 1st chooses their 3rd.
+In most cases it won't matter because the champions only serve a purpose on one board really.</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" ButtonMask="16384" Hold="150" Wait="500" Repeat="1" />
+      <Group Name="Quit/Start Adventure" Repeat="1" />
+      <Group Name="Load Formation" Repeat="1" />
+      <Group Name="Setup Party" Repeat="1" />
+      <Group Name="DoIt" Repeat="1" />
+      <Loop Target="1" Repeat="10" />
+      <Group Name="Restart Game" Repeat="1" />
+      <Loop Target="1" Repeat="25" />
+    </ActionGroup>
+    <ActionGroup>
+      <Name>Quit/Start Adventure</Name>
+      <Press Controller="1" ButtonMask="8192" Hold="1000" Wait="5000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="5000" Wait="6000" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="150" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="4000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16384" Hold="100" Wait="200" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="150" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="150" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="5000" Wait="6000" Repeat="1" />
+    </ActionGroup>
+    <ActionGroup>
+      <Name>Load Formation</Name>
+      <Press Controller="1" ButtonMask="16384" LT="255" Hold="150" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="5000" Wait="6000" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="150" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="32768" Hold="150" Wait="1000" Repeat="1" />
+    </ActionGroup>
+    <ActionGroup>
+      <Name>Setup Party</Name>
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="1024" Hold="1500" Wait="160" Repeat="1" />
+    </ActionGroup>
+    <ActionGroup>
+      <Name>DoIt</Name>
+      <Press Controller="1" RSX="32512" RSY="0" Hold="1500" Wait="2000" Repeat="1" />
+      <Press Controller="1" ButtonMask="96" Hold="720000" Wait="750000" Repeat="1" />
+    </ActionGroup>
+    <ActionGroup>
+      <Name>Restart Game</Name>
+      <Press Controller="1" ButtonMask="4" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="50" Wait="250" Repeat="2" />
+      <Press Controller="1" ButtonMask="4096" Hold="50" Wait="250" Repeat="1" />
+      <Press Controller="1" RT="255" Hold="50" Wait="250" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="50" Wait="5000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="50" Wait="25000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="50" Wait="25000" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="1000" Repeat="1" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>

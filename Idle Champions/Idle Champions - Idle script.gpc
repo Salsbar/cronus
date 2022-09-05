@@ -1,0 +1,61 @@
+/* Exported from AutoGH
+Game:     Idle Champions
+Script:   Fight
+Exported: 2022/05/19 13:45:57
+Press both LS and RS to stop or start the combo
+
+*/
+int ON;
+int count=0;
+//approx 50 per minute
+int countmax=1000;
+main {
+	if (event_press(XB360_LS)) {if (get_val(XB360_RS)) {ON=!ON;}}
+	if (event_press(XB360_RS)) {if (get_val(XB360_LS)) {ON=!ON;}}
+	if (ON) {combo_run(autogh);}
+	if (!ON){if (combo_running(autogh)) {combo_stop(autogh);}}
+ }
+
+combo autogh {
+	set_val(TRACE_1,count);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);set_val(XB1_B,100);wait(25);
+	if (count == countmax) {set_val(XB1_RX,100);}set_val(XB1_X,100);wait(25);
+	if (count % 40 <= 19) {set_val(XB1_RIGHT,100);} else {set_val(XB1_LEFT,100);}wait(50);
+	wait(50);
+	count++;
+	if (count > countmax) {count=count - countmax;}
+}

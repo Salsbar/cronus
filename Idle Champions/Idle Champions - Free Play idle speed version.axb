@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Idle Champions</Game>
+    <Title>Speed Free Plays ToA</Title>
+    <Description>Setup Party spec choices for ToA free plays:
+8 Deekin (3/3)
+12 Celeste (1/2)
+17 Nahara (3/3)
+22 Sentry (2/3)
+26 Calliope (1/2)
+30 Krull (1/3)
+xx Freely (3/3) - skip
+xx Hitch (2/2) - skip
+35 Makos (2/2)
+38 Havilar (2/2) - underleveled
+41 Avren (1/3, 2/2) - underleveled
+44 Melf (2/3) - underleveled </Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Group Name="Quit/Start Adventure" Repeat="1" />
+      <Group Name="Load Formation" Repeat="1" />
+      <Group Name="Setup Party" Repeat="1" />
+      <Group Name="Load Formation" Repeat="1" />
+      <Group Name="DoIt" Repeat="1" />
+      <Loop Target="0" Repeat="10" />
+      <Group Name="Restart Game" Repeat="1" />
+      <Loop Target="0" Repeat="25" />
+    </ActionGroup>
+    <ActionGroup>
+      <Name>Quit/Start Adventure</Name>
+      <Press Controller="1" ButtonMask="8192" Hold="1000" Wait="5000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="5000" Wait="6000" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="150" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="4000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="2000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="5000" Wait="6000" Repeat="1" />
+    </ActionGroup>
+    <ActionGroup>
+      <Name>Load Formation</Name>
+      <Press Controller="1" ButtonMask="16384" LT="255" Hold="150" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="5000" Wait="6000" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="150" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="32768" Hold="150" Wait="1000" Repeat="1" />
+    </ActionGroup>
+    <ActionGroup>
+      <Name>Setup Party</Name>
+      <Press Controller="1" ButtonMask="32" Hold="6000" Wait="6500" Repeat="1" />
+      <Press Controller="1" ButtonMask="1024" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="250" Repeat="10" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="500" Wait="600" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="250" Repeat="2" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="500" Wait="600" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="250" Repeat="2" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="500" Wait="600" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="250" Repeat="2" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="500" Wait="600" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="250" Repeat="2" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="500" Wait="600" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="250" Repeat="2" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="500" Wait="600" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="250" Repeat="2" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="3" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="500" Wait="600" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="250" Repeat="2" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="250" Repeat="2" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="250" Repeat="2" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="1024" Hold="1500" Wait="1600" Repeat="1" />
+    </ActionGroup>
+    <ActionGroup>
+      <Name>DoIt</Name>
+      <Press Controller="1" ButtonMask="96" Hold="180000" Wait="181000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="1500" Wait="1600" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="2500" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="500" Wait="600" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="250" Repeat="2" />
+      <Wait Delay="2000" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="250" Repeat="2" />
+      <Press Controller="1" ButtonMask="1024" Hold="1500" Wait="1600" Repeat="1" />
+      <Press Controller="1" ButtonMask="96" Hold="420000" Wait="435000" Repeat="1" />
+    </ActionGroup>
+    <ActionGroup>
+      <Name>Restart Game</Name>
+      <Press Controller="1" ButtonMask="4" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="50" Wait="250" Repeat="2" />
+      <Press Controller="1" ButtonMask="4096" Hold="50" Wait="250" Repeat="1" />
+      <Press Controller="1" RT="255" Hold="50" Wait="250" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="50" Wait="5000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="50" Wait="25000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="50" Wait="25000" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="50" Wait="1000" Repeat="1" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
