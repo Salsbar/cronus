@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Cruz Brothers</Game>
+    <Title>Career Mode Idle</Title>
+    <Description>Script to progress through all fights for one of the career championships.
+Start the first match, then wait for the achievement to unlock. 
+Move on to the next championship, rinse &amp; repeat.
+Modify the repeat count in line 1 as needed. I used ~1500 for the first few championships and increased up to ~2400 for the final championship.</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" ButtonMask="32" Hold="60" Wait="120" Repeat="2400" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="16" Hold="60" Wait="120" Repeat="1" />
+      <Wait Delay="5000" />
+      <Press Controller="1" ButtonMask="16" Hold="60" Wait="120" Repeat="1" />
+      <Wait Delay="5000" />
+      <Press Controller="1" ButtonMask="2048" Hold="60" Wait="120" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="16" Hold="60" Wait="120" Repeat="1" />
+      <Press Controller="1" ButtonMask="48" Hold="60" Wait="120" Repeat="300" />
+      <Loop Target="0" Repeat="8" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
