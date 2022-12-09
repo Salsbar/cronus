@@ -1,0 +1,94 @@
+/* Exported from AutoGH
+Game:     Minecraft Dungeons
+Script:   Tower Finish (Series)
+Exported: 2022/05/13 12:36:06
+Press both LS and RS to stop or start the combo
+Beat tower boss, exit tower via pillar, quit game once back in town
+Run back to tower and walk over to exit (but don't hit A)
+Run Script as many times as desired
+*/
+int ON;
+main {
+	if (event_press(XB360_LS)) {if (get_val(XB360_RS)) {ON=!ON;}}
+	if (event_press(XB360_RS)) {if (get_val(XB360_LS)) {ON=!ON;}}
+	if (ON) {combo_run(autogh);}
+	if (!ON){if (combo_running(autogh)) {combo_stop(autogh);}}
+ }
+
+combo autogh {
+// FinishTower
+set_val(XB1_A,100);wait(50);
+wait(7950);
+// DelCloud
+set_val(XB1_XBOX,100);wait(100);
+wait(900);
+set_val(XB1_DOWN,100);wait(50);
+wait(200);
+set_val(XB1_DOWN,100);wait(50);
+wait(200);
+set_val(XB1_MENU,100);wait(50);
+wait(450);
+set_val(XB1_RT,100);wait(50);
+wait(200);
+set_val(XB1_UP,100);wait(50);
+wait(200);
+set_val(XB1_A,100);wait(50);
+wait(1950);
+set_val(XB1_DOWN,100);wait(50);
+wait(150);
+set_val(XB1_DOWN,100);wait(50);
+wait(150);
+set_val(XB1_DOWN,100);wait(50);
+wait(150);
+set_val(XB1_A,100);wait(50);
+wait(200);
+set_val(XB1_A,100);wait(50);
+wait(200);
+set_val(XB1_LEFT,100);wait(50);
+wait(200);
+set_val(XB1_A,100);wait(50);
+wait(200);
+set_val(XB1_B,100);wait(50);
+wait(200);
+set_val(XB1_B,100);wait(50);
+wait(200);
+set_val(XB1_B,100);wait(50);
+wait(200);
+wait(10000);
+// LaunchToCamp
+set_val(XB1_A,100);wait(50);
+wait(32000);
+wait(2950);
+set_val(XB1_A,100);wait(50);
+wait(1950);
+set_val(XB1_A,100);wait(50);
+wait(14950);
+set_val(XB1_A,100);wait(50);
+wait(7450);
+// CampToTower
+set_val(XB1_LB,100);wait(50);
+wait(50);
+set_val(XB1_LX,-100);set_val(XB1_LY,-100);wait(2500);
+wait(100);
+set_val(XB1_LX,100);set_val(XB1_LY,-100);wait(1000);
+wait(100);
+set_val(XB1_LX,-100);set_val(XB1_LY,-100);wait(500);
+wait(100);
+set_val(XB1_LY,-100);wait(2000);
+wait(100);
+set_val(XB1_LX,-100);wait(500);
+wait(100);
+set_val(XB1_LY,-100);wait(500);
+wait(100);
+set_val(XB1_LX,-100);set_val(XB1_LY,-100);wait(3500);
+wait(100);
+// RunTower
+set_val(XB1_A,100);wait(50);
+wait(1950);
+set_val(XB1_A,100);wait(50);
+wait(9950);
+set_val(XB1_LB,100);wait(50);
+wait(50);
+set_val(XB1_LX,-100);wait(5000);
+wait(100);
+}
