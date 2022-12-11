@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>World II Hunting Boss</Game>
+    <Title>XP Grind</Title>
+    <Description>Currently on Mission B 6/7 Burning All. Takes 19 down presses to get back to D Steel Nightmare</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" ButtonMask="512" Hold="125" Wait="250" Repeat="19" />
+      <Press Controller="1" ButtonMask="16" Hold="120" Wait="250" Repeat="1" />
+      <Wait Delay="70000" />
+      <Press Controller="1" ButtonMask="16" Hold="120" Wait="2000" Repeat="3" />
+      <Loop Target="0" Repeat="200" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
