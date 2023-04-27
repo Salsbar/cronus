@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Mosaic</Game>
+    <Title>1T Blops</Title>
+    <Description>The script will automatically cycle through purchasing the blops per click upgrade. 
+It can definitely be optimized but is reliable in its current state.</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" ButtonMask="16" Hold="60" Wait="100" Repeat="250" />
+      <Press Controller="1" ButtonMask="512" Hold="60" Wait="120" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="60" Wait="2000" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="60" Wait="120" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="60" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="60" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="256" Hold="60" Wait="120" Repeat="4" />
+      <Press Controller="1" ButtonMask="16" Hold="60" Wait="120" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="60" Wait="120" Repeat="1" />
+      <Loop Target="0" Repeat="1000" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
