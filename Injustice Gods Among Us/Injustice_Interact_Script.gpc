@@ -1,0 +1,28 @@
+//Press LT to start macro in the KOF online arcade lobby screen.
+
+int onoff;
+
+main 
+{
+// ON / OFF script - press LS
+   if(event_press(XB360_LS)) onoff = !onoff; 
+ 
+   if( onoff ) {
+      combo_run(LOOP); 
+   }
+      
+}
+
+
+combo LOOP {
+	
+//Skipping starting cutscene
+	set_val(XB360_RB, 100);
+	wait(200);
+	set_val(XB360_RB, 0);
+	wait(500);
+
+	
+
+}
+
