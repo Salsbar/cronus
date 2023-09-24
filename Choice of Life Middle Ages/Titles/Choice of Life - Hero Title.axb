@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><XBScript>
+<Information>
+<Game>Choice of Life</Game>
+<Title>AutoPlay</Title>
+<Description></Description>
+<Version>2</Version>
+</Information>
+<ActionGroups>
+<ActionGroup>
+<Name>[Main]</Name>
+<Wait Delay="1000" />
+<Press Controller="1" ButtonMask="128" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="16" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="1024" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="1024" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="1024" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="1024" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="1024" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="1024" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="2048" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="1024" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="1024" Hold="100" Wait="900" Repeat="1" /><Press Controller="1" ButtonMask="1024" Hold="100" Wait="900" Repeat="1" /><Wait Delay="8000" />
+</ActionGroup>
+</ActionGroups>
+</XBScript>
