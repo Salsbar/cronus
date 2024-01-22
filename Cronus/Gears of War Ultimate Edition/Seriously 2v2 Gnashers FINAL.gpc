@@ -1,0 +1,137 @@
+//FOR TITAN TWO USERS, UNCOMMENT LINES 2 AND 3 (REMOVE THE DOUBLE SLASHES).
+//#include <titanone.gph>
+//#pragma METAINFO("Gears of War Ultimate Edition Seriously", 2, 0, "XxFrAsZeRxX")
+
+//Created by XxFrAsZeRxX
+//If there are issues with the script message me on Discord (XxFrAsZeRxX#8948).
+
+//For 2v2 Gnashers. If on the locust team press LS, if on the COG press RS. Script will run 
+//until stopped with the pause button or there is lag. Activate at the start of the first round, after your characters spawn.
+//This script is heavily dependant on server stability. It will only mess up if the game lags or crashes. Keep an eye on it.
+
+int i;
+int j=1;
+main 
+{
+	if(get_val(XB360_LS))
+	{
+		i = 1;
+	}
+	if(get_val(XB360_RS))
+	{
+		i = 2;
+	}
+	if(get_val(XB360_START))
+	{
+		i = 0;
+	}
+	if(i==1) //Locust
+	{
+		if(j==1 || j==3 || j==5 || j==7)
+		{
+			combo_run(start_blue);
+		}
+		if(j==2 || j==4 || j==6)
+		{
+			combo_run(start_red);
+		}
+		if(j==8)
+		{
+			combo_run(newmatch);
+		}
+	}
+	if(i==2) //COG
+	{
+		if(j==1 || j==3 || j==5 || j==7)
+		{
+			combo_run(start_red);
+		}
+		if(j==2 || j==4 || j==6)
+		{
+			combo_run(start_blue);
+		}
+		if(j==8)
+		{
+			combo_run(newmatch);
+		}
+	}
+	if(i==0)
+	{
+		combo_stop(start_blue);
+		combo_stop(start_red);
+		j=1;
+	}
+}
+
+combo start_blue
+{
+	set_val(XB360_A, 100); //Go to barrier
+	wait(4000);
+	set_val(XB360_LX, -100); //Go to the edge of the barries
+	wait(1000);
+	set_val(XB360_LX, 0);
+	wait(100);
+	set_val(XB360_LY, -100); //Push forward for cover system
+	wait(100);
+	set_val(XB360_A, 100);
+	set_val(XB360_LY, -100); //Run forward
+	wait(2000);
+	set_val(XB360_LX, 100); //Move right
+	wait(1000);
+	set_val(XB360_LY, -100); //Run forward
+	set_val(XB360_A, 100);
+	wait(2000);
+	set_val(XB360_RT, 100); //Fire
+	wait(100);
+	set_val(XB360_LX, 100); //Start dive right
+	wait(2000);
+	set_val(XB360_LY, -100);
+	wait(1000);
+	set_val(XB360_RT, 100); //Fire
+	wait(17000);
+	j = j + 1;
+}
+
+combo start_red
+{
+	set_val(XB360_A, 100); //Go to barrier
+	wait(4000);
+	set_val(XB360_LX, -100); //Go to the edge of the barries
+	wait(1200);
+	set_val(XB360_LX, 0);
+	wait(100);
+	set_val(XB360_LY, -100); //Push forward for cover system
+	wait(100);
+	set_val(XB360_A, 100);
+	set_val(XB360_LY, -100); //Run forward
+	wait(3000);
+	set_val(XB360_LX, 100); //Move right
+	wait(1500);
+	set_val(XB360_LY, -100); //Run forward
+	wait(100);
+	set_val(XB360_A, 100);
+	set_val(XB360_LY, -100); //Run forward
+	wait(1400);
+	wait(1000);
+	set_val(XB360_RT, 100); //Fire
+	wait(2000);
+	set_val(XB360_LX, 100); //Start dive right
+	wait(1800);
+	set_val(XB360_LY, -100);
+	wait(1300);
+	set_val(XB360_RT, 100); //Fire
+	wait(17000);
+	j = j + 1;
+}
+
+combo newmatch
+{
+	wait(25000); //Post match wait
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 30);
+	wait(30000); //Lobby wait
+	wait(30000);
+	wait(25000);
+	j=1;
+}
