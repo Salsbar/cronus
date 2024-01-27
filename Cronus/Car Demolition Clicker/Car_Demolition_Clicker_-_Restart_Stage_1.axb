@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Car Demolition Clicker</Game>
+    <Title>Restart Stage 1</Title>
+    <Description>lvl 5=10 damage/19 $
+purple drone 179/149</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" LSX="-32512" LSY="32512" Hold="2000" Wait="2100" Repeat="1" />
+      <Press Controller="1" LSX="7680" LSY="-5632" Hold="4750" Wait="5000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="5000" Repeat="1" />
+      <Loop Target="0" Repeat="1000" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
