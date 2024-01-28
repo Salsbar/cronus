@@ -1,0 +1,24 @@
+#pragma METAINFO("Shredders_SnowmobileSpam", 1, 0, "Parker")
+#include <xb1.gph>
+
+bool loop = FALSE;
+
+main {
+    
+    if (event_active(XB1_LS)) {loop=!loop;} // Click Left Stick to enable/disable this 
+    
+    if (loop) {
+        combo_run(callSnowMobile);
+        set_val(STICK_2_X, 100); // Hold right to minimise distance travelled
+    }
+    if (!loop) {combo_stop(callSnowMobile);}
+    
+    
+}
+
+combo callSnowMobile {
+    set_val(XB1_RB, 100);
+    set_val(XB1_LB, 100);
+    wait(33);
+    wait(4000); // wait for snowmobile to trigger and disappear
+}
