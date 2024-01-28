@@ -1,0 +1,65 @@
+#pragma METAINFO("ToggleSpam", 1, 2, "Parker")
+#include <xb1.gph>
+#include "ColorLED.gph"
+
+bool aSpamOn=FALSE;
+bool bSpamOn=FALSE;
+bool xSpamOn=FALSE;
+bool ySpamOn=FALSE;
+
+main {
+  // button has to be pressed twice faster than 200ms
+  if (event_active(XB1_A) && time_release(XB1_A) < 200) {
+    aSpamOn = !aSpamOn;
+	if (aSpamOn) ColorLED(CG);
+	else ColorLED(CB);
+  }
+  if (event_active(XB1_B) && time_release(XB1_B) < 200) {
+    bSpamOn = !bSpamOn;
+	if (bSpamOn) ColorLED(CR);
+	else ColorLED(CB);
+  }
+  if (event_active(XB1_X) && time_release(XB1_X) < 200) {
+    xSpamOn = !xSpamOn;
+	if (xSpamOn) ColorLED(CC);
+	else ColorLED(CB);
+  }
+  if (event_active(XB1_Y) && time_release(XB1_Y) < 200) {
+    ySpamOn = !ySpamOn;
+	if (ySpamOn) ColorLED(CA);
+	else ColorLED(CB);
+  }
+    
+  if (aSpamOn) combo_run(aSpam);
+  if (bSpamOn) combo_run(bSpam);
+  if (xSpamOn) combo_run(xSpam);
+  if (ySpamOn) combo_run(ySpam);
+}
+
+combo xSpam {
+  set_val(XB1_X,0);  	// release button 16
+  wait(200);            // (release) for 200ms
+  set_val(XB1_X,100);	// press button 16
+  wait(200);            // (press) for 200ms
+}
+
+combo ySpam {
+  set_val(XB1_Y,0);  	// release button 16
+  wait(200);            // (release) for 200ms
+  set_val(XB1_Y,100);	// press button 16
+  wait(200);            // (press) for 200ms
+}
+
+combo aSpam {
+  set_val(XB1_A,0);  	// release button 16
+  wait(200);            // (release) for 200ms
+  set_val(XB1_A,100);	// press button 16
+  wait(200);            // (press) for 200ms
+}
+
+combo bSpam {
+  set_val(XB1_B,0);  	// release button 16
+  wait(200);            // (release) for 200ms
+  set_val(XB1_B,100);	// press button 16
+  wait(200);            // (press) for 200ms
+}
