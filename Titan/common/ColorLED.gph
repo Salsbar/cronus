@@ -1,0 +1,136 @@
+//
+//
+// NOTHING TO EDIT HERE IN THIS FILE
+//
+//
+/* Function to control the T2/Controller LED
+
+   ATTENTION: ! This function should NOT be called on every interaction of main !
+   Take a look at the documentation for more information:
+               https://www.consoletuner.com/forum/viewtopic.php?f=23&t=10962&p=75648#p75648
+
+   To use this headerfile copy it into the same directoy as your script 
+   and add this line to your script:
+                                      #include "ColorLED.gph"
+                                      
+  Color Names / Numbers to use:
+                                CB   1  //  blue
+                                CR   5  //  red
+                                CG   9  //  green
+                                CP   13 //  purple
+                                CC   17 //  cyan
+                                CA   21 //  amber
+                                CW   25 //  white
+                                      
+   Examples:
+        Blink in Color Green 200ms on / 200ms off, 2 times and reset the LED :
+              ColorLED(CG,200,200,2);
+              
+        Blink in Color Purple 100ms on / 100ms off, 4 times and set the LED to Green :
+              ColorLED(CP,100,100,4,CG);
+        
+        Permanent Color Red:
+              ColorLED(CR);
+
+
+
+  Optional Settings:
+     
+        If you want to save some bytecode usage (~1,5%) 
+        and do the reset or color change after blinking yourself
+        you can put this line above the include line:
+                                                      #define _ColorSimple
+                                                      
+        If you want to be able to set the brightness of the LED on permanent color commmands
+        you can put this line above the include line:
+                                                      #define _ColorBrightness
+        This will increase the bytecode usage by ~0.7%.
+        
+        Example for Permanent Color Red, 80% Intensity:
+              ColorLED(CR,80);
+
+*/
+
+#ifndef _ColorLED
+#define _ColorLED
+
+#define CB 1 // blue
+#define CR 5 // red
+#define CG 9 // green
+#define CP 13// purple
+#define CC 17// cyan
+#define CA 21// amber
+#define CW 25// white
+
+#ifndef _ColorSimple
+uint32 ColorWait1=0;
+uint32 ColorWait2=0;
+uint8 ColorPost=0;
+
+void ColorLED(uint8 Color, uint16 DurOn, uint16 DurOff, int Count, int8 PColor) {
+  combo_stop(cColorPost);
+#else
+void ColorLED(uint8 Color, uint16 DurOn, uint16 DurOff, int Count) {
+#endif
+                           //  name : index
+  bool *cmap[]={  0,       // dummy 
+                  1,0,0,0, // Blue  : 1
+                  0,1,0,0, // Red   : 5
+                  0,0,1,0, // Green : 9
+                  0,0,0,1, // Purple: 13
+                  1,0,1,0, // Cyan  : 17
+                  0,1,1,0, // Amber : 21
+                  1,1,1,1, // White : 25
+                };
+
+ led_reset();
+
+ 
+#ifdef _ColorBrightness
+  if (DurOn==0) DurOn=100;
+  if (cmap[Color])   if (DurOff > 0) led_vmset(LED_1, DurOn, DurOff, Count); else led_set(LED_1,(fix32)DurOn,0);
+	if (cmap[Color+1]) if (DurOff > 0) led_vmset(LED_2, DurOn, DurOff, Count); else led_set(LED_2,(fix32)DurOn,0);
+	if (cmap[Color+2]) if (DurOff > 0) led_vmset(LED_3, DurOn, DurOff, Count); else led_set(LED_3,(fix32)DurOn,0);
+	if (cmap[Color+3]) if (DurOff > 0) led_vmset(LED_4, DurOn, DurOff, Count); else led_set(LED_4,(fix32)DurOn,0);
+#else
+  if (!DurOff) { DurOn=65000; Count=-1; };
+  if (cmap[Color])   led_vmset(LED_1, DurOn, DurOff, Count);
+	if (cmap[Color+1]) led_vmset(LED_2, DurOn, DurOff, Count);
+	if (cmap[Color+2]) led_vmset(LED_3, DurOn, DurOff, Count);
+	if (cmap[Color+3]) led_vmset(LED_4, DurOn, DurOff, Count);
+#endif                
+                
+#ifndef _ColorSimple
+  if (Count > -1) if (DurOff > 0) {
+    ColorPost=PColor;
+    uint32 ColorWait=(DurOn+DurOff)*Count;
+    ColorWait1=(uint16)ColorWait;
+    ColorWait2=ColorWait-ColorWait1;
+    combo_run(cColorPost);
+  }
+}
+
+combo cColorPost {
+  wait(ColorWait1);
+  wait(ColorWait2);
+  if (ColorPost > 0) ColorLED(ColorPost,100);
+  else led_reset();
+#endif
+}
+
+#endif
+
+
+/************************    SHORTDESC    ******************************************************************************
+<title>ColorLED</title>
+<version>1.01</version>
+<author>Scachi</author>
+<shortdesc>
+Adds the function "<b>ColorLED</b> ( <i>Color, BlinkOnTime, BlinkOffTime, BlinkCount, ColorPost</i>)" to control the LED of your controller / Titan Two<br>
+For example usage visit the DOC link or take a look inside this file.
+</shortdesc>
+
+<keywords>ColorLED</keywords>
+
+<docurl>https://www.consoletuner.com/forum/viewtopic.php?f=23&t=10962&p=75648#p75648</docurl>
+***********************************************************************************************************************/

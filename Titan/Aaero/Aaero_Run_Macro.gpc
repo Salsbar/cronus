@@ -1,27 +1,28 @@
-#pragma METAINFO("Aaero_Run_Macro", 2, 0, "Parker")
+#pragma METAINFO("Aaero", 3, 0, "Parker")
 #include <xb1.gph>
 #include "../common/ColorLED.gph"
 
+// Values for Auto Firing to maximise points and minimise attack duration i.e. firing ~1/16th before the beat
 bool autoFireOn = FALSE;
 bool fireNext = FALSE;
+bool shoot = FALSE;
 
-uint32 time_counter;
+uint32 elapsedTimeInLevel = 0;
 
-// Values for Auto Firing just before every other beat
-int bpm = 128; // <--------- CHANGE THIS VALUE
-int beatInterval = 60000 / bpm; // ms
-int sixteenth = (beatInterval / 4) + 2; // Slightly more than 1/16th - if you shoot slightly late, it punishes way more than slightly early. Feel free to play with the added value
-int shotDelay = 2*beatInterval - sixteenth; // n*interval mean fire on beat n
+uint32 bpm = 172; // <--------- CHANGE THIS VALUE
+uint32 beatInterval = 60000 / bpm; // ms
+uint32 sixteenth = (beatInterval / 4);
+uint32 shotDelay = beatInterval - sixteenth;
 
 /* 
-BPM / Macro Test:
+<level> - <BPM> / <Macro Test Result>:
 bass cannon - 140 / P
 pure sunlight - 105 / P
 sequenz - 100 / P
 split the atom - 125
 habby 9000 - 125
 i can't stop - 140
-some kind of monster - n/a / P
+some kind of monster - ? / P
 katy on a mission - 140
 ill still - 130 / F
 revenge - 139
@@ -29,30 +30,32 @@ edge of tomorrow - 128
 alpha centauri - 125 / F
 kein signal - 96 / P
 get crazy - 88 / P
-stigma - 172 / F
+stigma - 172 / P
 */
 
 // IMPORTANT: Load script on the "Ready? (A)" screen, this is needed for timings
-/* Macro status indicated by LED: 
-    - Green = Running macro
-    - Purple = Running manual w/ auto fire
-    - Red = Stopped
+/* Script status indicated by LED: 
+- Green = Running macro
+- White = Running manual w/ auto fire
+- Red = Stopped
 */
 main{
-    time_counter += elapsed_time();
-    // MANUAL w/ Auto Fire - Press A
+    elapsedTimeInLevel += elapsed_time();
+    if (elapsedTimeInLevel >= 30000 && (mod((fix32)elapsedTimeInLevel, (fix32)beatInterval)==0.0)) {
+        elapsedTimeInLevel = 0; // we need to prevent this value exceeding the range of a fix32 to ensure the mod operation for shooting can work
+    }
+    
+    // Manual Sticks w/ Auto Fire - Press A when "Ready?"
     if (!autoFireOn && event_active(XB1_A)) {
         autoFireOn=TRUE;
         ColorLED(CW); 
-        macro_rec("EdgeOfT2.gmk"); // <---------- CHANGE to record your own run
-        printf("shotDelay: %d, sixteenth: %d", shotDelay, sixteenth);
+        macro_rec("tmp.gmk"); // <---------- CHANGE to record your own run
+        printf("beatInterval: %d, shotDelay: %d", beatInterval, shotDelay);
     }
     
-    // MACRO - Press LS
+    // Use MACRO - Press LS
     if (event_active(XB1_LS)) { // Will trigger macro once
-        macro_run("EdgeOfTo.gmk");  // <------------------ CHANGE THIS VALUE
-        macro_rec("EdgeOfT2.gmk");
-        autoFireOn=TRUE;
+        macro_run("Stigma.gmk");  // <------------------ CHANGE THIS VALUE
         ColorLED(CG);
     }
     
@@ -66,23 +69,36 @@ main{
     
     if (event_active(XB1_X)) { printf("Macro Time: %d", macro_time());} // for debugging
     
-    if (autoFireOn) { combo_run(fireOnBeat);}
-    else { combo_stop(fireOnBeat);}
-
     set_val(XB1_RT, 0); // prevent manual fire
+    
+    if (autoFireOn && 
+            mod((fix32)elapsedTimeInLevel, (fix32) beatInterval) == (fix32)shotDelay) {
+        shoot = TRUE;
+    }
+    
+    if (shoot && fireNext) {
+        combo_run(shootOnce);
+    }
+    
     if (is_active(XB1_RT)) {
         fireNext = TRUE;
     }
+    
+    if (event_active(XB1_LB)) {
+        shotDelay--;
+        printf("Shot Delay: %d", shotDelay);
+    }
+    if (event_active(XB1_RB)) {
+        shotDelay++;
+        printf("Shot Delay: %d", shotDelay);
+    }
 }
 
-
-combo fireOnBeat {
-    wait(shotDelay);
-//     if (fireNext) { // <------ Uncomment to manually shoot (with delay to beat)
-        set_val(XB1_RT, 100);
-//     }
-    wait(sixteenth);
-//     printf("time %d", time_counter); // wtf sometimes every loop adds 1ms and sometimes it doesn't -.-
+combo shootOnce {
+    set_val(XB1_RT, 100);
+    wait(33);
+    wait(20);
     fireNext = FALSE;
+    shoot = FALSE;
+    combo_stop(shootOnce);
 }
-
