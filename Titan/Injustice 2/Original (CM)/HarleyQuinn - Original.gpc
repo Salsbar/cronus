@@ -1,0 +1,102 @@
+/*
+For Xbox and PS
+Harley Quinn 2.0
+Script by XSENSETIVX
+
+There is no need of different release for the XB1 and PS3
+The buttons are the same for the compiler , so XB1_A = PS3_CROSS
+
+IMPORTANT
+IGNORE MAIN BLOCK, Go to tower you want to farm endless, just mark over. PUSCH DOWN RIGHT ANALOGSTICK FOR START,AND ONE MORE FOR STOP AUTOFARM.
+Automatic selection of
+HARLEY QUINN and your AI Armament 1.
+If I could make you happy, let me have a thank you here. <3 Thanks in advance <3
+
+
+GERMAN
+IGNURIERE DEN MAIN BLOCK. Gehe zu dem Turm den du farmen willt, nur makieren. DRÜCKE DEN RECHTEN ANALOGSTICK NACH UNTEN ZUM STARTEN VON AUTOFARM, UND NOCHMAL ZUM STOPPEN.
+Automatische Auswahl von
+HARLEY QUINN und deiner KI Bewaffnung 1.
+Wenn ich euch damit Glücklich
+machen konnte, lasst mir doch ein Danke hier. <3 Danke im vorraus <3
+
+
+*/
+
+
+int start ;
+
+
+main {
+
+
+/////////////////////////////////////////
+// start/stop combo (macro) = press RS / R3
+if(event_press(XB1_RS)) start = !start;
+
+
+/////////////////////////////////////////
+// combo loop
+if(start) {
+// run combos in loop
+combo_run(Left_Analog);
+}else{
+// stop combos
+combo_stop(Left_Analog);
+}
+
+
+}
+/////////////////////////////////////////////////
+// COMBO BLOCKS
+/////////////////////////////////////////////////
+combo Left_Analog {
+wait(2000);
+set_val(PS4_CROSS, 100);
+wait(160);
+set_val(PS4_CROSS, 0);
+wait(2000);
+set_val(PS4_LEFT, 100);
+wait(100);
+set_val(PS4_LEFT, 0);
+wait(80);
+set_val(PS4_SQUARE, 100);
+wait(340);
+set_val(PS4_SQUARE, 0);
+wait(80);
+set_val(PS4_LEFT, 0);
+wait(80);
+set_val(PS4_LEFT, 100);
+wait(100);
+set_val(PS4_LEFT, 0);
+wait(80);
+set_val(PS4_LEFT, 100);
+wait(300);
+set_val(PS4_CROSS, 100);
+wait(80);
+set_val(PS4_CROSS, 0);
+wait(1000);
+set_val(PS4_CROSS, 100);
+wait(50);
+set_val(PS4_CROSS, 0);
+wait(100);
+set_val(PS4_CROSS, 100);
+wait(50);
+set_val(PS4_CROSS, 0);
+wait(100);
+set_val(PS4_CROSS, 100);
+wait(50);
+set_val(PS4_CROSS, 0);
+wait(100);
+set_val(PS4_CROSS, 100);
+wait(50);
+set_val(PS4_CROSS, 0);
+wait(100);
+set_val(PS4_CROSS, 100);
+wait(50);
+set_val(PS4_CROSS, 0);
+wait(4000);
+wait(4000);
+wait(4000);
+wait(4000);
+}

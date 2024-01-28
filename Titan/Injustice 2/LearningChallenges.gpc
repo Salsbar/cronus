@@ -1,0 +1,189 @@
+#pragma METAINFO("LearningChallenges", 1, 3, "Parker")
+#include <xb1.gph>
+#include "I2_inputs.gph"
+
+main {
+  if (event_active(XB1_LS)) {
+	combo_run(crossUp2);
+  }
+}
+
+combo backgroundBounce {
+	R();wait(200);wait(200);
+	X();wait(33);wait(33);
+	X();wait(33);wait(33);
+	Y();wait(33);wait(500);
+	RB();wait(33);wait(33);
+	
+	wait(1000);
+	
+	L();
+	A();
+	wait(150);wait(1000);
+	combo_run(jumpRight);
+	wait(200);
+	A();wait(33);
+}
+
+combo extendComboWithBackgroundBounce {
+	R();
+	Y();
+	wait(33);wait(33);
+	RB();wait(33);wait(33);
+	
+	wait(1500);
+	
+	A();wait(33);wait(33);
+	call(d2r);
+	X();wait(33);
+}
+
+combo extendComboWithBackgroundBounce2 {
+	R();wait(200);wait(200);
+	X();wait(33);wait(33);
+	Y();wait(33);wait(33);
+	A();wait(33);wait(33);
+	wait(1200);
+	L();Y();wait(33);wait(33);
+	RB();wait(33);wait(33);
+	wait(1200);
+	U();wait(33);wait(33);
+	Y();wait(33);wait(33);
+	wait(300);
+	L();Y();wait(33);wait(33);
+	A();wait(33);wait(33);
+}
+
+combo extendComboWithBackgroundBounce3 {
+	L();X();wait(33);wait(150);
+	X();wait(33);wait(33);
+	RB();wait(33);wait(33);
+	
+	wait(1100);
+	L();A();wait(110);wait(1000);
+	call(jumpRight);
+	Y();wait(33);wait(33);
+	
+	wait(500);
+	L();Y();wait(33);wait(33);
+	A();wait(33);
+	
+}
+
+combo bounceCancel {
+	R();wait(200);wait(200);
+	X();wait(33);wait(200);
+	X();wait(33);wait(200);
+	A();wait(33);wait(200);
+	R();wait(33);wait(33);
+	R();wait(33);wait(33);
+	RT();wait(33);wait(33);
+	wait(1000);
+	call(jumpRight);
+	A();wait(33);
+}
+
+combo bounceCancel2 {
+	R();wait(200);wait(200);
+	X();wait(33);wait(200);
+	X();wait(33);wait(200);
+	Y();wait(33);wait(200);
+	L();wait(33);wait(33);
+	L();wait(33);wait(33);
+	RT();wait(33);wait(33);
+	wait(1000);
+	R();A();wait(33);
+}
+
+combo bounceCancel3 {
+	R();wait(200);wait(200);
+	Y();wait(33);wait(100);
+	Y();wait(33);wait(100);
+	L();wait(33);wait(33);
+	L();wait(33);wait(33);
+	RT();wait(33);wait(100);
+	wait(1200);
+	call(jumpRight);
+	Y();wait(33);wait(33);
+	wait(200);
+	L();Y();wait(33);wait(33);
+	A();wait(33);wait(33);
+}
+
+combo bounceCancel4 {
+	R();wait(200);wait(200);
+	X();wait(33);wait(200);
+	X();wait(33);wait(200);
+	Y();wait(33);wait(200);
+	R();wait(33);wait(33);
+	R();wait(33);wait(33);
+	RT();wait(33);wait(33);
+	wait(1100);
+	Y();wait(33);wait(100);
+	Y();wait(33);wait(100);
+	call(d2r);
+	X();wait(33);
+}
+
+combo crossUp {
+	R();wait(200);wait(200);
+	call(jumpRight);
+	wait(350);
+	Y();wait(33);wait(33);
+	wait(200);
+	X();wait(33);wait(33);
+	X();wait(33);wait(33);
+	Y();wait(33);wait(33);
+	wait(300);
+	R();wait(33);wait(33);
+	L();wait(33);wait(33);
+	Y();wait(33);wait(33);
+}
+
+combo crossUp2 {
+	R();wait(200);wait(200);
+	call(jumpRight);
+	wait(350);
+	Y();wait(33);wait(33);
+	wait(200);
+	Y();wait(33);wait(100);
+	Y();wait(33);wait(100);
+	A();wait(33);wait(100);
+	wait(200);
+	call(d2r);wait(50);
+	X();wait(33);wait(33);
+}
+
+combo crossUp3 {
+	R();wait(200);wait(200);
+	call(jumpRight);
+	wait(350);
+	Y();wait(33);wait(33);
+	wait(200);
+	
+	R();X();wait(33);wait(100);
+	X();wait(33);wait(100);
+	A();wait(33);wait(100);
+	wait(1000);
+	L();Y();wait(33);wait(33);
+	A();wait(33);wait(33);
+}
+
+combo crossUp4 {
+	R();wait(200);wait(200);
+	call(jumpRight);
+	wait(350);
+	Y();wait(33);wait(33);
+	wait(200);
+	
+	X();wait(33);wait(100);
+	X();wait(33);wait(100);
+	A();wait(33);wait(100);
+	wait(200);
+	
+	R();wait(33);wait(33);
+	L();wait(33);wait(33);
+	A();wait(33);wait(100);
+	wait(600);
+	RT();wait(33);wait(33);
+}

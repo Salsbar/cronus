@@ -1,0 +1,204 @@
+#pragma METAINFO("BlueBeetle.gpc", 1, 0, "Buffy's GPC Converter v0.28r6")
+#include <titanone.gph>
+
+
+#define _ot_i _ot_i2
+const uint8 _ot_i2[42] = {
+    BUTTON_1,  BUTTON_2,  BUTTON_3,  BUTTON_4,  BUTTON_5,  BUTTON_6, 
+    BUTTON_7,  BUTTON_8,  BUTTON_9,  STICK_1_X, STICK_1_Y, STICK_2_X, 
+    STICK_2_Y, BUTTON_10, BUTTON_11, BUTTON_12, BUTTON_13, BUTTON_14, 
+    BUTTON_15, BUTTON_16, BUTTON_17, ACCEL_1_X, ACCEL_1_Y, ACCEL_1_Z, 
+    GYRO_1_X,  GYRO_1_Y,  GYRO_1_Z,  PADDLE_1, POINT_1_X, POINT_1_Y, 
+    PADDLE_2, PADDLE_3, PADDLE_4, ACCEL_2_X, ACCEL_2_Y, ACCEL_2_Z,
+    0, 0, BUTTON_18, BUTTON_19, BUTTON_20, BUTTON_21,
+};
+/*
+For Xbox and PS
+BlueBeetle
+Script by XSENSETIVX
+
+There is no need of different release for the XB1 and PS3
+The buttons are the same for the compiler , so XB1_A = PS3_CROSS
+
+IMPORTANT
+IGNORE MAIN BLOCK, Go to tower you want to farm endless, just mark over. PUSCH DOWN RIGHT ANALOGSTICK FOR START,AND ONE MORE FOR STOP AUTOFARM.
+Automatic selection of BlueBeetle and your AI Armament 1.
+If I could make you happy, let me have a thank you here. <3 Thanks in advance <3
+
+
+GERMAN
+IGNURIERE DEN MAIN BLOCK. Gehe zu dem Turm den du farmen willt, nur makieren. DRÜCKE DEN RECHTEN ANALOGSTICK NACH UNTEN ZUM STARTEN VON AUTOFARM, UND NOCHMAL ZUM STOPPEN.
+Automatische Auswahl von BlueBeetle und deiner KI Bewaffnung 1.
+Wenn ich euch damit Glücklich
+machen konnte, lasst mir doch ein Danke hier. <3 Danke im vorraus <3
+
+
+**//////////////////////////////////////////
+// start/stop combo (macro) = press RS / R3
+/////////////////////////////////////////
+// combo loop
+// run combos in loop
+// stop combos
+/////////////////////////////////////////////////
+// COMBO BLOCKS
+/////////////////////////////////////////////////
+
+
+#define __LAST_COMBO__ c_Left_Analog
+#define _VM_BTN_COUNT_ 42
+#define DISABLE_VM_ // delete underscore to disable VM mode
+#ifndef DISABLE_VM
+#define VM_TIME 10
+#define vm_tctrl(time) ___vm_time___ = (((10+ time) < 0) ? 0 : (10+ time))
+#define wait(a) wait(vm_tctrl_wait(a));
+#else 
+#define VM_TIME 0
+#endif
+
+int start;
+uint8 __COMBO_RUN__[1];
+int8 __io_vals__[_VM_BTN_COUNT_];
+uint8 __io_val_events__[_VM_BTN_COUNT_];
+uint32 __vm_run_time__ = 0;
+uint8 __run_vm__ = 1,  ___vm_time___ = VM_TIME,  ___i____i;
+
+main {
+	if(__run_vm__) {
+		if (_event_press(XB1_RS)) start =! start;
+		if (start) {
+			combo_run(c_Left_Analog);
+		}
+		else {
+			combo_stop(c_Left_Analog);
+		}
+	}
+}
+main {
+	if(__run_vm__) {
+	}
+}
+
+combo c_Left_Analog {
+	wait(2000);
+	set_val(PS4_CROSS, 100);
+	wait(160);
+	set_val(PS4_CROSS, 0);
+	wait(2600);
+	set_val(PS4_LEFT, 100);
+	wait(100);
+	set_val(PS4_LEFT, 0);
+	wait(80);
+	set_val(PS4_LEFT, 100);
+	wait(100);
+	set_val(PS4_LEFT, 0);
+	wait(80);
+	set_val(PS4_LEFT, 100);
+	wait(100);
+	set_val(PS4_LEFT, 0);
+	wait(100);
+	set_val(PS4_DOWN, 100);
+	wait(80);
+	set_val(PS4_DOWN, 0);
+	wait(80);
+	set_val(PS4_SQUARE, 100);
+	wait(340);
+	set_val(PS4_SQUARE, 0);
+	wait(80);
+	set_val(PS4_LEFT, 0);
+	wait(80);
+	set_val(PS4_LEFT, 100);
+	wait(100);
+	set_val(PS4_LEFT, 0);
+	wait(80);
+	set_val(PS4_LEFT, 100);
+	wait(300);
+	set_val(PS4_CROSS, 100);
+	wait(80);
+	set_val(PS4_CROSS, 0);
+	wait(1000);
+	set_val(PS4_CROSS, 100);
+	wait(50);
+	set_val(PS4_CROSS, 0);
+	wait(100);
+	set_val(PS4_CROSS, 100);
+	wait(50);
+	set_val(PS4_CROSS, 0);
+	wait(100);
+	set_val(PS4_CROSS, 100);
+	wait(50);
+	set_val(PS4_CROSS, 0);
+	wait(100);
+	set_val(PS4_CROSS, 100);
+	wait(50);
+	set_val(PS4_CROSS, 0);
+	wait(100);
+	set_val(PS4_CROSS, 100);
+	wait(50);
+	set_val(PS4_CROSS, 0);
+	wait(4000);
+	wait(4000);
+	wait(4000);
+	wait(4000);
+}
+
+
+
+main {
+	if(__run_vm__) {
+		__run_vm__ = system_time() >= (__vm_run_time__+ ___vm_time___);
+		if(__run_vm__) __vm_run_time__ = system_time();
+		else {
+			memset( & __io_vals__[0],  0,  _VM_BTN_COUNT_);
+			memset( & __io_val_events__[0],  0,  _VM_BTN_COUNT_);
+			for(___i____i = 0; ___i____i < _VM_BTN_COUNT_; ++ ___i____i) {
+				if(get_val(___i____i)) __io_vals__[___i____i] = get_val(___i____i);
+				if(get_val( ++ ___i____i)) __io_vals__[___i____i] = get_val(___i____i);
+			}
+			#ifdef __LAST_COMBO__
+			for(___i____i = 0; ___i____i < sizeof(__COMBO_RUN__); ++ ___i____i) {
+				if(__LAST_COMBO__[(___i____i * 3) + ___i____i]) {
+					__LAST_COMBO__[(___i____i * 3) + ___i____i] = 0;
+					__COMBO_RUN__[___i____i] = 1;
+				}
+			}
+			#endif
+		}
+	}
+	else {
+		___i____i = 0;
+		do {
+			if(__io_vals__[___i____i]) set_val(___i____i,    __io_vals__[___i____i]);
+			if(event_press(___i____i)) __io_val_events__[___i____i] = 1;
+			if(event_release(___i____i)) __io_val_events__[___i____i] = 3;
+			if(__io_vals__[ ++ ___i____i]) set_val(___i____i,    __io_vals__[___i____i]);
+			if(event_press(___i____i)) __io_val_events__[___i____i] = 1;
+			if(event_release(___i____i)) __io_val_events__[___i____i] = 3;
+		} while( ++ ___i____i < _VM_BTN_COUNT_);
+		if(system_time() >= (__vm_run_time__+ ___vm_time___)) {
+			__run_vm__ = 1; __vm_run_time__ = system_time();
+			#ifdef __LAST_COMBO__
+			for(___i____i = 0; ___i____i < sizeof(__COMBO_RUN__); ++ ___i____i) {
+				if(__COMBO_RUN__[___i____i]) {
+					__LAST_COMBO__[(___i____i * 3) + ___i____i] = 1;
+					__COMBO_RUN__[___i____i] = 0;
+				}
+			}
+			#endif
+		}
+	}
+}
+
+
+int vm_tctrl_wait(int num) { 
+	return ___vm_time___ ? ((num / ___vm_time___) + ((num % ___vm_time___) ? 1 : 0)) : num;
+}
+
+bool _event_press(uint8 io) {
+	return event_press(io) || __io_val_events__[io] == 1;
+}
+
+bool _event_release(uint8 io) {
+	return event_release(io) || __io_val_events__[io] == 3;
+}
+
+
