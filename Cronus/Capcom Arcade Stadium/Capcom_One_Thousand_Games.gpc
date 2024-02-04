@@ -1,0 +1,48 @@
+// Capcom Arcade Stadium
+// Press LB to start and stop
+// The script will replay games over and over in order to get Core Gamer (100 games played) and Hardcore Gamer (1000 games played)
+// Author - dubdeetwothree
+
+// Capcom Arcade Stadium - Hardcore Gamer
+
+int loop;
+
+main {
+if (event_press(XB1_LB)) {loop=!loop;} // Press 'LB' to Start/Stop it
+if (loop) {combo_run(One_Thousand_Games);}        
+if (!loop) {combo_stop(One_Thousand_Games);}    
+}
+
+combo One_Thousand_Games
+{	set_val(XB1_MENU, 1);
+	wait(100);
+	set_val(XB1_MENU, 0);
+	wait(1000);
+	set_val(XB1_UP, 1);
+	wait(100);
+	set_val(XB1_UP, 0);
+	wait(1000);
+	set_val(XB1_UP, 1);
+	wait(100);
+	set_val(XB1_UP, 0);
+	wait(1000);	
+	set_val(XB1_A, 1);
+	wait(100);
+	set_val(XB1_A, 0);
+	wait(1000);
+	set_val(XB1_UP, 1);
+	wait(100);
+	set_val(XB1_UP, 0);
+	wait(1000);
+	set_val(XB1_A, 1);
+	wait(100);
+	set_val(XB1_A, 0);
+	wait(3000);
+	set_val(XB1_A, 1);
+	wait(100);
+	set_val(XB1_A, 0);
+	wait(1000);
+
+}
+
+                  ˙πã≤ãæçµÖƒˆ≈Û¡¬
