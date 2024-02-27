@@ -1,0 +1,12 @@
+These are Cronus Zen scripts for each song in Aaero.
+Most can use the same scripts for all difficulty levels. (One exception is Split The Atom, use SplitTheAtom2.gpc for avanced/master.) While the scripts aren't exactly tiny, you should be able to load one in each of the 8 slots so you aren't having to shuffle them around TOO much.
+
+Load the appropriate script then go to the "ready" screen in game. Hold down back and tap A to start. This (back+A) will start the script running and will also start the level, ensuring proper timing. It will display "Run" on the Zen screen when the script is running and "Stop" when it is stopped. Throughout the level it will automatically follow the ribbon, dodge most obstacles and fire on the beat. All you need to be responsible is aiming the targeting reticle over any enemies or projectiles (and even that is semi-automated).
+
+During the level you can use:
+X: turn auto-reticle on or off. (This will spin your targeting reticle, automatically hitting most secrets and enemies.) You can temporarily override this by moving RS out of the center area, and it will resume spinning when you let go.
+LB/RB: if your ship seems a little ahead of the curve hit LB. If it is a little behind, hit RB. This will adjust the time in 25ms increments.
+B: stop the script
+
+Song specific notes:
+Ill Still: you will need to manually dodge the large wasps shots at the beginning. Turning on the auto reticle and manually moving your ship in a circle at a moderate speed will usually avoid all his shots but not kill him (but that's not required).
