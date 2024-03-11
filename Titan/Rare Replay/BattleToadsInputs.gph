@@ -1,0 +1,31 @@
+#include <xb1.gph>
+
+#define D() set_val(XB1_DOWN, 100);
+#define R() set_val(XB1_RIGHT, 100);
+#define L() set_val(XB1_LEFT, 100);
+#define U() set_val(XB1_UP, 100);
+
+int TRAVEL_TIME = 200; // ms to travel between sections of path
+int JUMP_TIME = 860; // ms until can jump again
+
+combo jump {
+    set_val(XB1_B, 100);
+	wait(33);
+    wait(JUMP_TIME);
+    printf("jumped");
+//     combo_stop(jump);
+}
+
+combo down {
+    D();
+    wait(TRAVEL_TIME);
+    wait(33);
+    combo_stop(down);
+}
+
+combo up {
+    U();
+    wait(TRAVEL_TIME);
+    wait(33);
+    combo_stop(up);
+}

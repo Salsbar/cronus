@@ -1,0 +1,112 @@
+#pragma METAINFO("BattleToadsTunnel", 0, 3, "Parker")
+#include <xb1.gph>
+#include "BattleToadsInputs.gph"
+#include "../common/ColorLED.gph"
+
+bool runCombo = FALSE;
+
+main {
+    // Click LS to toggle
+    if (event_active(XB1_LS)) {
+        runCombo = !runCombo;
+    }
+    
+    if (runCombo) {
+        combo_run(TurboTunnel);
+    } else {
+        combo_stop(TurboTunnel);
+        ColorLED(CR);
+    }
+    
+}
+
+combo TurboTunnel {
+    ColorLED(CG);
+    set_val(XB1_A, 100); // A to play
+    wait(33);
+    wait(4000); // Wait for loading
+    
+    // Move to about mid point
+    D();
+    wait(400);
+    wait(4000);
+    
+    printf("b start");
+    // b start
+    call(up);
+    wait(1500);
+    call(down);
+    wait(1500);
+    call(up);
+    wait(1500);
+    call(down);
+    wait(1500); // b1
+    call(up); // x2
+    wait(1900);
+    call(down); // x2
+    wait(2500);
+    call(jump);
+    call(up);
+    wait(900);
+    call(down);
+    wait(950);
+    call(jump);
+    call(jump);
+    call(jump);
+    wait(1200);
+    call(up);
+    wait(200);
+    call(down);
+    printf("c start");
+    wait(1);
+    wait(6500); // auto jump
+    call(jump); 
+    wait(2000); // auto jump
+    call(jump);
+    call(jump);
+    wait(2000); // auto jump
+    call(up);
+    wait(500);
+    call(down);
+    printf("c-1 start");
+    wait(1);
+    wait(3700); // autojump + stay down
+    call(up);
+    wait(400);
+    call(down);
+    wait(100);
+    call(up);
+    wait(200);
+    call(down);
+    wait(500);
+    call(up);
+    wait(4200); // auto jump
+    call(jump);
+    call(jump);
+    wait(3200);
+    printf("d start");
+    wait(1);
+    call(down);
+    wait(1000);
+    call(up);
+    wait(100);
+    call(jump);
+    wait(500); // up
+    call(down);
+    wait(600);
+    call(up);
+//     wait(200);
+    call(down);
+    wait(300);
+    call(up);
+    wait(1300);
+    call(jump);
+    call(jump);
+    call(jump);
+    wait(4000);
+    printf("d-1 start");
+    wait(1);
+    
+    
+    runCombo=FALSE;
+}
