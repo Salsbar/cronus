@@ -1,8 +1,8 @@
-# General Info
+# Shredders
 
 This script helps automates calling the snowmobile for unlocking "Discount please!" achievement.
 
-# Usage
+## Usage
 
 Assuming you have it unlocked in free roam, load up 
 

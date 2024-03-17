@@ -1,0 +1,1214 @@
+
+/*** Interactive Configuration
+
+<cfgdesc>
+[Macro Recording and Playback]
+collapsible = 1
+control     = info
+shortdesc	  = <<<MULTILINE
+<b>Record and Playback macros on the fly - *SD-card required!</b>
+
+&#10153; Different start, stop and playback options to choose from
+&#10153; Now supporting 9 macros with unique filenames for using the same script in different T2 slots
+&#10153; Option to configure playback loop count per macro file
+
+<b>Default Setting/Usage:</b>
+-> <b>Start</b> : Hold Down L3/LS for 2 seconds, the LED turns yellow, now release that button.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the next input it will start the recording.
+-> <b>Stop</b> : After no input/idle time of 5 seconds the recording will stop.
+-> <b>Play</b> : Playback in an endless loop starts and stops with Hold Down R3/RS for > 2 seconds.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It skips the idle time on play back (4850ms)
+
+<b>Hint: You can't use the same button/s to start recording and start playback.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The T2 will blink <b><font color=red>red</font></b> fast if it has found such an issue.</b>
+
+
+<b><u>The T2 LED display will show specific colors:</u></b>
+<b><font color=blue>blue</font>&nbsp;&nbsp;&nbsp;&nbsp; for <font color=blue>Standby</font>,
+<font color=green>green</font>&nbsp; for <font color=green>Playback</font>,
+<font color=Orange>yellow</font> for <font color=Orange>Record On Next Activity</font>,
+<font color=DarkViolet>purple</font> for <font color=DarkViolet>Active Recording</font></b>
+On script start or macrofile selection it displays letters a..i for the selected macrofile.
+
+More information can be found at the forum : <a href="https://www.consoletuner.com/forum/viewtopic.php?f=23&t=9745&p=68771#p68771">Here</a> 
+MULTILINE
+
+
+[Main Settings]
+collapsible = 2
+control     = info
+shortdesc	  = <<<MULTILINE
+
+MULTILINE
+
+
+[Default Macro]
+group       = true
+control     = combobox
+byteoffset  = 0
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+
+<b>Default Macrofile</b> to use:
+MULTILINE
+control     = combobox
+default     = 0
+item        = A
+item        = B
+item        = C
+item        = D
+item        = E
+item        = F
+item        = G
+item        = H
+item        = I
+
+[Default Macro Info]
+group       = true
+control     = info
+shortdesc	  = <<<MULTILINE
+The resulting filename on the sd-card will be macrp{slot}{selection}.gmk
+Example: Script running from <b>Slot 1</b> and selecting "<b>A</b>" : <b>macrp1A.gmk</b>
+<i>Running via GTuner IV "Test and Debug" mode will use 0 as the slot number.</i>
+MULTILINE
+
+[Macro Selection Cycle]
+group       = true
+control     = combobox
+byteoffset  = 1
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+
+<b><font color=blue>Cycle</font> through macro files</b> A-I with selected button combination
+<b>!</b> Only works during <b><font color=blue>Blue LED = Standby</font></b> Mode <b>!</b>
+MULTILINE
+control     = combobox
+default     = 0
+item        = ---------------- NONE ---------------------
+item        = ::::::::::::: Playstation ::::::::::::::::::
+item        = L3+L1                //  L3+R1
+item        = R3+L1               //  R3+R1
+item        = L3+PS               //  R3+PS
+item        = R3+Dpad_Left  //  R3+Dpad_Right
+item        = R3+Dpad_Up    //  R3+Dpad_Down
+item        = :::::::::::::::: XBox ::::::::::::::::::::::
+item        = LS+LB                //  LS+RB
+item        = RS+LB               //  RS+RB
+item        = LS+Xbox           //  RS+Xbox
+item        = RS+Dpad_Left  //  RS+Dpad_Right
+item        = RS+Dpad_Up    //  RS+Dpad_Down
+
+
+[Recall Last Used]
+group       = true
+control     = checkbox
+byteoffset  = 2
+bitsize     = 1
+bitoffset   = 0
+default     = 1
+item        = Recall last used macro file
+
+
+
+
+[Record start mode]
+group       = true
+control     = combobox
+byteoffset  = 3
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+
+<b><font color="DarkViolet">____RECORDING____</font>
+
+<font color="DarkViolet">Start recording</b> on action:</b></font>
+MULTILINE
+default     = 1
+item        = 0) Press: Button "Alpha"
+item        = 1) Holding down: Button "Alpha"
+item        = 2) Double Tap: Button "Alpha"
+item        = 3) Hold: Button "Alpha" and Tap: Button "Beta"
+
+[Record start activity]
+group       = true
+control     = checkbox
+byteoffset  = 2
+bitsize     = 1
+bitoffset   = 1
+default     = 1
+item        = Start recording on next activity after action selected above
+
+
+[Record start hold Timer ]
+group       = true
+control     = spinbox
+step		= 1
+byteoffset  = 5
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+<font color=DarkViolet><b>Hold Time</b></font> (seconds) for Start recording on action <b>1)</b>
+MULTILINE
+default     = 2
+minimum     = 0
+maximum     = 10
+
+
+[Record Start Btn "Alpha"]
+group       = true
+control     = combobox
+byteoffset  = 6
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+
+<font color=DarkViolet><b>Button "Alpha"</b></font> for start actions <b>0), 1), 2), 3)</b> and stop actions <b>0), 1), 2), 3), 7)</b>
+PS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /      XB
+MULTILINE
+default     = 9
+item        = - NONE -
+item        = PS            / XBox
+item        = Touchclick/ View
+item        = Options    / Menu
+item        = R1            / RB
+item        = R2            / RT
+item        = R3            / RS
+item        = L1             / LB
+item        = L2             / LT
+item        = L3             / LS
+item        = DPAD Up
+item        = DPAD Down
+item        = DPAD Left
+item        = DPAD Right
+item        = Triangle    / Y
+item        = Circle        / B
+item        = Cross       / A
+item        = Square     / X
+item        = Share       / P1
+item        = Touch P1 / P2
+item        = Touch P2 / P3
+item        = Btn_21    / P4
+
+[Record Start Btn "Beta"]
+group       = true
+control     = combobox
+byteoffset  = 7
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+<font color=DarkViolet><b>Button "Beta"</b></font> for start action <b>3)</b> and stop actions <b>3), 4), 5), 6), 7)</b>
+PS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /      XB
+MULTILINE
+default     = 0
+item        = - NONE -
+item        = PS            / XBox
+item        = Touchclick/ View
+item        = Options    / Menu
+item        = R1            / RB
+item        = R2            / RT
+item        = R3            / RS
+item        = L1             / LB
+item        = L2             / LT
+item        = L3             / LS
+item        = DPAD Up
+item        = DPAD Down
+item        = DPAD Left
+item        = DPAD Right
+item        = Triangle    / Y
+item        = Circle        / B
+item        = Cross       / A
+item        = Square     / X
+item        = Share        / P1
+item        = Touch P1  / P2
+item        = Touch P2  / P3
+item        = Btn_21     / P4
+
+[Record Stop mode]
+group       = true
+control     = combobox
+byteoffset  = 10
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+
+<b><font color=DarkViolet>Stop recording</font> on action:</b>
+MULTILINE
+default     = 8
+item        = 0) Press: Button "Alpha"
+item        = 1) Holding down: Button "Alpha"
+item        = 2) Double Tap: Button "Alpha"
+item        = 3) Hold: Button "Alpha" and Tap: Button "Beta"
+item        = 4) Press: Button "Beta"
+item        = 5) Holding down: Button "Beta"
+item        = 6) Double Tap: Button "Beta"
+item        = 7) Hold: Button "Beta" and Tap: Button "Alpha"
+item        = 8) On Inactivity/no input for "Time of inactivity" (seconds)
+
+[Record Stop hold Timer ]
+group       = true
+control     = spinbox
+step			  = 1
+byteoffset  = 11
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+<font color=DarkViolet><b>Hold Time</b></font> (seconds) for Stop recording on actions <b>1), 5)</b>
+MULTILINE
+default     = 2
+minimum     = 0
+maximum     = 10
+
+[Record Stop Timer End]
+group       = true
+control     = spinbox
+byteoffset  = 12
+bitsize     = 8
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<font color=DarkViolet><b>Time of inactivity</b></font> (seconds) for Stop recording on stop action <b>8)</b>
+MULTILINE
+default     = 5
+minimum     = 1
+maximum     = 120
+
+
+[Record Play]
+group       = true
+control     = info
+shortdesc	  = <<<MULTILINE 
+
+<font color=green><b>____PLAYBACK____</b></font>
+
+MULTILINE
+
+
+[Play On Script Load]
+group       = true
+control     = checkbox
+byteoffset  = 2
+bitsize     = 1
+bitoffset   = 2
+shortdesc   = <<<MULTILINE
+<b>Start Playback on Script Load</b>
+MULTILINE
+default     = 0
+item        = Enable
+
+
+[Record Play Mode]
+group       = true
+control     = combobox
+byteoffset  = 20
+bitsize     = 8
+shortdesc	  = <<<MULTILINE 
+
+<font color=green><b>Start Playback</b></font> on action:
+MULTILINE
+default     = 1
+item        = 0) Press: Button "Gamma"
+item        = 1) Holding down: Button "Gamma"
+item        = 2) Double Tap: Button "Gamma"
+item        = 3) Hold: Button "Gamma" and Tap: Button "Delta"
+
+[Record Play Hold Timer ]
+group       = true
+control     = spinbox
+step			  = 1
+byteoffset  = 21
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+<font color=green><b>Hold Time</b></font> (seconds) for toggle playback on action <b>1)</b>
+MULTILINE
+default     = 2
+minimum     = 0
+maximum     = 10
+
+[Record Play Btn "Gamma"]
+group       = true
+control     = combobox
+byteoffset  = 22
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+
+<font color=green><b>Button "Gamma"</b></font> for actions <b>0), 1), 2), 3)</b>
+PS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /      XB
+MULTILINE
+default     = 6
+item        = - NONE -
+item        = PS            / XBox
+item        = Touchclick/ View
+item        = Options    / Menu
+item        = R1            / RB
+item        = R2            / RT
+item        = R3            / RS
+item        = L1             / LB
+item        = L2             / LT
+item        = L3             / LS
+item        = DPAD Up
+item        = DPAD Down
+item        = DPAD Left
+item        = DPAD Right
+item        = Triangle    / Y
+item        = Circle        / B
+item        = Cross       / A
+item        = Square     / X
+item        = Share        / P1
+item        = Touch P1  / P2
+item        = Touch P2  / P3
+item        = Btn_21     / P4
+
+[Record Btn "Delta"]
+group       = true
+control     = combobox
+byteoffset  = 23
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+<font color=green><b>Button "Delta"</b></font> for action <b>3)</b>
+PS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /      XB
+MULTILINE
+default     = 0
+item        = - NONE -
+item        = PS            / XBox
+item        = Touchclick/ View
+item        = Options    / Menu
+item        = R1            / RB
+item        = R2            / RT
+item        = R3            / RS
+item        = L1             / LB
+item        = L2             / LT
+item        = L3             / LS
+item        = DPAD Up
+item        = DPAD Down
+item        = DPAD Left
+item        = DPAD Right
+item        = Triangle    / Y
+item        = Circle        / B
+item        = Cross       / A
+item        = Square     / X
+item        = Share        / P1
+item        = Touch P1  / P2
+item        = Touch P2  / P3
+item        = Btn_21     / P4
+
+
+
+[Record Play Stop Mode]
+group       = true
+control     = combobox
+byteoffset  = 16
+bitsize     = 8
+shortdesc	  = <<<MULTILINE 
+
+<b><font color=MediumBlue>Stop</font> <font color=green>Playback</font></b> on action:
+MULTILINE
+default     = 4
+item        = 0) Press: Button "Epsilon"
+item        = 1) Holding down: Button "Epsilon"
+item        = 2) Double Tap: Button "Epsilon"
+item        = 3) Hold: Button "Epsilon" and Tap: Button "Zeta"
+item        = 4) Use "Start Playback" settings to stop ( ignoring Hold,Epsilon,Zeta below )
+
+[Record Play Stop Hold Timer ]
+group       = true
+control     = spinbox
+step			  = 1
+byteoffset  = 17
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+<b><font color=MediumBlue>Hold</font> <font color=green> Time</font></b> (seconds) for stop playback on action <b>1)</b>
+MULTILINE
+default     = 2
+minimum     = 0
+maximum     = 10
+
+[Record Play Stop Btn "Epsilon"]
+group       = true
+control     = combobox
+byteoffset  = 18
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+
+<b><font color=MediumBlue>Button</font> <font color=green>"Epsilon"</font></b> for actions <b>0), 1), 2), 3)</b>
+PS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /      XB
+MULTILINE
+default     = 6
+item        = - NONE -
+item        = PS            / XBox
+item        = Touchclick/ View
+item        = Options    / Menu
+item        = R1            / RB
+item        = R2            / RT
+item        = R3            / RS
+item        = L1             / LB
+item        = L2             / LT
+item        = L3             / LS
+item        = DPAD Up
+item        = DPAD Down
+item        = DPAD Left
+item        = DPAD Right
+item        = Triangle    / Y
+item        = Circle        / B
+item        = Cross       / A
+item        = Square     / X
+item        = Share        / P1
+item        = Touch P1  / P2
+item        = Touch P2  / P3
+item        = Btn_21     / P4
+
+[Record Play Stop Btn "Zeta"]
+group       = true
+control     = combobox
+byteoffset  = 19
+bitsize     = 8
+shortdesc	  = <<<MULTILINE
+<b><font color=MediumBlue>Button </font><font color=green>"Zeta"</b></font> for action <b>3)</b>
+PS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /      XB
+MULTILINE
+default     = 0
+item        = - NONE -
+item        = PS            / XBox
+item        = Touchclick/ View
+item        = Options    / Menu
+item        = R1            / RB
+item        = R2            / RT
+item        = R3            / RS
+item        = L1             / LB
+item        = L2             / LT
+item        = L3             / LS
+item        = DPAD Up
+item        = DPAD Down
+item        = DPAD Left
+item        = DPAD Right
+item        = Triangle    / Y
+item        = Circle        / B
+item        = Cross       / A
+item        = Square     / X
+item        = Share        / P1
+item        = Touch P1  / P2
+item        = Touch P2  / P3
+item        = Btn_21     / P4
+
+
+
+[Default Play Loop]
+group       = true
+control     = spinbox
+byteoffset  = 24
+bitsize     = 16
+step			  = 1
+shortdesc	  = <<<MULTILINE
+
+<font color=green><b>Default Play/Loop</b></font> that many times (0 = endless / until Playback action triggered again)
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 65530
+
+[Default Play Loop Pause]
+group       = true
+control     = spinbox
+byteoffset  = 4
+bitsize     = 8
+step		= 1
+shortdesc	= <<<MULTILINE
+<font color=green><b>Default Loop Pause</b></font> in minutes to pause playback after each run
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 255
+
+[Default Play Skip]
+group       = true
+control     = spinbox
+byteoffset  = 26
+bitsize     = 32
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b><font color=green>Default Skip milliseconds</font> at the end of playback</b> (like the Idle time used to stop recording)
+MULTILINE
+default     = 4850
+minimum     = 0
+maximum     = 2147483647
+
+[Macrofile Specific Space]
+control     = space
+default     = 10
+
+[Macrofile Specific Settings]
+collapsible = 2
+control     = info
+shortdesc	  = <<<MULTILINE
+
+MULTILINE
+
+[Macrofile A headline]
+group       = true
+control     = info
+shortdesc	  = <<<MULTILINE
+<hr><b>Macro A</b><hr>
+MULTILINE
+
+[Macro A Use Default]
+group       = true
+control     = checkbox
+byteoffset  = 120
+bitsize     = 1
+bitoffset   = 0
+shortdesc   = <<<MULTILINE
+<b>A: <font color=green>Use Default settings</font></b> configured in Main Settings ____PLAYBACK____
+MULTILINE
+default     = 1
+item        = Use Default, ignore both values below
+
+[Macro A Play Loop]
+group       = true
+control     = spinbox
+byteoffset  = 30
+bitsize     = 16
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>A: <font color=green>Play/Loop</font></b> that many times (0 = endless / until Playback action triggered again)
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 65530
+
+[Macro A Play Loop Pause]
+group       = true
+control     = spinbox
+byteoffset  = 122
+bitsize     = 8
+step		= 1
+shortdesc	= <<<MULTILINE
+<b>A: <font color=green>Loop Pause</font></b> in minutes to pause playback after each run
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 255
+
+[Macro A Play Skip]
+group       = true
+control     = spinbox
+byteoffset  = 32
+bitsize     = 32
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>A: <font color=green>Skip milliseconds</font> at the end of playback</b> (like the Idle time used to stop recording)
+MULTILINE
+default     = 4850
+minimum     = 0
+maximum     = 2147483647
+
+[Macro A Recording Time]
+color       = #808080
+group       = true
+shortdesc	  = <<<MULTILINE
+<b><font color=#808080>A: DO NOT EDIT THIS</font></b> (used internally by script)
+MULTILINE
+control     = spinbox
+byteoffset  = 36
+bitsize     = 32
+step			  = 1
+default     = 0
+minimum     = 0
+maximum     = 2147483647
+
+
+
+[Macrofile B headline]
+group       = true
+control     = info
+shortdesc	  = <<<MULTILINE
+
+<hr><b>Macro B</b><hr>
+MULTILINE
+
+[Macro B Use Default]
+group       = true
+control     = checkbox
+byteoffset  = 120
+bitsize     = 1
+bitoffset   = 1
+shortdesc   = <<<MULTILINE
+<b>B: <font color=green>Use Default settings</font></b> configured in Main Settings ____PLAYBACK____
+MULTILINE
+default     = 1
+item        = Use Default, ignore both values below
+
+[Macro B Play Loop]
+group       = true
+control     = spinbox
+byteoffset  = 40
+bitsize     = 16
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>B: <font color=green>Play/Loop</font></b> that many times (0 = endless / until Playback action triggered again)
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 65530
+
+[Macro B Play Loop Pause]
+group       = true
+control     = spinbox
+byteoffset  = 123
+bitsize     = 8
+step		= 1
+shortdesc	= <<<MULTILINE
+<b>B: <font color=green>Loop Pause</font></b> in minutes to pause playback after each run
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 255
+
+[Macro B Play Skip]
+group       = true
+control     = spinbox
+byteoffset  = 42
+bitsize     = 32
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>B: <font color=green>Skip milliseconds</font> at the end of playback</b> (like the Idle time used to stop recording)
+MULTILINE
+default     = 4850
+minimum     = 0
+maximum     = 2147483647
+
+[Macro B Recording Time]
+color       = #808080
+group       = true
+shortdesc	  = <<<MULTILINE
+<b><font color=#808080>B: DO NOT EDIT THIS</font></b> (used internally by script)
+MULTILINE
+control     = spinbox
+byteoffset  = 46
+bitsize     = 32
+step			  = 1
+default     = 0
+minimum     = 0
+maximum     = 2147483647
+
+
+
+
+[Macrofile C headline]
+group       = true
+control     = info
+shortdesc	  = <<<MULTILINE
+
+<hr><b>Macro C</b><hr>
+MULTILINE
+
+[Macro C Use Default]
+group       = true
+control     = checkbox
+byteoffset  = 120
+bitsize     = 1
+bitoffset   = 2
+shortdesc   = <<<MULTILINE
+<b>C: <font color=green>Use Default settings</font></b> configured in Main Settings ____PLAYBACK____
+MULTILINE
+default     = 1
+item        = Use Default, ignore both values below
+
+[Macro C Play Loop]
+group       = true
+control     = spinbox
+byteoffset  = 50
+bitsize     = 16
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>C: <font color=green>Play/Loop</font></b> that many times (0 = endless / until Playback action triggered again)
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 65530
+
+[Macro C Play Loop Pause]
+group       = true
+control     = spinbox
+byteoffset  = 124
+bitsize     = 8
+step		= 1
+shortdesc	= <<<MULTILINE
+<b>C: <font color=green>Loop Pause</font></b> in minutes to pause playback after each run
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 255
+
+[Macro C Play Skip]
+group       = true
+control     = spinbox
+byteoffset  = 52
+bitsize     = 32
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>C: <font color=green>Skip milliseconds</font> at the end of playback</b> (like the Idle time used to stop recording)
+MULTILINE
+default     = 4850
+minimum     = 0
+maximum     = 2147483647
+
+[Macro C Recording Time]
+color       = #808080
+group       = true
+shortdesc	  = <<<MULTILINE
+<b><font color=#808080>C: DO NOT EDIT THIS</font></b> (used internally by script)
+MULTILINE
+control     = spinbox
+byteoffset  = 56
+bitsize     = 32
+step			  = 1
+default     = 0
+minimum     = 0
+maximum     = 2147483647
+
+
+
+[Macrofile D headline]
+group       = true
+control     = info
+shortdesc	  = <<<MULTILINE
+
+<hr><b>Macro D</b><hr>
+MULTILINE
+
+[Macro D Use Default]
+group       = true
+control     = checkbox
+byteoffset  = 120
+bitsize     = 1
+bitoffset   = 3
+shortdesc   = <<<MULTILINE
+<b>D: <font color=green>Use Default settings</font></b> configured in Main Settings ____PLAYBACK____
+MULTILINE
+default     = 1
+item        = Use Default, ignore both values below
+
+[Macro D Play Loop]
+group       = true
+control     = spinbox
+byteoffset  = 60
+bitsize     = 16
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>D: <font color=green>Play/Loop</font></b> that many times (0 = endless / until Playback action triggered again)
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 65530
+
+[Macro D Play Loop Pause]
+group       = true
+control     = spinbox
+byteoffset  = 125
+bitsize     = 8
+step		= 1
+shortdesc	= <<<MULTILINE
+<b>D: <font color=green>Loop Pause</font></b> in minutes to pause playback after each run
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 255
+
+[Macro D Play Skip]
+group       = true
+control     = spinbox
+byteoffset  = 62
+bitsize     = 32
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>D: <font color=green>Skip milliseconds</font> at the end of playback</b> (like the Idle time used to stop recording)
+MULTILINE
+default     = 4850
+minimum     = 0
+maximum     = 2147483647
+
+[Macro D Recording Time]
+color       = #808080
+group       = true
+shortdesc	  = <<<MULTILINE
+<b><font color=#808080>D: DO NOT EDIT THIS</font></b> (used internally by script)
+MULTILINE
+control     = spinbox
+byteoffset  = 66
+bitsize     = 32
+step			  = 1
+default     = 0
+minimum     = 0
+maximum     = 2147483647
+
+
+
+[Macrofile E headline]
+group       = true
+control     = info
+shortdesc	  = <<<MULTILINE
+
+<hr><b>Macro E</b><hr>
+MULTILINE
+
+[Macro E Use Default]
+group       = true
+control     = checkbox
+byteoffset  = 120
+bitsize     = 1
+bitoffset   = 4
+shortdesc   = <<<MULTILINE
+<b>E: <font color=green>Use Default settings</font></b> configured in Main Settings ____PLAYBACK____
+MULTILINE
+default     = 1
+item        = Use Default, ignore both values below
+
+[Macro E Play Loop]
+group       = true
+control     = spinbox
+byteoffset  = 70
+bitsize     = 16
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>E: <font color=green>Play/Loop</font></b> that many times (0 = endless / until Playback action triggered again)
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 65530
+
+[Macro E Play Loop Pause]
+group       = true
+control     = spinbox
+byteoffset  = 126
+bitsize     = 8
+step		= 1
+shortdesc	= <<<MULTILINE
+<b>E: <font color=green>Loop Pause</font></b> in minutes to pause playback after each run
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 255
+
+[Macro E Play Skip]
+group       = true
+control     = spinbox
+byteoffset  = 72
+bitsize     = 32
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>E: <font color=green>Skip milliseconds</font> at the end of playback</b> (like the Idle time used to stop recording)
+MULTILINE
+default     = 4850
+minimum     = 0
+maximum     = 2147483647
+
+[Macro E Recording Time]
+color       = #808080
+group       = true
+shortdesc	  = <<<MULTILINE
+<b><font color=#808080>E: DO NOT EDIT THIS</font></b> (used internally by script)
+MULTILINE
+control     = spinbox
+byteoffset  = 76
+bitsize     = 32
+step			  = 1
+default     = 0
+minimum     = 0
+maximum     = 2147483647
+
+
+[Macrofile F headline]
+group       = true
+control     = info
+shortdesc	  = <<<MULTILINE
+
+<hr><b>Macro F</b><hr>
+MULTILINE
+
+[Macro F Use Default]
+group       = true
+control     = checkbox
+byteoffset  = 120
+bitsize     = 1
+bitoffset   = 5
+shortdesc   = <<<MULTILINE
+<b>F: <font color=green>Use Default settings</font></b> configured in Main Settings ____PLAYBACK____
+MULTILINE
+default     = 1
+item        = Use Default, ignore both values below
+
+[Macro F Play Loop]
+group       = true
+control     = spinbox
+byteoffset  = 80
+bitsize     = 16
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>F: <font color=green>Play/Loop</font></b> that many times (0 = endless / until Playback action triggered again)
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 65530
+
+[Macro F Play Loop Pause]
+group       = true
+control     = spinbox
+byteoffset  = 127
+bitsize     = 8
+step		= 1
+shortdesc	= <<<MULTILINE
+<b>F: <font color=green>Loop Pause</font></b> in minutes to pause playback after each run
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 255
+
+[Macro F Play Skip]
+group       = true
+control     = spinbox
+byteoffset  = 82
+bitsize     = 32
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>F: <font color=green>Skip milliseconds</font> at the end of playback</b> (like the Idle time used to stop recording)
+MULTILINE
+default     = 4850
+minimum     = 0
+maximum     = 2147483647
+
+[Macro F Recording Time]
+color       = #808080
+group       = true
+shortdesc	  = <<<MULTILINE
+<b><font color=#808080>F: DO NOT EDIT THIS</font></b> (used internally by script)
+MULTILINE
+control     = spinbox
+byteoffset  = 86
+bitsize     = 32
+step			  = 1
+default     = 0
+minimum     = 0
+maximum     = 2147483647
+
+
+
+[Macrofile G headline]
+group       = true
+control     = info
+shortdesc	  = <<<MULTILINE
+
+<hr><b>Macro G</b><hr>
+MULTILINE
+
+[Macro G Use Default]
+group       = true
+control     = checkbox
+byteoffset  = 120
+bitsize     = 1
+bitoffset   = 6
+shortdesc   = <<<MULTILINE
+<b>G: <font color=green>Use Default settings</font></b> configured in Main Settings ____PLAYBACK____
+MULTILINE
+default     = 1
+item        = Use Default, ignore both values below
+
+[Macro G Play Loop]
+group       = true
+control     = spinbox
+byteoffset  = 90
+bitsize     = 16
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>G: <font color=green>Play/Loop</font></b> that many times (0 = endless / until Playback action triggered again)
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 65530
+
+[Macro G Play Loop Pause]
+group       = true
+control     = spinbox
+byteoffset  = 13
+bitsize     = 8
+step		= 1
+shortdesc	= <<<MULTILINE
+<b>G: <font color=green>Loop Pause</font></b> in minutes to pause playback after each run
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 255
+
+[Macro G Play Skip]
+group       = true
+control     = spinbox
+byteoffset  = 92
+bitsize     = 32
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>G: <font color=green>Skip milliseconds</font> at the end of playback</b> (like the Idle time used to stop recording)
+MULTILINE
+default     = 4850
+minimum     = 0
+maximum     = 2147483647
+
+[Macro G Recording Time]
+color       = #808080
+group       = true
+shortdesc	  = <<<MULTILINE
+<b><font color=#808080>G: DO NOT EDIT THIS</font></b> (used internally by script)
+MULTILINE
+control     = spinbox
+byteoffset  = 96
+bitsize     = 32
+step			  = 1
+default     = 0
+minimum     = 0
+maximum     = 2147483647
+
+
+
+[Macrofile H headline]
+group       = true
+control     = info
+shortdesc	  = <<<MULTILINE
+
+<hr><b>Macro H</b><hr>
+MULTILINE
+
+[Macro H Use Default]
+group       = true
+control     = checkbox
+byteoffset  = 120
+bitsize     = 1
+bitoffset   = 7
+shortdesc   = <<<MULTILINE
+<b>H: <font color=green>Use Default settings</font></b> configured in Main Settings ____PLAYBACK____
+MULTILINE
+default     = 1
+item        = Use Default, ignore both values below
+
+[Macro H Play Loop]
+group       = true
+control     = spinbox
+byteoffset  = 100
+bitsize     = 16
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>H: <font color=green>Play/Loop</font></b> that many times (0 = endless / until Playback action triggered again)
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 65530
+
+[Macro H Play Loop Pause]
+group       = true
+control     = spinbox
+byteoffset  = 14
+bitsize     = 8
+step		= 1
+shortdesc	= <<<MULTILINE
+<b>H: <font color=green>Loop Pause</font></b> in minutes to pause playback after each run
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 255
+
+
+[Macro H Play Skip]
+group       = true
+control     = spinbox
+byteoffset  = 102
+bitsize     = 32
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>H: <font color=green>Skip milliseconds</font> at the end of playback</b> (like the Idle time used to stop recording)
+MULTILINE
+default     = 4850
+minimum     = 0
+maximum     = 2147483647
+
+[Macro H Recording Time]
+color       = #808080
+group       = true
+shortdesc	  = <<<MULTILINE
+<b><font color=#808080>H: DO NOT EDIT THIS</font></b> (used internally by script)
+MULTILINE
+control     = spinbox
+byteoffset  = 106
+bitsize     = 32
+step			  = 1
+default     = 0
+minimum     = 0
+maximum     = 2147483647
+
+
+
+
+[Macrofile I headline]
+group       = true
+control     = info
+shortdesc	  = <<<MULTILINE
+
+<hr><b>Macro I</b><hr>
+MULTILINE
+
+[Macro I Use Default]
+group       = true
+control     = checkbox
+byteoffset  = 121
+bitsize     = 1
+bitoffset   = 0
+shortdesc   = <<<MULTILINE
+<b>I: <font color=green>Use Default settings</font></b> configured in Main Settings ____PLAYBACK____
+MULTILINE
+default     = 1
+item        = Use Default, ignore both values below
+
+[Macro I Play Loop]
+group       = true
+control     = spinbox
+byteoffset  = 110
+bitsize     = 16
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>I: <font color=green>Play/Loop</font></b> that many times (0 = endless / until Playback action triggered again)
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 65530
+
+[Macro I Play Loop Pause]
+group       = true
+control     = spinbox
+byteoffset  = 15
+bitsize     = 8
+step		= 1
+shortdesc	= <<<MULTILINE
+<b>I: <font color=green>Loop Pause</font></b> in minutes to pause playback after each run
+MULTILINE
+default     = 0
+minimum     = 0
+maximum     = 255
+
+[Macro I Play Skip]
+group       = true
+control     = spinbox
+byteoffset  = 112
+bitsize     = 32
+step			  = 1
+shortdesc	  = <<<MULTILINE
+<b>I: <font color=green>Skip milliseconds</font> at the end of playback</b> (like the Idle time used to stop recording)
+MULTILINE
+default     = 4850
+minimum     = 0
+maximum     = 2147483647
+
+[Macro I Recording Time]
+color       = #808080
+group       = true
+shortdesc	  = <<<MULTILINE
+<b><font color=#808080>I: DO NOT EDIT THIS</font></b> (used internally by script)
+MULTILINE
+control     = spinbox
+byteoffset  = 116
+bitsize     = 32
+step			  = 1
+default     = 0
+minimum     = 0
+maximum     = 2147483647
+
+</cfgdesc>
+
+***/

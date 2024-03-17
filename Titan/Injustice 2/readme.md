@@ -1,6 +1,6 @@
 > NOTE: This was uploaded from my personal archive, as such it was not originally intended for sharing and may not be written to a good standard. Additionally, my memory of what they do and how to use them is hazy at best, so do keep this in mind and feel free to commit changes to them (both the readme and code) to this repo
 
-# Injstice 2 - What's included?
+# Injstice 2
 
 There are two main things in here.
 

@@ -1,0 +1,20 @@
+
+/*** Online Resource Info
+<shortdesc>
+Please report bugs/problems via consoletuners forum - click the DOC link to get to this scripts topic.<br>
+
+Record and playback macros on the fly, without GTuner, a SD-card is required !
+
+Features: Record&playback macro without GTuner IV &#9702; different start and stop conditions to choose from
+
+Changes v1.07: Added option: Playback start on script load
+
+</shortdesc>
+
+<keywords>macro recorder, macro playback, recplay, recording</keywords>
+
+<docurl>https://www.consoletuner.com/forum/viewtopic.php?f=23&t=9745#p68771</docurl>
+
+<donate>https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=WSN28VXS2HLA6</donate>
+
+***/
