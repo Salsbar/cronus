@@ -1,0 +1,69 @@
+#include <xb1.gph>
+
+#define A() set_val(XB1_X, 100);
+#define B() set_val(XB1_Y, 100);
+#define C() set_val(XB1_B, 100);
+#define SWITCH() set_val(XB1_A, 100);
+#define RB() set_val(XB1_RB, 100);
+#define RT() set_val(XB1_RT, 100);
+#define THROW() set_val(XB1_LB, 100);
+#define D() set_val(XB1_DOWN, 100);
+#define R() set_val(XB1_RIGHT, 100);
+#define L() set_val(XB1_LEFT, 100);
+#define U() set_val(XB1_UP, 100);
+
+combo d2r {
+	D();
+	wait(33);
+	D();
+	R();
+	wait(33);
+	R();
+	wait(33);
+}
+
+combo d2l {
+	D();
+	wait(33);
+	D();
+	L();
+	wait(33);
+	L();
+	wait(33);
+}
+
+combo dashRight {
+    set_val(BUTTON_13, 0.00);
+    wait(33);
+    set_val(BUTTON_13, 100.00);
+    wait(33);
+    set_val(BUTTON_13, 0.00);
+    wait(33);
+    set_val(BUTTON_13, 100.00);
+    wait(33);
+    set_val(BUTTON_13, 0.00);
+    wait(33);
+}
+
+combo dashLeft {
+    L();
+    wait(33);
+    wait(33);
+    L();
+    wait(33);
+    wait(33);
+}
+
+combo jumpRight {
+	U();
+	R();
+	wait(100);
+}
+
+combo reset {
+	set_val(XB1_MENU, 100);
+	wait(50);
+	wait(650);
+	set_val(XB1_A, 100);
+	wait(50);
+}
