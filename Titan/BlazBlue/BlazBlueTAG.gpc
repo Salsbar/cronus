@@ -1,0 +1,49 @@
+#pragma METAINFO("BlazBlueTAG", 1, 0, "Parker")
+#include <xb1.gph>
+#include "BlazBlueTAG_inputs.gph"
+
+// For Tactics > Characters > BlitzTank #5 and #6
+// To use, replace the combo being run on line 14, in the main body, load up the script, then Press Left Trigger
+
+init {
+	combo_run(reset);
+}
+
+main {
+  if (event_active(XB1_LT)) {
+	combo_run(combo6);
+  }
+}
+
+combo combo5 {
+	R();wait(300);wait(33);
+
+	A();wait(33);wait(200);
+	B();wait(33);wait(400);
+	B();wait(33);wait(500);
+	
+	call(d2l);wait(33);
+	C();wait(33);wait(1000);
+	
+	U();wait(33);wait(200);
+	A();wait(33);wait(200);
+	B();wait(33);wait(200);
+	C();wait(33);wait(500);
+	
+	call(d2r);
+	B();C();wait(33);
+}
+
+combo combo6 {
+	RB();wait(33);wait(1700);
+	R();wait(800);wait(33);
+	
+	A();wait(600);wait(200);
+	B();wait(33);wait(300);
+	B();wait(33);wait(300);
+	
+	call(d2r);
+	C();wait(33);wait(700);
+	call(dashRight);wait(300);
+	call(d2r);B();C();wait(33);
+}
