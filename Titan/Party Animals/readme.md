@@ -24,7 +24,9 @@ By default it is mapped to Y. You can change it by:
 
 ## Usage
 
-From the main menu, go to Custom Games > Create > Last Stand > Select "All" maps > Press Y to create.
+From the main menu, go to Custom Games > Create > Last Stand > Select "All"* maps > Press Y to create.
+
+**You're slightly better off if you disable black hole, but if you're afk it doesn't really matter that much. It's better to disable it because the matches take longer than others as, for some reason, the 1 hit knockout doesn't apply for some reason.*
 
 Then, cick the padlock near the top of the screen and Y to apply - this will stop randoms joining.
 
