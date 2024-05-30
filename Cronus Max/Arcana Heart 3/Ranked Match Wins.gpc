@@ -1,0 +1,243 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("Arcana Heart Kill", 2, 4, "XxFrAsZeRxX")
+
+// THIS SCRIPT REQUIRES 2 TITANS/CRONUS'.
+
+// Instructions:
+/*
+	Player 1 Setup (Person getting the wins)
+*From the main menu go to Xbox Live>Ranked Match>Select Character>Custom Match
+*Highlight the option to start the match
+
+	Player 2 Setup (Person losing/the dummie)
+*From the main menu go to Xbox Live>Ranked Match>Select Character
+*Highlight the option for a quicj macth
+
+	To start the script
+*Press LS on player 1 and RS on player 2 simaltaneously
+*/
+
+// Notes
+/*
+*The script will start a match, select the default character choices, then finish the match
+
+*To ensure the script doesn't get lost in the menus AND progress is saved for the PAL version
+	the script backs out to the title screen then re-enters the correct setup position
+
+*This is more so meant to idle the level 10 character but can also be used for the level 3 achievement
+	however it will not change characters for you (I may add this to another version)
+
+*Since every character has different damage and health, be mindful that not every combination was tested.
+	this script was designed for any character, so it shuold be okay, but keep an eye on it
+*/
+
+
+int i, attack; // Declare variables
+int attacks_to_win = 70;
+
+main {
+	// Check for button presses to set 'i' state
+	if(get_val(XB360_LS)) {
+		i = 1;
+	}
+	if(get_val(XB360_RS)) {
+		i = 2;
+	}
+	if(get_val(XB360_START)) {
+		i = 0;
+	}
+
+	// Option 1 logic
+	if(i == 1) {
+		if(attack == 0) {
+			combo_run(winner_start);
+		} else if(attack > 0 && attack <= attacks_to_win) {
+			combo_run(perform_attack);
+		} else if(attack > attacks_to_win) {
+			combo_run(start_new_match_winner);
+		}
+	}
+
+	// Option 2 logic
+	if(i == 2) {
+		if(attack == 0) {
+			combo_run(loser_start);
+		} else if(attack > 0 && attack <= attacks_to_win) {
+			combo_run(wait_for_attack);
+		} else if(attack > attacks_to_win) {
+			combo_run(start_new_match_loser);
+		}
+	}
+
+	// Stop all macros logic
+	if(i == 0) {
+		combo_stop(winner_start);
+		combo_stop(perform_attack);
+		combo_stop(start_new_match_loser);
+		combo_stop(start_new_match_winner);
+		combo_stop(loser_start);
+		combo_stop(wait_for_attack);
+		attack = 0;
+	}
+}
+
+combo winner_start { // Macro for Host
+	wait(1000);
+
+	// Start Match
+	call(press_A);
+
+	// Wait for other user
+	wait(30000);
+	wait(30000);
+
+	// Select Character
+	call(press_A); call(press_A); call(press_A);
+
+	// Select Arcana
+	wait(10000);
+	call(press_A); call(press_A); call(press_A); call(press_A);
+
+	// Wait for match start
+	wait(30000);
+	attack = 1;
+}
+
+combo start_new_match_winner {
+	// Wait for results timer and skip replay save
+	wait(30000);
+	call(press_A);
+	wait(5000);
+
+	// Back out to save just in case, and navigate back to custom match
+	call(press_B);
+	wait(10000);
+	call(press_B);
+	wait(10000);
+	call(press_B);
+	wait(10000);
+	call(press_B);
+	wait(10000);
+	call(press_B);
+	wait(10000);
+	call(press_B);
+	wait(10000);
+	call(press_A);
+	wait(10000);
+	call(press_start);
+	wait(10000);
+	call(press_down);
+	call(press_down);
+	call(press_down);
+	call(press_down);
+	call(press_A);
+	wait(10000);
+	call(press_A);
+	call(press_A);
+	call(press_A);
+	call(press_A);
+	attack = 0;
+}
+
+combo start_new_match_loser {
+	// Wait for results timer and skip replay save
+	wait(30000);
+	call(press_A);
+	wait(5000);
+
+	// Back out to save just in case, and navigate back to custom match
+	call(press_B);
+	wait(10000);
+	call(press_B);
+	wait(10000);
+	call(press_B);
+	wait(10000);
+	call(press_B);
+	wait(10000);
+	call(press_B);
+	wait(10000);
+	call(press_B);
+	wait(10000);
+	call(press_A);
+	wait(10000);
+	call(press_start);
+	wait(10000);
+	call(press_down);
+	call(press_down);
+	call(press_down);
+	call(press_down);
+	call(press_A);
+	wait(10000);
+	call(press_A);
+	call(press_A);
+	call(press_A);
+	wait(1000);
+	attack = 0;
+}
+
+combo loser_start {
+	wait(1000);
+
+	// Search for host
+	wait(10000);
+	call(press_A);
+	wait(20000);
+	wait(30000);
+
+	// Select Character
+	call(press_A); call(press_A); call(press_A);
+
+	// Select Arcana
+	wait(10000);
+	call(press_A); call(press_A); call(press_A); call(press_A);
+
+	// Wait for match start
+	wait(30000);
+	attack = 1;
+}
+
+combo press_A {
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(900);
+}
+
+combo press_B {
+	set_val(XB360_B, 100);
+	wait(100);
+	set_val(XB360_B, 0);
+	wait(900);
+}
+
+combo press_start {
+	set_val(XB360_START, 100);
+	wait(100);
+	set_val(XB360_START, 0);
+	wait(900);
+}
+
+combo press_down {
+	set_val(XB360_DOWN, 100);
+	wait(100);
+	set_val(XB360_DOWN, 0);
+	wait(900);	
+}
+
+combo perform_attack {
+	set_val(XB360_A, 100);
+	wait(50);
+	set_val(XB360_A, 0);
+	wait(1450);
+	set_val(XB360_Y, 100);
+	wait(50);
+	set_val(XB360_Y, 0);
+	wait(950);
+	attack++;
+}
+
+combo wait_for_attack {
+	wait(2500);
+	attack++;
+}
