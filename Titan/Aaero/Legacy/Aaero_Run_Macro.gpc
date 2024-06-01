@@ -1,6 +1,6 @@
-#pragma METAINFO("Aaero", 3, 0, "Parker")
+#pragma METAINFO("Aaero", 3, 1, "Parker")
 #include <xb1.gph>
-#include "../common/ColorLED.gph"
+#include "../../common/ColorLED.gph"
 
 // Values for Auto Firing to maximise points and minimise attack duration i.e. firing ~1/16th before the beat
 bool autoFireOn = FALSE;
@@ -9,7 +9,7 @@ bool shoot = FALSE;
 
 uint32 elapsedTimeInLevel = 0;
 
-uint32 bpm = 172; // <--------- CHANGE THIS VALUE
+uint32 bpm = 173; // <--------- CHANGE THIS VALUE
 uint32 beatInterval = 60000 / bpm; // ms
 uint32 sixteenth = (beatInterval / 4);
 uint32 shotDelay = beatInterval - sixteenth;
@@ -31,6 +31,16 @@ alpha centauri - 125 / F
 kein signal - 96 / P
 get crazy - 88 / P
 stigma - 172 / P
+
+DLC 1
+outsiders - 175
+we won't be alone - 175
+echoes of the past - 105
+
+DLC 2
+the sickness - 173
+rage - 173
+dissonance constant - 173
 */
 
 // IMPORTANT: Load script on the "Ready? (A)" screen, this is needed for timings
