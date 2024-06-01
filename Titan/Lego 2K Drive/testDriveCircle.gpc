@@ -1,0 +1,49 @@
+#pragma METAINFO("testDriveCircle", 1, 0, "Parker")
+#include <xb1.gph>
+
+bool mainLoop=FALSE;
+
+main {
+    if (event_active(XB1_LS)) {
+        combo_run(getIntoPosition);
+    }
+    
+    if (event_active(XB1_RS)) {
+        mainLoop = FALSE;
+        combo_stop(getIntoPosition);
+        combo_stop(driveInCircles);
+        combo_stop(boost);
+    }
+    
+    if (mainLoop) {
+        combo_run(driveInCircles);
+        combo_run(boost);
+    }
+}
+
+combo driveInCircles {
+    set_val(XB1_LT, 100);
+    set_val(XB1_RT, 100);
+    set_val(STICK_2_X, 100);
+}
+
+combo getIntoPosition {
+    set_val(XB1_LT, 100);
+    wait(4000);
+    wait(33);
+    set_val(XB1_RT, 100);
+    set_val(STICK_2_X, 100);
+    wait(3000);
+    mainLoop=TRUE;
+    combo_stop(getIntoPosition);
+}
+
+combo boost {
+    wait(26000);
+    set_val(XB1_A, 100);
+    wait(33);
+    wait(33);
+    set_val(XB1_A, 100);
+    wait(33);
+    wait(33);
+}
