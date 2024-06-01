@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Aimlabs</Game>
+    <Title>500 Tasks</Title>
+    <Description></Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" ButtonMask="128" Hold="150" Wait="2000" Repeat="1" />
+      <Press Controller="1" RT="255" Hold="500" Wait="35000" Repeat="1" />
+      <Loop Target="0" Repeat="500" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
