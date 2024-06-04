@@ -1,0 +1,107 @@
+// REMOVE THE SLASHES ON THE NEXT 2 LINES FOR USE WITH A TITAN TWO
+//#include <titanone.gph>
+//#pragma METAINFO("Apples to Apples", 2, 00, "XxFrAsZeRxX")
+
+// THIS SCRIPT REQUIRES 3 SCRIPTING DEVICES TO WORK
+
+
+// This script will unlock the following achievements:
+/* 
+	*An Apple A Day - Reach the Orchard Rank in Xbox LIVE by playing 500 games.
+	*Apple-opolis - Unlock all the Apple Avatars [48 wins in online matches].
+*/
+
+// Instructions:
+/*
+
+*With 1 account go to: Play Now>Xbox LIVE Game>Custom Match
+
+*Use the following settings, the ones not listed do not matter:
+	Mode: Custom Match
+	Total Players: 3
+	Game Length: 1 card
+	Time Limit: 5 sec.
+	
+*There are likely no randoms on this game, but if you want to be safe set private slots to 2.
+
+*You may also turn Golden Apple Cards on if you'd like to make progress on other achievements while the script runs.
+
+*Invite in two other players and make sure the host is highlighting the "Invite Friends" option.
+
+*On the controller that is hosting click Right Stick (RS) to start the script. 
+
+*On the other two controllers wait for the loading screen to appear and then click RS on those as well.
+
+// Notes
+/*
+*The script will start a match, let the time player out to end the round and thus the game.
+
+*The script will skip all rewards and return every play to the lobby, wait 30 seconds for saftey, then the next match will start.
+
+*The script has extra time added to ensure that the host player does not invite others randomly. 
+
+*Playing 500 matches will take roughly 18 and a half hours.
+
+*I ran this script for about 8 hours with no hiccups, but keep an eye on it. It is more likely to get out of sync in the beginning.
+	What can cause it to go out of sync are the rewards that pop up in between matches. I have inserted 4 A presses to account for this
+	but there could be a slight chance there are more than 3 or 4 at one time which will cause a de-sync. 
+	As long as this does not happen the script should work. However, if there is a de-sync, the script will get out of sync and the 
+	dummies will end up in the 360 guide. A lag out or console freeze can cause this as well.
+	
+*You may also work on achievements for playing golden apple cards while the script is running if you wish.
+*/
+
+
+int i;
+
+main {
+	// Check for button presses to set 'i' state
+	if(get_val(XB360_LS)) {
+		i = 1;
+	}
+	if(get_val(XB360_RS)) {
+		i = 0;
+	}
+
+	// Option 1 logic
+	if(i == 1) {
+		combo_run(restart_match);
+	}
+
+	// Stop all macros logic
+	if(i == 0) {
+		combo_stop(restart_match);
+	}
+}
+
+combo restart_match {
+	wait(100);
+	set_val(XB360_DOWN, 100);
+	wait(100);
+	set_val(XB360_DOWN, 0);
+	wait(5000);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(5000);
+	wait(30000);
+	wait(30000);
+	wait(30000);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(500);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(500);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(500);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(500);
+	wait(30000);
+}
