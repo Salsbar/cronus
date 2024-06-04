@@ -20,8 +20,11 @@ This script requires 3 scripting devices to work. It will unlock the following a
 5. Invite two other players and make sure the host is highlighting the "Invite Friends" option.
 
 ### Starting the Script
-1. On the controller that is hosting, click the Right Stick (RS) to start the script.
-2. On the other two controllers, wait for the loading screen to appear and then click RS on those as well.
+1. On the controller that is hosting, click the Left Stick (LS) to start the script.
+2. On the other two controllers, wait for the loading screen to appear and then click LS on those as well.
+
+### Stopping the Script
+Simply press Right Stick (RS).
 
 ## Script Behavior
 
@@ -34,6 +37,6 @@ This script requires 3 scripting devices to work. It will unlock the following a
 ## Notes
 - The script may get out of sync due to the rewards that pop up between matches. Four A presses have been inserted to account for this, but if there are more than 3 or 4 at one time, it may cause a de-sync.
 - If a de-sync occurs the accounts may end up in the Xbox 360 guide. Lag or console freeze can also cause this.
-- You may also work on achievements for playing golden apple cards while the script is running if you wish.
+- You may also work on achievements for playing golden apple cards while the script is running if you wish. This however, requires manual inputs during the rounds.
 
 For any issues or suggestions, please reach out in the Discord server.
