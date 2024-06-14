@@ -1,0 +1,207 @@
+// Remove the slashes on the next 2 lines for Titan Two compatibility.
+//#include <titanone.gph>
+//#pragma METAINFO("Pacific Rim", 1, 12, "XxFrAsZeRxX")
+
+// THIS SCRIPT REQUIRES 2 TITANS/CRONUS'.
+
+// Instructions:
+/*
+	Initial Setup
+*Do 1 match manually and pick Gipsy Danger for both accounts.
+
+*Go to Xbox Live and highlight Quick Match on both accounts. Click Left Stick (LS)
+	on the account getting XP and Right Stick (RS) on the account losing.
+*/
+
+// Notes
+/*
+*Make sure both accounts have the same DLC (or make sure neither have DLC). Ignore the 
+	message about a missing update.
+
+*The script will start a match on the winning account, and then wait for the dummy to join.
+	Then the host will mash X until the dummy is dead.
+
+*To ensure the script doesn't get lost in the menus AND progress is saved for the PAL version
+	the script backs out to the title screen then re-enters the correct setup position
+
+*This is more so meant to idle the level 10 character but can also be used for the level 3 achievement
+	however it will not change characters for you (I may add this to another version)
+
+*Since every character has different damage and health, be mindful that not every combination was tested.
+	this script was designed for any character, so it shuold be okay, but keep an eye on it
+*/
+
+int i;
+int hits;
+int hits_for_kill = 50;
+
+main {
+	// Check for button presses to set 'i' state
+	if(get_val(XB360_LS)) {
+		i = 1;
+	}
+	if(get_val(XB360_START)) {
+		i = 0;
+	}
+	if(get_val(XB360_RS)) {
+		i = 2;
+	}
+
+	// Option 1 logic
+	if(i == 1) {
+		if(hits == 0) {
+			combo_run(create_match);
+		}
+		if(hits > 0 && hits < hits_for_kill) {
+			combo_run(kill);
+		}
+		if(hits >= hits_for_kill) {
+			combo_run(end_match);
+		}
+	}
+	if(i == 2) {
+		if(hits == 0) {
+			combo_run(join_match);
+		}
+		if(hits > 0 && hits < hits_for_kill) {
+			combo_run(die);
+		}
+		if(hits >= hits_for_kill) {
+			combo_run(end_match);
+		}
+	}
+
+	// Stop all macros logic
+	if(i == 0) {
+		combo_stop(kill);
+		combo_stop(die);
+	}
+}
+
+combo create_match {
+	// Create Match
+	wait(1000);
+	call(down);
+	wait(1000);
+	call(down);
+	wait(1000);
+	call(a);
+	wait(1000);
+	call(down);
+	wait(1000);
+	call(down);
+	wait(1000);
+	call(a);
+	wait(10000);
+	
+	// Select character
+	call(a);
+	wait(1000);
+	call(a);
+	wait(1000);
+	
+	// Change match settings
+	call(down);
+	wait(1000);
+	call(down);
+	wait(1000);
+	call(left);
+	wait(1000);
+	call(down);
+	wait(1000);
+	call(down);
+	wait(1000);
+	call(a);
+	wait(1000);
+	call(a);
+	wait(10000);
+	
+	// Wait for search
+	wait(10000);
+	wait(14000);
+	wait(4000);
+
+	// Wait for countdown and match start
+	wait(30000);
+	wait(30000);
+	
+	set_val(XB360_LT, 100);
+	wait(5000);
+	
+	hits = 1;
+}
+
+combo kill {
+	// Damage enemy
+	set_val(XB360_X, 100);
+	wait(100);
+	set_val(XB360_X, 0);
+	wait(1400);
+	hits++;
+}
+
+combo end_match {
+	wait(30000);
+	call(a);
+	wait(1000);
+	call(a);
+	wait(5000);
+	call(a);
+	wait(30000);
+	hits = 0;
+}
+
+combo join_match {
+	// Wait for match to be setup
+	wait(18000);
+	wait(21000);
+	wait(10000);
+	
+	// Join match
+	call(a);
+	wait(4000);
+	call(a);
+	wait(4000);
+	wait(14000);
+	
+	// Select Character
+	call(a);
+	wait(1000);
+	call(a);
+	wait(1000);
+	
+	// wait for countdown and match start
+	wait(30000);
+	wait(30000);
+	
+	wait(5000);
+	
+	hits = 1;
+}
+
+combo die {
+	//Let self get hit and wait
+	wait(1500);
+	hits++;
+}
+
+combo down {
+	set_val(XB360_DOWN, 100);
+	wait(100);
+	set_val(XB360_DOWN, 0);
+	wait(900);
+}
+
+combo left {
+	set_val(XB360_LEFT, 100);
+	wait(100);
+	set_val(XB360_LEFT, 0);
+	wait(900);
+}
+
+combo a {
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(900);
+}
