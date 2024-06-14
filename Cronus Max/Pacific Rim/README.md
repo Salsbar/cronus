@@ -2,7 +2,7 @@
 
 ## Overview
 
-This script requires 2 Titans/Cronus devices to work. It automates the process of playing and winning quick matches on Xbox Live, focusing on leveling up a character to level 10 or achieving the level 3 achievement.
+This script requires 2 Titans/Cronus devices to work. It automates the process of playing and winning quick matches on Xbox Live to get level 30 on the three different factions. 
 
 ## Setup Instructions
 
