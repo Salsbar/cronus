@@ -1,0 +1,99 @@
+#pragma METAINFO("Aaero: I Can't Stop", 1, 0, "Palesius, Parker")
+#include <xb1.gph>
+#include "../common/ColorLED.gph"
+
+const int32 times[] = {0,55222,55722,56006,56306,56590,57774,57873,57874,57941,58025,58225,58876,58892,59193,59693,59694,60727,61227,61227,61727,61728,62062,62562,63246,63247,63462,63563,63596,63629,64847,64931,64964,64998,64999,65031,65047,65064,65097,65597,65598,67250,67750,67850,67851,68167,68534,69502,69869,70303,71571,71704,71737,71741,71742,71804,71871,71904,71971,72471,72472,74441,74941,74941,75441,75442,75775,76275,76962,76963,77176,77260,77276,77310,77326,77360,78611,78628,78673,78674,78744,78761,78811,79311,79312,80880,81380,81380,81880,81881,137520,138020,138354,138788,138921,140072,140184,140185,140289,140373,140489,140989,140990,143059,143559,143559,144059,144060,144344,144844,145535,145536,145761,145862,145895,145912,145962,147230,147263,147281,147282,147330,147346,147380,147880,147881,149482,149982,150129,150130,150266,150483,150583,150616,150850,151767,152251,152585,153853,154020,154043,154044,154136,154187,154253,154753,154754,156706,157206,157206,157706,157707,158058,158558,159225,159237,159238,159475,159525,159542,159575,159592,159625,159709,160843,160860,160910,160955,160956,161027,161043,161093,161593,161594,163163,163663,163663,164163,164164};
+const int angles[] = {-1,182,182,228,286,331,335,359,0,16,36,85,85,225,225,225,-1,225,225,225,225,-1,90,90,0,359,331,329,334,332,332,335,338,359,0,20,26,53,70,70,-1,332,332,359,0,86,165,187,239,301,304,338,358,359,0,19,46,63,85,85,-1,225,225,225,225,-1,88,88,0,359,332,329,334,328,333,330,335,336,359,0,36,52,74,74,-1,270,270,270,270,-1,180,180,240,318,331,333,359,0,24,48,76,76,-1,225,225,225,225,-1,90,90,0,359,330,328,334,328,330,329,348,359,0,30,51,70,70,-1,321,321,359,0,35,92,112,122,168,184,254,302,299,350,359,0,36,60,84,84,-1,225,225,225,225,-1,90,90,1,0,359,332,329,334,328,334,328,331,331,344,336,359,0,36,54,74,74,-1,270,270,270,270,-1};
+int maxIdx = 178;
+int bpm=<$BMP>;
+int ribbon_offset=0;
+
+int32 ms=0;
+int32 ms_ribbon=0;
+int running=0;
+
+int idx=0;
+int curAngle=-1;
+
+int next_beat=0;
+int beat_anticipate=0;
+int autoswirl=1;
+fix32 deadzone=5f; //deadzone for autoswirl set negative to disable
+
+init {
+    beat_anticipate=60000/(bpm*4);
+}
+
+main {
+    ms+=elapsed_time();
+    // Start / Reset
+    if (get_val(XB1_VIEW) && event_active(XB1_A)) {
+        ColorLED(CG);
+        ms=0;
+        idx=0;
+        next_beat=0;
+        running=1;
+    }
+    // Quit
+    if (event_active(XB1_B)) {
+        ColorLED(CR);
+        ms=0;
+        idx=0;
+        next_beat=0;
+        running=0;
+    }
+    if (event_active(XB1_RB)) {
+        ribbon_offset = ribbon_offset + 25;
+    }
+    if (event_active(XB1_LB)) {
+        ribbon_offset = ribbon_offset - 25;
+    }
+    
+    if (running) {
+        ms_ribbon = ms + ribbon_offset;
+        //advance until we reach the end or catch up with the time code
+        while (idx<maxIdx && ms_ribbon>times[idx + 1]) {
+            idx++;
+        }
+        //if we've reached the end of the ribbon, releast LS
+        if (idx>=maxIdx || angles[idx]== -1) {
+            curAngle=-1;
+        } else {
+            curAngle=angles[idx]+(angles[idx + 1]-angles[idx])*(ms_ribbon-times[idx])/(times[idx + 1]-times[idx]);
+        }
+        //set LS position if ribbon present
+        if (curAngle>=0) { 
+            fix32 y = sin(deg2rad((fix32)curAngle))*100f; // opposite
+            fix32 x = cos(deg2rad((fix32)curAngle))*100f; // adjacent
+            if (mod((fix32)ms, 100f)==(fix32)0) {
+//                 printf("DEBUG ribbon angle: %d, x: %d, y: %d", curAngle, x, y);
+            }
+            set_val(STICK_2_Y, y);
+            set_val(STICK_2_X, x);
+            
+        }
+        
+        //shoot if we are on the beat
+        if ((ms+beat_anticipate)>((next_beat*2*60000)/bpm)) {
+            next_beat+=1;
+            combo_run(fire);
+        }
+        
+        //swirl reticle if idle
+        if (event_active(XB1_X)) { autoswirl = !autoswirl; }
+        if ((autoswirl==1) && (get_val(XB1_RX)<=deadzone) && (get_val(XB1_RY)<=deadzone) && (get_val(XB1_RX)>=-deadzone) && (get_val(XB1_RY)>=-deadzone)) {
+            fix32 aimAngle = mod((fix32)ms, 360f);
+            fix32 rsX = sin(deg2rad(aimAngle))*100f; // opposite
+            fix32 rsY = cos(deg2rad(aimAngle))*100f; // adjacent
+            if (mod((fix32)ms, 100f)==(fix32)0) {
+//                 printf("DEBUG aim angle: %d, x: %d, y: %d", aimAngle, rsX, rsY);
+            }
+            set_val(STICK_1_Y, rsY);
+            set_val(STICK_1_X, rsX);
+        }
+    }
+}
+
+combo fire {
+    set_val(XB1_RT,100);wait(50);
+}
