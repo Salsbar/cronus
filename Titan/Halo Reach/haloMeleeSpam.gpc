@@ -1,0 +1,10 @@
+#pragma METAINFO("HaloMeleeHelper", 1, 0, "Parker")
+#include <xb1.gph>
+ 
+ init {
+	 remapper_swap(XB1_RT, XB1_B);
+ }
+ 
+main {
+	
+}
