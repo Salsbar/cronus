@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>FIST</Game>
+    <Title>Intermediate Training 2</Title>
+    <Description>Needed to do the last Up + Y manually at end.</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Wait Delay="500" />
+      <Press Controller="1" ButtonMask="256" Hold="60" Wait="100" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="60" Wait="600" Repeat="3" />
+      <Press Controller="1" ButtonMask="128" Hold="60" Wait="600" Repeat="1" />
+      <Press Controller="1" ButtonMask="128" LSX="0" LSY="-32512" Hold="60" Wait="1600" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="60" Wait="300" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="60" Wait="300" Repeat="2" />
+      <Press Controller="1" ButtonMask="2048" Hold="60" Wait="100" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="60" Wait="600" Repeat="1" />
+      <Press Controller="1" ButtonMask="128" LSX="0" LSY="-32512" Hold="60" Wait="1600" Repeat="1" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
