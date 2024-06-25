@@ -1,0 +1,280 @@
+#pragma METAINFO("MvCI_Thanos", 1, 0, "Parker")
+#include <xb1.gph>
+#include "MvCI_inputs.gph"
+
+init {
+	combo_run(reset);
+}
+	
+main {
+  // Press X  to trigger script
+  if (get_val(XB1_X)) {
+		set_val(XB1_X, 0);
+		combo_run(than5);
+  }
+}
+
+combo than5 {
+	call(dashRight);
+	wait(500);
+	R();
+	wait(200);
+	HK();
+	wait(33);
+	wait(200);
+	call(d2l);
+	L();
+	LK();
+	wait(33);
+	wait(800);
+	R();
+	HP();
+	wait(33);
+	
+	wait(1150);
+	LP();
+	wait(33);
+	wait(33);
+	LK();
+	wait(33);
+	wait(400);
+	D();
+	HP();
+	wait(33);
+	R();
+	wait(700);
+	LP();
+	wait(33);
+	wait(33);
+	LK();
+	wait(33);
+	wait(400);
+	HK();
+	wait(33);
+}
+
+combo than6 {
+	call(dashRight);
+	wait(200);
+	R();
+	wait(300);
+	LP();
+	wait(33);
+	wait(200);
+	LK();
+	wait(33);
+	wait(200);
+	HP();
+	wait(33);
+	wait(400);
+	HK();
+	wait(33);
+	wait(400);
+	
+	SWITCH();
+	wait(33);
+	wait(500);
+	LP();
+	wait(33);
+	wait(200);
+	LK();
+	wait(33);
+	wait(200);
+	HP();
+	wait(33);
+}
+
+combo than7 {
+	call(dashRight);
+	wait(100);
+	LK();
+	wait(33);
+	wait(100);
+	HP();
+	wait(33);
+	wait(400);
+	HK();
+	wait(33);
+	wait(400);
+	
+	call(d2r);
+	R();
+	LK();
+	wait(33);
+	wait(1500);
+	D();
+	LK();
+	wait(33);
+	wait(200);
+	D();
+	HP();
+	wait(33);
+	R();
+	wait(500);
+	LK();
+	wait(33);
+	wait(500);
+	HP();
+	wait(33);
+	wait(200);
+	call(d2r);
+	R();
+	LP();
+	HP();
+	wait(33);
+}
+
+combo than8 {
+	R();
+	wait(500);
+	R();
+	wait(33);
+	R();
+	D();
+	wait(33);
+	call(d2l);
+	L();
+	HP();
+	wait(33);
+	wait(1600);
+	
+	D();
+	HP();
+	wait(33);
+	R();
+	wait(400);
+	wait(33);
+	LK();
+	wait(33);
+	
+	wait(200);
+	HP();
+	wait(33);
+	wait(200);
+	HK();
+	wait(33);
+}
+
+combo than9 {
+	call(dashRight);
+	wait(100);
+	HP();
+	wait(33);
+	D();
+	wait(100);
+	D();
+	HP();
+	wait(33);
+	wait(650);
+	HP();
+	wait(33);
+	wait(100);
+	R();
+	HP();
+	wait(33);
+	wait(1400);
+	
+	D();
+	LP();
+	wait(33);
+	wait(33);
+	R();
+	LP();
+	wait(33);
+	wait(300);
+	call(d2r);
+	R();
+	HP();
+	wait(33);
+	wait(1350);
+	D();
+	LP();
+	wait(33);
+	wait(100);
+	
+	R();
+	LP();
+	wait(33);
+	wait(400);
+	call(d2r);
+	R();
+	LP();
+	wait(33);
+	wait(400);
+	call(d2r);
+	R();
+	LP();
+	HP();
+	wait(33);
+}
+
+combo than10 {
+	call(dashRight);
+	wait(100);
+	HP();
+	wait(33);
+	wait(100);
+	D();
+	wait(100);
+	D();
+	HK();
+	wait(33);
+	wait(300);
+	call(d2r);
+	HK();
+	wait(33);
+	wait(500);
+	
+	SWITCH();
+	wait(33);
+	wait(700);
+	call(d2l);
+	L();
+	LP();
+	wait(33);
+	wait(1900);
+	call(d2r);
+	R();
+	LP();
+	wait(33);
+	wait(500);
+	
+	D();
+	wait(100);
+	D();
+	LK();
+	wait(33);
+	wait(100);
+	HK();
+	wait(33);
+	wait(250);
+	SWITCH();
+	wait(33);
+	wait(450);
+	SWITCH();
+	STONE();
+	wait(33);
+	wait(1600);
+	
+	R();
+	HP();
+	wait(33);
+	wait(1350);
+	R();
+	wait(33);
+	R();
+	LP();
+	wait(33);
+	wait(260);
+	
+	call(d2r);
+	R();
+	LP();
+	wait(33);
+	wait(170);
+	call(d2l);
+	L();
+	LP();
+	HP();
+	wait(33);
+}

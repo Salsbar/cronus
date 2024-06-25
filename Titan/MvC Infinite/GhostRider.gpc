@@ -1,0 +1,296 @@
+#pragma METAINFO("MvCI_GhostRider", 1, 0, "Parker")
+#include <xb1.gph>
+#include "MvCI_inputs.gph"
+
+init {
+	combo_run(reset);
+}
+	
+main {
+  // Press X  to trigger script
+  if (get_val(XB1_X)) {
+		set_val(XB1_X, 0);
+		combo_run(gh6);
+  }
+}
+
+combo gh5 {
+	HP();
+	wait(33);
+	wait(250);
+	HP();
+	wait(33);
+	wait(200);
+	
+	call(d2r);
+	LP();
+	wait(33);
+	wait(1200);
+	
+	HP();
+	wait(33);
+	wait(250);
+	HP();
+	wait(33);
+	wait(200);
+	
+	call(d2l);
+	LP();
+	wait(33);
+	wait(1200);
+	
+	LP()
+	wait(250);
+	LK();
+	wait(100);
+	D();
+	wait(33);
+	D();
+	HP();
+	wait(50);
+	wait(700);
+	
+	LP();
+	wait(33);
+	wait(200);
+	LP();
+	wait(33);
+	wait(200);
+	LK();
+	wait(33);
+	wait(200);
+	HK();
+	wait(33);
+}
+
+combo gh6 {
+	call(dashRight);
+	R();
+	wait(200);
+	
+	LP();
+	wait(200);
+	LK();
+	wait(200);
+	HP();
+	wait(200);
+	wait(200);
+	HP();
+	wait(200);
+	
+	call(d2r);
+	R();
+	HK();
+	wait(200);
+	wait(900);
+	
+	SWITCH();
+	wait(100);
+	wait(400);
+	U();
+	R();
+	wait(100);
+	LP();
+	wait(200);
+	HP();
+	wait(200);
+	wait(50);
+	R();
+	HP();
+	wait(200);
+}
+combo gh7 {
+	printf("executing combo sequence...");
+	wait(0);
+	R();
+	wait(200);
+	U();
+	R();
+	wait(33);
+	wait(100);
+	HP();
+	wait(33);
+	wait(200);
+	D();
+	wait(33);
+	D();
+	HP();
+	wait(33);
+	wait(500);
+	LK();
+	wait(33);
+	wait(200);
+	HK();
+	wait(33);
+	//checkpoint
+	wait(300);
+	D();
+	wait(33);
+	D();
+	HP();
+	wait(33);
+	wait(500);
+	LP();
+	wait(33);
+	wait(200);
+	LK();
+	wait(33);
+	wait(300);
+	HP();
+	wait(33);
+	wait(300);
+	HK();
+	wait(33);
+}
+
+combo gh8 {
+	R();
+	wait(200);
+	R();
+	D();
+	wait(33);
+	R();
+	D();
+	HP();
+	wait(33);
+	wait(350);
+	call(d2l);
+	LP();
+	wait(33);
+	wait(1200);
+	D();
+	R();
+	wait(33);
+	D();
+	R();
+	LP();
+	wait(33);
+	wait(200);
+	LK();
+	wait(33);
+	wait(200);
+	HK();
+	wait(33);
+	wait(300);
+	D();
+	wait(33);
+	wait(66);
+	D();
+	wait(33);
+	D();
+	HP();
+	wait(33);
+}
+
+combo gh9 {
+	HP();
+	wait(33);
+	wait(250);
+	HP();
+	wait(33);
+	wait(200);
+	
+	call(d2r);
+	LP();
+	wait(33);
+	wait(1200);
+	
+	HP();
+	wait(33);
+	wait(250);
+	HP();
+	wait(33);
+	wait(200);
+	
+	call(d2l);
+	LK();
+	wait(33);
+	wait(200);
+	LP();
+	wait(33);
+	wait(1100);
+	
+	call(d2r);
+	LK();
+	HK();
+	wait(33);
+}
+
+combo gh10 {
+	HP();
+	wait(33);
+	wait(200);
+	HP();
+	wait(33);
+	wait(300);
+	
+	call(d2r);
+	LP();
+	wait(33);
+	wait(500);
+	
+	SWITCH();
+	STONE();
+	wait(33);
+	wait(1750);
+	
+	HP();
+	wait(33);
+	wait(250);
+	HP();
+	wait(33);
+	wait(200);
+	call(d2r);
+	HK();
+	wait(33);
+	wait(200);
+	wait(33);
+	call(d2r);
+	HP();
+	LP();
+	wait(33);
+	wait(1750);
+	
+	SWITCH();
+	wait(33);
+	wait(500);
+	U();
+	R();
+	wait(33);
+	R();
+	wait(100);
+	R();
+	wait(33);
+	R();
+	HP();
+	wait(33);
+	wait(900);
+
+	U();
+	R();
+	wait(33);
+	R();
+	wait(100);
+	R();
+	wait(33);
+	R();
+	HP();
+	wait(33);
+	R();
+	wait(1600);
+	wait(100);
+	
+	call(d2r);
+	HP();
+	LP();
+	wait(33);
+	wait(4000);
+	
+	SWITCH();
+	wait(33);
+	wait(500);
+	call(d2r);
+	HK();
+	LK();
+	wait(33);
+}

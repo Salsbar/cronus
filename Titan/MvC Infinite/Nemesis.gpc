@@ -1,0 +1,80 @@
+#pragma METAINFO("MvCI_Nemesis", 1, 2, "Parker")
+#include <xb1.gph>
+#include "MvCI_inputs.gph"
+
+init {
+	combo_run(reset);
+}
+	
+main {
+  // Press X  to trigger script
+  if (get_val(XB1_X)) {
+		set_val(XB1_X, 0);
+		combo_run(nem10);
+  }
+}
+
+combo nem10 {
+	printf("executing combo sequence...");
+	wait(0);
+	R();
+	wait(500);
+	wait(33);
+	HP();
+	wait(33);
+	wait(300);
+	HK();
+	wait(33);
+	wait(300);
+	call(d2r);
+	LK();
+	HK();
+	wait(33);
+	wait(1800);
+	SWITCH();
+	wait(33);
+	wait(500);
+	//HULK SEG
+	R();
+	wait(33);
+	R();
+	HP();
+	wait(33);
+	wait(900);
+	R();
+	wait(33);
+	R();
+	HP();
+	wait(500);
+	wait(1150);
+	D();
+	wait(33);
+	D();
+	LP();
+	wait(33);
+	D();
+	wait(200);
+	D();
+	HP();
+	wait(200);
+	L();
+	D();
+	wait(33);
+	L();
+	wait(33);
+	LK();
+	HK();
+	wait(33);
+	//END HULK SEG
+	wait(3350);
+	SWITCH();
+	wait(33);
+	wait(300);
+	call(d2r);
+	HP();
+	wait(33);
+	wait(1000);
+	call(d2r);
+	HP();
+	wait(33);
+}
