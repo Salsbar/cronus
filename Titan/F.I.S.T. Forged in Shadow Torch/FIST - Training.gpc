@@ -1,0 +1,230 @@
+#pragma METAINFO("F.I.S.T. - Training", 1, 0, "D3LTA, Parker")
+#include <xb1.gph>
+
+int ON;
+main {
+    if (event_active(XB1_LS)) {ON=!ON;}
+    if (ON) {combo_run(adv1);} // <<<<<<<<<<<<<<< CHANGE ME
+    if (!ON) {combo_stop(adv1);} // <<<<<<<<<<<<<<< CHANGE ME
+}
+
+combo adv1 {
+    wait(500);
+    set_val(XB1_RIGHT,100);wait(60);
+    wait(100);
+    set_val(XB1_LY,100);set_val(XB1_Y,100);wait(60);
+    wait(990);
+    set_val(XB1_A,100);wait(60);
+    wait(100);
+    set_val(XB1_X,100);wait(60);
+    wait(800);
+    set_val(XB1_UP,100);wait(60);
+    wait(40);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_LY,-100);set_val(XB1_Y,100);wait(60);
+    wait(1540);
+    set_val(XB1_RIGHT,100);wait(60);
+    wait(840);
+    set_val(XB1_X,100);wait(60);
+    wait(740);
+    set_val(XB1_LY,100);set_val(XB1_Y,100);wait(60);
+    wait(1540);
+}
+
+combo adv2 {
+    wait(500);
+    set_val(XB1_UP,100);wait(60);
+    wait(40);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_Y,100);wait(60);
+    wait(990);
+    set_val(XB1_RIGHT,100);wait(60);
+    wait(240);
+    set_val(XB1_X,100);wait(60);
+    wait(240);
+    set_val(XB1_LEFT,100);wait(60);
+    wait(1940);
+    set_val(XB1_LY,100);set_val(XB1_Y,100);wait(60);
+    wait(940);
+    set_val(XB1_X,100);wait(1600);
+}
+
+combo adv3 {
+    wait(500);
+    set_val(XB1_LEFT,100);wait(60);
+    wait(40);
+    set_val(XB1_X,100);wait(60);
+    wait(540);
+    set_val(XB1_Y,100);wait(60);
+    wait(540);
+    set_val(XB1_B,100);wait(60);
+    wait(340);
+    set_val(XB1_UP,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_RIGHT,100);wait(60);
+    wait(40);
+    set_val(XB1_X,100);wait(60);
+    wait(840);
+    set_val(XB1_LY,100);set_val(XB1_Y,100);wait(60);
+    wait(740);
+    set_val(XB1_LEFT,100);wait(60);
+    wait(540);
+    set_val(XB1_LY,100);set_val(XB1_Y,100);wait(60);
+    wait(740);
+}
+
+combo master1 {
+    wait(500);
+    set_val(XB1_UP,100);wait(60);
+    wait(40);
+    set_val(XB1_X,100);wait(60);
+    wait(300);
+    set_val(XB1_Y,100);wait(60);
+    wait(1340);
+    set_val(XB1_X,100);wait(60);
+    wait(300);
+    set_val(XB1_X,100);wait(60);
+    wait(540);
+    set_val(XB1_RIGHT,100);wait(60);
+    wait(40);
+    set_val(XB1_X,100);wait(60);
+    wait(540);
+    set_val(XB1_LEFT,100);wait(60);
+    wait(540);
+    set_val(XB1_B,100);wait(60);
+    wait(540);
+    set_val(XB1_UP,100);wait(60);
+    wait(200);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_RIGHT,100);wait(60);
+    wait(40);
+    set_val(XB1_LY,-100);set_val(XB1_Y,100);wait(60);
+    wait(540);
+}
+
+combo master2 {
+    wait(500);
+    set_val(XB1_UP,100);wait(60);
+    wait(40);
+    set_val(XB1_X,100);wait(60);
+    wait(540);
+    set_val(XB1_Y,100);wait(60);
+    wait(740);
+    set_val(XB1_X,100);wait(60);
+    wait(440);
+    set_val(XB1_X,100);wait(60);
+    wait(440);
+    set_val(XB1_X,100);wait(60);
+    wait(440);
+    wait(500);
+    set_val(XB1_RB,100);wait(60);
+    wait(240);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_LY,-100);set_val(XB1_Y,100);wait(60);
+    wait(2240);
+    set_val(XB1_A,100);wait(60);
+    wait(140);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_LY,100);set_val(XB1_Y,100);wait(60);
+    wait(1140);
+}
+
+combo master3 {
+    wait(500);
+    set_val(XB1_UP,100);wait(60);
+    wait(40);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_Y,100);wait(60);
+    wait(540);
+    set_val(XB1_RIGHT,100);wait(60);
+    wait(40);
+    set_val(XB1_X,100);wait(60);
+    wait(540);
+    set_val(XB1_UP,100);wait(60);
+    wait(1440);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    wait(500);
+    set_val(XB1_RB,100);wait(60);
+    wait(40);
+    set_val(XB1_RIGHT,100);wait(60);
+    wait(40);
+    set_val(XB1_X,100);wait(60);
+    wait(540);
+    set_val(XB1_UP,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_LY,100);set_val(XB1_Y,100);wait(60);
+    wait(340);
+}
+
+combo master4 {
+    wait(500);
+    set_val(XB1_LEFT,100);wait(60);
+    wait(40);
+    set_val(XB1_X,100);wait(60);
+    wait(540);
+    set_val(XB1_Y,100);wait(60);
+    wait(1140);
+    set_val(XB1_B,100);wait(60);
+    wait(40);
+    set_val(XB1_UP,100);wait(60);
+    wait(740);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_LEFT,100);wait(60);
+    wait(240);
+    set_val(XB1_B,100);wait(60);
+    wait(40);
+    set_val(XB1_UP,100);wait(60);
+    wait(740);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_X,100);wait(60);
+    wait(340);
+    set_val(XB1_LY,-100);set_val(XB1_Y,100);wait(60);
+    wait(2140);
+    set_val(XB1_LEFT,100);wait(60);
+    wait(340);
+    set_val(XB1_B,100);wait(60);
+    wait(140);
+    set_val(XB1_RIGHT,100);wait(60);
+    wait(840);
+    set_val(XB1_X,100);wait(60);
+    wait(740);
+    set_val(XB1_LY,-100);set_val(XB1_Y,100);wait(60);
+    wait(1140);
+}
