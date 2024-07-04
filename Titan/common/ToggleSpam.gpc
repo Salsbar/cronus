@@ -1,4 +1,4 @@
-#pragma METAINFO("ToggleSpam", 1, 2, "Parker")
+#pragma METAINFO("ToggleSpam", 1, 3, "Parker")
 #include <xb1.gph>
 #include "ColorLED.gph"
 
@@ -6,6 +6,7 @@ bool aSpamOn=FALSE;
 bool bSpamOn=FALSE;
 bool xSpamOn=FALSE;
 bool ySpamOn=FALSE;
+bool rtSpamOn=FALSE;
 
 main {
   // button has to be pressed twice faster than 200ms
@@ -29,11 +30,17 @@ main {
 	if (ySpamOn) ColorLED(CA);
 	else ColorLED(CB);
   }
+  if (event_active(XB1_RT) && time_release(XB1_RT) < 200) {
+    rtSpamOn = !rtSpamOn;
+	if (rtSpamOn) ColorLED(CP);
+	else ColorLED(CB);
+  }
     
   if (aSpamOn) combo_run(aSpam);
   if (bSpamOn) combo_run(bSpam);
   if (xSpamOn) combo_run(xSpam);
   if (ySpamOn) combo_run(ySpam);
+  if (rtSpamOn) combo_run(rtSpam);
 }
 
 combo xSpam {
@@ -61,5 +68,12 @@ combo bSpam {
   set_val(XB1_B,0);  	// release button 16
   wait(200);            // (release) for 200ms
   set_val(XB1_B,100);	// press button 16
+  wait(200);            // (press) for 200ms
+}
+
+combo rtSpam {
+  set_val(XB1_RT,0);  	// release button 16
+  wait(200);            // (release) for 200ms
+  set_val(XB1_RT,100);	// press button 16
   wait(200);            // (press) for 200ms
 }
