@@ -1,0 +1,18 @@
+This is used for the PS4 version of THPS1+2, but should work for X1. I used a 3rd party 360 controller on the PS4, which gave me some issues when the Cronus program had to reauthenticate to the console it was a legitimate controller.
+
+If you have to do this in chunks, you may have to click "Program Device" during each session to make sure the Cronus is working properly.
+
+Once your controller is set up and you have the Cronus desktop app open, perform the following:
+
+1. From the main menu, edit your skater's tricks under the "Skater" tab so the highest scoring grab and grind tricks are on the Up, Down + Triangle (Y)/Circle (B) or Down, Up + Triangle (Y)/Circle (B)
+2. Load up level "Philadelphia" in THPS2 in the Skate Tours mode
+3. Once loaded, pause and ensure all Game Mods are enabled. This includes Perfect Rail Balance, Manual Balance, Lip Balance, Always Special, No Bail, and Double Base Score. You can include Super Stats if you haven't maxed them out already.
+4. Return to the pause menu and click End Run and click through the progress screens until you see "Retry Level"
+5. On the Cronus Pro app, go to "Plugins," then "MAX Rec" (Alt+F3)
+6. Click "Load" then choose the "THPS 1+2 Auto-Level Grind v2" file
+7. Click "Loop" to have the script continue running
+8. Make sure you have "Retry Level" highlighted, then click the Play button to begin
+
+The script should get you 1.53-1.85m points in ~9 seconds. The script will then pause, end the run, then replay the level if you have selected the "Loop" box.
+This should give you 300xp per 25-30 seconds. You should check in on the progress in case there's any issues and the script lands you in the tutorial or another level.
+
