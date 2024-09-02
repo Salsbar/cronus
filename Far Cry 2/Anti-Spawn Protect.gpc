@@ -1,0 +1,31 @@
+int turbo = 0; // Turbo on/off 
+
+main {
+
+// Start/stop turbo mode
+
+if (event_press(XB1_RS)) {
+    if (turbo == 0) {
+    turbo = 1;
+    }
+    else {
+    turbo = 0;
+    }
+}
+
+if (turbo == 1) {
+    combo_run(TurboCombo);
+    }
+}
+
+// Turbo mode code runs in a loop
+combo TurboCombo {
+set_val(XB1_RT, 100);
+wait(100);
+set_val(XB1_RT, 0);
+wait(100);
+set_val(XB1_B, 100);
+wait(100);
+set_val(XB1_B, 0);
+wait(1000);
+}
