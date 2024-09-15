@@ -1,0 +1,104 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("Killer Instinct Character Challenges - Blocks", 1, 0, "XxFrAsZeRxX")
+
+// THIS SCRIPT REQUIRES 2 TITANS/CRONUS'.
+
+// Instructions:
+/*
+*This requires two scripting devices on the same console, or one cronus on player 2 and a rubberband for player 1
+
+*Match time should set for Infinite.
+
+*On player 1 choose the character that needs progress on blocks.
+
+*On player 2 choose Kan-Ra.
+
+	To start the script
+*Press LS on player 1 and RS on player 2 simaltaneously
+*The script will automatically quit to the menu and stop the execution when 5000 blocks are performed.
+*/
+
+int i,j;
+main
+{
+	if(get_val(XB360_LS))
+	{
+		i=1;
+	}
+	if(get_val(XB360_RS))
+	{
+		i=2;
+	}
+	if(get_val(XB360_START))
+	{
+		i=0;
+	}
+	if(i==1) //For player blocking
+	{	
+		combo_run(block);
+	}
+	if(i==2)//For player attacking
+	{
+		combo_run(walk);
+	}
+	if(i==3)
+	{
+		combo_stop(walk);
+		combo_run(attack);
+		if(j==2000)
+		{
+			combo_stop(attack);
+			combo_run(quit);
+		}
+	}
+	if(i==0)
+	{
+		combo_stop(block);
+		combo_stop(attack);
+	}
+}
+
+combo walk
+{
+	set_val(XB360_LEFT, 100);
+	wait(10000);
+	set_val(XB360_LEFT, 0);
+	wait(100);
+	i = 3;
+}
+
+combo block
+{
+	set_val(XB360_LEFT, 100);
+}
+
+combo attack
+{
+	set_val(XB360_RIGHT, 100);
+	set_val(XB360_Y, 100);
+	wait(1000);
+	set_val(XB360_RIGHT, 0);
+	set_val(XB360_Y, 0);
+	wait(250);
+	set_val(XB360_LEFT, 100);
+	wait(1000);
+	set_val(XB360_LEFT, 0);
+	wait(1000);
+	j = j + 1;
+}
+
+combo quit
+{
+	set_val(XB360_START, 100);
+	wait(100);
+	set_val(XB360_START, 0);
+	wait(2000);
+	set_val(XB360_UP, 100);
+	wait(50);
+	set_val(XB360_UP, 0);
+	wait(1000);
+	set_val(XB360_A, 100);
+	wait(50);
+	set_val(XB360_A, 0);
+}
