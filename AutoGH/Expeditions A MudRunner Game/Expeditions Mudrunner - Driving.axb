@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Expeditions Mudrunner</Game>
+    <Title>Driving</Title>
+    <Description>I used the Little Colorado free roam expedition. Try to place your truck on a flat area with space to drive forwards and reverse. You may want to keep an eye on the script in case your truck gets stuck. Choose a vehicle with tons of spare gas.
+	</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Wait Delay="3000" />
+      <Press Controller="1" RT="255" Hold="5000" Wait="6000" Repeat="1" />
+      <Press Controller="1" LT="255" Hold="6500" Wait="7500" Repeat="1" />
+      <Loop Target="1" Repeat="100" />
+      <Hold Controller="1" ButtonMask="1" />
+      <Wait Delay="500" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="150" Repeat="15" />
+      <Wait Delay="500" />
+      <Release Controller="1" ButtonMask="1" />
+      <Wait Delay="500" />
+      <Loop Target="1" Repeat="20" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
