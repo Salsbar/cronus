@@ -1,0 +1,62 @@
+#pragma METAINFO("GoW5vsKILLS Dropshot", 1, 0, "Parker")
+
+// A modified version pf ToastBubbles's assist script to get kills
+
+//requires at least 2 xboxes and 4 dummies/guests (5 total players/guests)
+
+//Private online match
+//Map: Speyer
+//Mode: CTF
+//Settings:
+//>No bots
+//>0 spawn protection
+//>5sec respawn
+//>swap all weapons for DROPSHOT
+//-Setup as a 1v4 with the dummies on one team
+
+//manually use the dropshot once or twice, then stand at a safe distance in a spot where you can reach a dropshot that was dropped by a killed enemy, look near the center of the group of enemies, then press down on the dpad to run the script.
+
+//This scripts uses the DEFAULT controls and sensitivity, if you are having issues, try the default settings
+
+int i;
+main {
+if(get_val(BUTTON_11))  //down on dpad
+	{
+		i = 1;
+	}
+	if(get_val(BUTTON_6))  //RS
+	{
+		i = 0;
+	}
+	if(i==1)
+	{
+		combo_run(spam);
+	}else{
+		combo_stop(spam);
+	}
+}
+
+
+
+combo spam{
+		wait(200);
+		set_val(BUTTON_17, 100); //X
+		wait(750);
+		set_val(BUTTON_17, 0); //X
+        set_val(STICK_1_Y, -100); //LOOK UP	
+        set_val(STICK_1_X, 0); // STOP SIDE DRIFT	
+        wait(700);    
+		wait(1350);
+		set_val(STICK_1_Y, 0);
+		wait(100);
+	
+		set_val(BUTTON_5, 100); //RT
+		wait(100);
+		set_val(BUTTON_5, 0); 
+		wait(5900);
+		set_val(BUTTON_5, 100); //RT
+		wait(100);
+		set_val(BUTTON_5, 0); 
+
+		wait(3600);
+}
