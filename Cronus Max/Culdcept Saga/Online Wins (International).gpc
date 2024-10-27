@@ -1,0 +1,186 @@
+// Remove the slashes on the next 2 lines for Titan Two compatibility.
+// #include <titanone.gph>
+// #pragma METAINFO("Culdcept Saga International 200 online wins", 1, 00, "XxFrAsZeRxX")
+
+// Instructions:
+/*
+	Initial Setup
+*Create a new character if you do not already have one. You can create a new character, save, then dashboard after the loading screen. No need to sit through cutscenes or play through the game at all
+
+*Go to multiplayer (press right at the main menu once). For player 1 pick the third option down after selecting your character to host a match.
+
+*Match setup
+	- For the 2nd option, scroll left once to use custom rules.
+	- For the 5th and 6th options they should read as "10 ~ 10". This makes the games 10 rounds and the timer on a player's turn 10 seconds. Select the top option to confirm.
+	- Pick the default map (the square).
+	- On the second option down scroll right once to make the game a player match.
+	- On the 5th option down make sure it is set as "2 ~ 4" (this allows the game to start with only 2 players). Select the top option to confirm.
+	- Leave the top option in the lobby highlighted.
+	- Invite the other account into your game, also leaving the top option highlighted.
+
+*To start the script, on the player winning press left stick (LS) and on the dummy press right stick (RS). Press these on both controls simaltaneously. Stop the script by pressing start.
+*/
+
+//Notes
+/*
+*This script essentially starts a match and has the winning player mash A for a large portion of the match ensuring that the winning player earns points while the losing players
+	idles and earns as few points as possible. This loops indefinitely so keep an eye on your achievements. You can also view progress in between matches by viewing your primary deck (assuming you didn't have wins from single player or local multiplayer).
+
+*This will make progress towards winning online matches but will also obtain the online win streak achievements along with some achievements for collecting cards.
+
+*If you are scripting the Japanese stack of this game use the script meant for that version, there is an extra button press that is required after the match.
+
+*Due to the fact that there are things that unlock after the match there are other screens that can appear post-match that cause the script to de-sync. there	
+	is not a way to bypass this since it seems mostly random. If this happens nothing of consequence should happen, the matches just will not begin. So, it is 
+	recommnended that the user keeps an eye on the script to ensure time isn't wasted.
+
+*There is a significant amount of time at the end of matches to ensure that the sequence that restarts the matches is timed correctly. Feel free to remove some of the extra 
+	`wait` commands at the beginning of the `end_match` combo but since there is an element of randomness to the length of a match due to the card order being random, 
+	it is not recommended. If the `end_match` combo ends too early a new match will not begin. The amount of `wait` commands ensures there is never a de-sync, provided
+	there are not extra prompts from unlocks post-game.
+*/
+
+int i;
+int state;
+int a;
+int match_a_presses = 500; // 1 second/press
+
+main {
+	// Check for button presses to set 'i' state
+	if(get_val(XB360_LS)) {
+		i = 1;
+	}
+	if(get_val(XB360_RS)) {
+		i = 2;
+	}
+	if(get_val(XB360_START)) {
+		i = 0;
+	}
+
+	// Option 1 logic
+	if(i == 1) {
+		if(state==0) {
+			combo_run(ready_up);
+		}
+		if(state == 1 && a < match_a_presses) {
+			combo_run(press_A);
+		}
+		if(state == 1 && a >= match_a_presses) {
+			combo_run(next);
+		}
+		if(state == 2) {
+			combo_run(end_match);
+		}
+	}
+	
+	if(i == 2) {
+		if(state==0) {
+			combo_run(ready_up);
+		}
+		if(state == 1 && a < match_a_presses) {
+			combo_run(dont_press_A);
+		}
+		if(state == 1 && a >= match_a_presses) {
+			combo_run(next);
+		}
+		if(state == 2) {
+			combo_run(end_match);
+		}
+	}
+
+	// Stop all macros logic
+	if(i == 0) {
+		state = 0;
+		a = 0;
+	}
+}
+
+combo next {
+	wait(1000);
+	state++;
+	a = 0;
+}
+
+combo ready_up {
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(1900);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(1900);
+	set_val(XB360_UP, 100);
+	wait(100);
+	set_val(XB360_UP, 0);
+	wait(900);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(900);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(2900);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(4900);
+	state++;
+}
+
+combo press_A {
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(900);
+	a++;
+}
+
+combo dont_press_A {
+	set_val(XB360_UP, 100);
+	wait(100);
+	set_val(XB360_UP, 0);
+	wait(900);
+	a++;
+}
+
+combo end_match {
+	wait(30000);
+	wait(30000);
+	wait(30000);
+	wait(30000);
+	wait(30000);
+	wait(30000);
+	wait(30000);
+	wait(30000);
+	wait(30000);
+	wait(30000);
+	wait(30000);
+	wait(30000);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(4900);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(4900);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(4900);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(9900);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(9900);
+	set_val(XB360_A, 100);
+	wait(100);
+	set_val(XB360_A, 0);
+	wait(9900);
+	state = 0;
+}
