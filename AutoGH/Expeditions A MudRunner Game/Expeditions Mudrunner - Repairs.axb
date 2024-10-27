@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Expeditions Mudrunner</Game>
+    <Title>Repairs</Title>
+    <Description>I used the Little Colorado free roam expedition. Choose a truck with a ton of spare repair parts. I drove into the water near the East base. Depending on the vehicle location, you may lose anywhere between 1 and 10 points of engine durability every second or so. I backed up against a rock to push the truck's engine a bit furthe under water (increasing the HP loss rate). I also deflated tires; not sure if that helped.
+	</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Wait Delay="1000" />
+      <Press Controller="1" LT="255" Hold="15000" Wait="15500" Repeat="1" />
+      <Hold Controller="1" ButtonMask="1" LSX="-32512" LSY="0" />
+      <Wait Delay="500" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="150" Repeat="10" />
+      <Release Controller="1" ButtonMask="1" AnalogMask="4" />
+      <Press Controller="1" LSX="0" LSY="0" Hold="100" Wait="150" Repeat="1" />
+      <Loop Target="1" Repeat="1000" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>

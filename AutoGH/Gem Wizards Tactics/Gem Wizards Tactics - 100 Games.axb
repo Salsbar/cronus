@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Gem Wizard Tactics</Game>
+    <Title>100 Games</Title>
+    <Description>Go to the Missions menu. Create a custom map in slot 1. Use K4's video for reference. 
+Place 2 players. Then place 2 castles. Each castle must be one space to the right of each player. Start the script with the cursor highlighting the 'play' button within the 'ranked mission' section. </Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Wait Delay="2000" />
+      <Press Controller="1" LSX="0" LSY="32512" Hold="100" Wait="150" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="100" Wait="150" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="2" />
+      <Press Controller="1" LSX="-32512" LSY="0" Hold="100" Wait="150" Repeat="1" />
+      <Press Controller="1" LSX="0" LSY="-32512" Hold="100" Wait="150" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="5000" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="100" Wait="150" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="2" />
+      <Press Controller="1" RT="255" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="100" Wait="150" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="2" />
+      <Press Controller="1" ButtonMask="64" Hold="100" Wait="2000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="3500" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="4000" Repeat="2" />
+      <Loop Target="1" Repeat="100" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
