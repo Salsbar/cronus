@@ -41,12 +41,12 @@ if(get_val(BUTTON_11))  //down on dpad
 combo spam{
 		wait(200);
 		set_val(BUTTON_17, 100); //X
-		wait(750);
+		wait(850);
 		set_val(BUTTON_17, 0); //X
         set_val(STICK_1_Y, -100); //LOOK UP	
         set_val(STICK_1_X, 0); // STOP SIDE DRIFT	
-        wait(700);    
-		wait(1350);
+        wait(900);    
+		wait(1150);
 		set_val(STICK_1_Y, 0);
 		wait(100);
 	
