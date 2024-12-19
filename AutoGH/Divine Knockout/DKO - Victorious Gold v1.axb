@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>DKO</Game>
+    <Title>Victorious Gold</Title>
+    <Description>Ver 1: When inviting a boosting partner to join the lobby, use this version if the boosting partner is in position 1. 
+
+2 player quitouts
+Add your boosting partner as an in game friend. </Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="128" Hold="150" Wait="2000" Repeat="1" />
+      <Press Controller="1" ButtonMask="1" Hold="150" Wait="2000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="2000" Repeat="2" />
+      <Press Controller="1" ButtonMask="2048" Hold="150" Wait="2000" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="150" Wait="2000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="2000" Repeat="2" />
+      <Press Controller="1" ButtonMask="32" Hold="150" Wait="2000" Repeat="1" />
+      <Press Controller="2" ButtonMask="16" Hold="150" Wait="2000" Repeat="1" />
+      <Press Controller="1" ButtonMask="1024" Hold="150" Wait="2000" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="150" Wait="2000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="2000" Repeat="1" />
+      <Wait Delay="90000" />
+      <Press Controller="2" ButtonMask="4096" Hold="150" Wait="2000" Repeat="1" />
+      <Press Controller="2" ButtonMask="512" Hold="150" Wait="1000" Repeat="3" />
+      <Press Controller="2" ButtonMask="16" Hold="150" Wait="2000" Repeat="2" />
+      <Wait Delay="25000" />
+      <Press Controller="1" ButtonMask="32" Hold="150" Wait="2000" Repeat="1" />
+      <Loop Target="1" Repeat="100" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
