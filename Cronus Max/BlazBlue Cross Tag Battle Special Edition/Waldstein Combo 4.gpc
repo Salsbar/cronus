@@ -1,0 +1,88 @@
+// Stand on the glowing line and activate
+// Waldstein Combo 4.gpc Press RT to activate and B to stop
+// Author: Sudden_Fall
+//if your thankful for the script please subscribe to my youtube https://www.youtube.com/@sudden_fall
+//Special thank you to D3lta for helping adjust the times so it works on both series and xbox one
+
+int toggle;
+main {      if (get_val(XB1_RT)) toggle = TRUE; // Activate
+    if (get_val(XB1_B)) toggle = FALSE; // Deactivate
+    if (toggle) combo_run(Waldstein);
+    else combo_stop(Waldstein);
+}
+
+combo Waldstein {
+	set_val(XB1_RIGHT, 0);
+    wait (300)
+	set_val(XB1_RIGHT,100);
+	wait (50)
+	set_val(XB1_DOWN, 0);
+	set_val(XB1_Y, 0);
+	wait (300)
+    set_val(XB1_DOWN,100);//
+    set_val(XB1_Y,100);//
+    wait(50);
+    set_val(XB1_DOWN, 0);
+	set_val(XB1_Y, 0);
+	wait (200)
+    set_val(XB1_DOWN,100);//
+    set_val(XB1_Y,100);//
+    wait(50);
+    wait(1600); //
+    set_val(XB1_Y, 0);
+	wait (300)
+    set_val(XB1_Y,100);//
+    wait(50);
+    set_val(XB1_Y, 0);
+	wait (500)
+    set_val(XB1_Y,100);//
+    wait(50);
+    set_val(XB1_RIGHT, 0);
+    set_val(XB1_UP, 0);
+    wait (300)
+    wait (600)
+    set_val(XB1_RIGHT,100);//
+    set_val(XB1_UP,100);//
+    wait(50);
+    set_val(XB1_X, 0);
+    wait(200)
+    set_val(XB1_X,100);//
+    wait(50);
+    set_val(XB1_X, 0);
+    wait(300)
+    set_val(XB1_X,100);//
+    wait(50);
+    set_val(XB1_RIGHT,0);
+    set_val(XB1_UP,0);
+    wait(200);
+    set_val(XB1_RIGHT,100);
+    set_val(XB1_UP,100);
+    wait(50);
+    set_val(XB1_X, 0);
+    wait (100)
+    set_val(XB1_X,100);
+    wait(50);
+    set_val(XB1_X,0);
+    wait (300)
+    set_val(XB1_X,100);
+    wait(50);
+    set_val(XB1_DOWN,0);
+    wait (63)
+    set_val(XB1_DOWN,100);
+    wait (50);
+    set_val(XB1_LEFT,0);
+    set_val(XB1_DOWN,0);
+    wait (63)
+    set_val(XB1_LEFT,100);
+    set_val(XB1_DOWN,100);
+    wait (50);
+    set_val(XB1_LEFT,0);
+    set_val(XB1_Y,0);
+    wait (63)
+    set_val(XB1_LEFT,100);
+    set_val(XB1_Y,100);
+    wait (50);
+	wait(4000);
+    wait(4000);
+    wait(4000);
+}
