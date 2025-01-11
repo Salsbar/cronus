@@ -1,0 +1,50 @@
+// This script needs you to stand as close to the enemy as possible
+// Waldstein Combo1.gpc Press RT to activate and B to stop
+// Author: Sudden_Fall
+//if your thankful for the script please subscribe to my youtube https://www.youtube.com/@sudden_fall
+
+int toggle;
+main {      if (get_val(XB1_RT)) toggle = TRUE; // Activate
+    if (get_val(XB1_B)) toggle = FALSE; // Deactivate
+    if (toggle) combo_run(Waldstein);
+    else combo_stop(Waldstein);
+}
+
+combo Waldstein {
+    set_val(XB1_X, 100);
+    wait(125);
+    set_val(XB1_X, 0);
+    wait(125);
+     set_val(XB1_X, 100);
+    wait(125);
+    set_val(XB1_X, 0);
+    wait(125);
+     set_val(XB1_X, 100);
+    wait(125);
+    set_val(XB1_X, 0);
+    wait(500);
+    set_val(XB1_Y, 100);
+    wait(63);
+    set_val(XB1_Y, 0);
+    wait(63);
+    set_val(XB1_DOWN, 100);
+    wait(63);
+    set_val(XB1_DOWN, 0);
+    wait(63);
+    set_val(XB1_DOWN, 100);
+    set_val(XB1_LEFT, 100);
+    wait(63);
+    set_val(XB1_DOWN, 0);
+    set_val(XB1_LEFT, 0);
+    wait(63);
+    set_val(XB1_LEFT, 100);
+    wait(63);
+    set_val(XB1_LEFT, 0);
+    wait(63);
+    set_val(XB1_Y, 100);
+    wait(63);
+    set_val(XB1_Y, 0);
+    wait(4000);
+    wait(4000);
+    wait(4000);
+}

@@ -1,0 +1,83 @@
+// This Script requires you to push the enemy all the way against the wall
+// Waldstein Combo 2.gpc Press RT to activate and B to stop
+// Author: Sudden_Fall
+//if your thankful for the script please subscribe to my youtube https://www.youtube.com/@sudden_fall
+//Special thank you to D3lta for helping adjust some of the times so it works on both series and xbox one
+
+int toggle;
+main {      if (get_val(XB1_RT)) toggle = TRUE; // Activate
+    if (get_val(XB1_B)) toggle = FALSE; // Deactivate
+    if (toggle) combo_run(Waldstein);
+    else combo_stop(Waldstein);
+}
+
+combo Waldstein {
+    set_val(XB1_RIGHT, 100);
+	wait (125);
+	set_val(XB1_RIGHT, 0);
+	wait (125);
+    set_val(XB1_UP, 100);
+    set_val(XB1_RIGHT, 100);
+    wait(125);
+    set_val(XB1_UP, 0);
+    set_val(XB1_RIGHT, 0);
+    wait(125);
+    set_val(XB1_X, 100);
+    wait(125);
+    set_val(XB1_X, 0);
+    wait(125);
+    set_val(XB1_X, 100);
+    wait(125);
+    set_val(XB1_X, 0);
+    wait(250);
+    call(Standing_Moves);
+    wait(100);
+    call(Down_Moves);
+    set_val(XB1_DOWN, 100);
+    wait(63);
+    set_val(XB1_DOWN, 100);
+    set_val(XB1_RIGHT, 100);
+    wait(63);
+    set_val(XB1_RIGHT, 100);
+    set_val(XB1_Y, 100);
+    set_val(XB1_B, 100);
+    wait(63);
+    set_val(XB1_DOWN, 0);
+    set_val(XB1_RIGHT, 0);
+    set_val(XB1_B, 0);
+    set_val(XB1_Y, 0);
+    wait(4000);
+    wait(4000);
+    wait(4000);
+}
+
+
+combo Standing_Moves {
+	wait (125);
+    set_val(XB1_RIGHT, 100);
+    wait(125);
+    set_val(XB1_X, 100);
+    wait(125);
+    set_val(XB1_X, 0);
+    wait(125);
+    set_val(XB1_X, 100);
+    wait(125);
+    set_val(XB1_X, 0);
+    set_val(XB1_RIGHT, 0);
+	wait(125);
+	wait(125);
+    set_val(XB1_Y, 100);
+    wait(125);
+    set_val(XB1_Y, 0);
+    wait(125);
+}
+
+combo Down_Moves {
+    wait(125); 
+    set_val(XB1_DOWN, 100);
+    set_val(XB1_B, 100);
+    wait(125);
+    set_val(XB1_B, 0);
+    set_val(XB1_DOWN, 0);
+	wait(125);
+}
