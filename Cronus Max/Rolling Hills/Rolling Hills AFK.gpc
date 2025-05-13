@@ -1,0 +1,118 @@
+/* Exported from AutoGH
+Game:     Rolling Hills
+Script:   AFK
+Exported: 2025/05/13 14:07:53
+
+Prep steps:
+1. Acquire profitable and charming furniture. The more the better, as it'll improve AFK gains.
+2. Do not use relaxing furniture. It'll prolong the days and cause the script to get out of sync.
+3. Build a path of furniture for the bot to take from daily spawn point to conveyor start button (see image).
+
+Running the script:
+Press both LS and RS to stop or start the combo.
+Start script at new day spawn point, inside of the furniture pathway.
+
+Other notes:
+The wait time is set to 8 mins. This was ~45s extra for 11  tables. Adjust as needed.
+
+*/
+int ON;
+main {
+	if (event_press(XB360_LS)) {if (get_val(XB360_RS)) {ON=!ON;}}
+	if (event_press(XB360_RS)) {if (get_val(XB360_LS)) {ON=!ON;}}
+	if (ON) {combo_run(autogh);}
+	if (!ON){if (combo_running(autogh)) {combo_stop(autogh);}}
+ }
+
+combo autogh {
+wait(500);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_A,100);wait(100);
+wait(400);
+set_val(XB1_LX,100);wait(3000);
+wait(500);
+set_val(XB1_LX,100);set_val(XB1_LY,100);wait(2000);
+wait(500);
+set_val(XB1_LX,-43);set_val(XB1_LY,100);wait(2000);
+wait(500);
+set_val(XB1_LX,-100);set_val(XB1_LY,-62);wait(2000);
+wait(500);
+set_val(XB1_A,100);wait(100);
+wait(4900);
+set_val(XB1_DOWN,100);wait(100);
+wait(700);
+set_val(XB1_A,100);wait(100);
+wait(700);
+wait(32000);
+wait(32000);
+wait(32000);
+wait(32000);
+wait(32000);
+wait(32000);
+wait(32000);
+wait(32000);
+wait(32000);
+wait(32000);
+wait(32000);
+wait(32000);
+wait(32000);
+wait(32000);
+wait(32000);
+}
