@@ -1,0 +1,39 @@
+//Castlevania: Symphony of the Night
+//Richter Combos
+//
+//All actions are on RS
+//Up: super jump
+//Right/Left: Dash
+
+int speed = 25;
+int dash_direction= XB360_RIGHT;
+
+main {
+    if(get_val(XB360_RX) > 80) {combo_run(dash_right);}
+    if(get_val(XB360_RX) < -80) {combo_run(dash_left);}
+    if(get_val(XB360_RY) < -80) {combo_run(jump);}
+}
+
+combo dash_right{
+	set_val(XB360_LX,0);set_val(XB360_LY,0);wait(25);
+    set_val(XB360_UP, 100);set_val(XB360_LX,0);set_val(XB360_LY,0);wait(speed);
+    set_val(XB360_DOWN, 100);set_val(XB360_LX,0);set_val(XB360_LY,0);wait(speed);
+    set_val(XB360_DOWN, 100);set_val(XB360_RIGHT, 100);set_val(XB360_LX,0);set_val(XB360_LY,0);wait(speed);
+    set_val(XB360_RIGHT, 100);set_val(XB360_X, 100);set_val(XB360_LX,0);set_val(XB360_LY,0);wait(speed);
+    wait(375);
+}
+combo dash_left{
+	set_val(XB360_LX,0);set_val(XB360_LY,0);wait(25);
+    set_val(XB360_UP, 100);set_val(XB360_LX,0);set_val(XB360_LY,0);wait(speed);
+    set_val(XB360_DOWN, 100);set_val(XB360_LX,0);set_val(XB360_LY,0);wait(speed);
+    set_val(XB360_DOWN, 100);set_val(XB360_LEFT, 100);set_val(XB360_LX,0);set_val(XB360_LY,0);wait(speed);
+    set_val(XB360_LEFT, 100);set_val(XB360_X, 100);set_val(XB360_LX,0);set_val(XB360_LY,0);wait(speed);
+    wait(375);
+}
+
+combo jump{
+	set_val(XB360_LX,0);set_val(XB360_LY,0);wait(25);
+	set_val(XB360_DOWN, 100);set_val(XB360_LX,0);set_val(XB360_LY,0);wait(speed);
+    set_val(XB360_UP, 100);set_val(XB360_LX,0);set_val(XB360_LY,0);wait(speed);
+    set_val(XB360_UP, 100);set_val(XB360_A, 100);set_val(XB360_LX,0);set_val(XB360_LY,0);wait(speed);
+}
