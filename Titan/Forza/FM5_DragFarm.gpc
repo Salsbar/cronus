@@ -1,0 +1,30 @@
+#pragma METAINFO("FM5_DragFarm", 1, 0, "Parker")
+#include <xb1.gph>
+
+/*
+This was made for a request so I haven't personally tested it.
+
+The idea is to simply auto drive staright for drag races on repeat to farm manufacturer xp.
+Works best if you remap the handbrake to something other than the A button.
+*/
+
+bool active;
+
+main {
+    if (get_val(XB1_VIEW) && event_active(XB1_A)) {
+        active= !active;
+    }
+}
+
+// To complete the race
+combo drive {
+  set_val(XB1_RT, 100);  
+}
+
+// To restart the race
+combo spamA {
+  set_val(XB1_A, 100);
+  wait(33);
+  set_val(XB1_A, 0);
+  wait(33);  
+}
