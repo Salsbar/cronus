@@ -14,6 +14,14 @@ main {
     if (get_val(XB1_VIEW) && event_active(XB1_A)) {
         active= !active;
     }
+    
+    if (active) {
+        combo_run(drive);
+        combo_run(spamA);
+    } else {
+        combo_stop(drive);
+        combo_stop(spamA);
+    }
 }
 
 // To complete the race
