@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>DiRT Showdown</Game>
+    <Title>Superstar AFK</Title>
+    <Description>This is a fully idle script for the Showdown Superstar achievement in DiRT Showdown. 
+You'll need autogh and a capture card. 
+The screen capture resolution is set to 1080p.
+Queue up a search for Solo Hoonigan and then start the script. 
+Once the lobby has been disbanded, the script will monitor for the pop up message and restart the search. </Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Wait Delay="500" />
+      <Hold Controller="1" RT="255" LSX="32512" LSY="0" />
+      <Wait Delay="5000" />
+      <VideoInput Interval="60000" Duration="3600000" X="393" Y="974" minColor="-201469" maxColor="-201469" />
+      <Release Controller="1" AnalogMask="6" />
+      <Group Name="ReSearch" Repeat="1" />
+      <Loop Target="0" Repeat="20" />
+    </ActionGroup>
+    <ActionGroup>
+      <Name>ReSearch</Name>
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="30000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="3000" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="150" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="150" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="1000" Repeat="2" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
