@@ -1,0 +1,210 @@
+#pragma METAINFO("GearsReloaded-2v2", 1, 0, "Parker")
+#include <xb1.gph>
+/*
+src: https://www.youtube.com/watch?v=-9Z9ol3xVKQ&t=50s, converted for titan two by Parker
+Gears Of War Reloaded Idle Boosting Seriously Achievement.
+
+This is an idle boosting script for Gears Of War Reloaded for the Seriously Achievement.
+
+You need two consoles with 4 controllers whether that be 2 Xbox Series X|S or One Xbox Series X|S and 1 PS5 either will do.
+If you don't have two consoles yourelf a friend could go AFK with two controllers on the other team.
+
+This script will only work on the Series X|S console.
+
+You need to select the 2v2 Gnashers game mode in either social or competitive. Recommend searching at the same time on both consoles to get into the same match.
+
+If you are on the 
+    Locust Team Press UP on the D-pad.
+    COG Team Press DOWN on the D-pad.
+
+The script will run until you press the start button or the game lags. Best check your console every so often.
+
+It normally runs fine for about 4-5 hours after this it may lag, so recommend searching for another match.
+
+You will get around 150 - 200 kills per hour or so.
+
+Start the script at the start of the first round without moving your character. Make sure to press the correct button depending on which team you're on.
+*/
+
+int i;
+int j=1;
+
+main { 
+    //If Locust team press UP on the D pad. You will spawn in the blue room.
+    if(get_val(XB1_UP))
+    {
+        i = 1;
+    }
+    
+    //If COG team press DOWN on the D pad. You will spawn in the yellow room.
+    if(get_val(XB1_DOWN))
+    {
+        i = 2;
+    }
+    
+    // Press start button to stop the script at anytime.
+    if(get_val(XB1_MENU))
+    {
+        i = 0;
+    }
+    if(i==1) // Locust first round.
+    {
+        if(j==1 || j==3 || j==5 || j==7)
+        {
+            combo_run(Yellow);
+        }
+        if(j==2 || j==4 || j==6)
+        {
+            combo_run(Blue);
+        }
+        if(j==8)
+        {
+            combo_run(newmatch);
+        }
+    }
+    if(i==2) // COG first round.
+    {
+        if(j==1 || j==3 || j==5 || j==7)
+        {
+            combo_run(Blue);
+        }
+        if(j==2 || j==4 || j==6)
+        {
+            combo_run(Yellow);
+        }
+        if(j==8)
+        {
+            combo_run(newmatch);
+        }
+    }
+    if(i==0)
+    {
+        combo_stop(Yellow);
+        combo_stop(Blue);
+        j=1;
+    }
+}
+
+combo Yellow {
+    //Hold A to run forward.
+    set_val(XB1_A, 100);
+    wait(3000);
+    set_val(XB1_A, 0);
+    wait(250);
+    //Walk right
+    set_val(XB1_LX, 100);
+    wait(1000);
+    set_val(XB1_LX, 0);
+    wait(250);
+    //Walk forward
+    set_val(XB1_LY, -100);
+    wait(1500);
+    set_val(XB1_LY, 0);
+    wait(250);
+    //Walk left
+    set_val(XB1_LX, -100);
+    wait(800);
+    set_val(XB1_LX, 0);
+    wait(250);
+    //Hold A to run forward.
+    set_val(XB1_A, 100);
+    wait(3700);
+    set_val(XB1_A, 0);
+    wait(500);
+    //Shoot first account
+    set_val(XB1_LT, 100);
+    wait(500);
+    set_val(XB1_LT, 100); set_val(XB1_RT, 100);
+    wait(500);
+    set_val(XB1_LT, 0); set_val(XB1_RT, 0);
+    wait(500);
+    //Adjust aim
+    set_val(XB1_RY, 100);
+    wait(50);
+    set_val(XB1_RY, 0);
+    wait(250);
+    //Walk right
+    set_val(XB1_LX, 100);
+    wait(2000);
+    set_val(XB1_LX, 0);
+    wait(250);
+    //Walk froward
+    set_val(XB1_LY, -100);
+    wait(1100);
+    set_val(XB1_LY, 0);
+    wait(500);
+    //Shoot second account
+    set_val(XB1_LT, 100);
+    wait(500);
+    set_val(XB1_LT, 100); set_val(XB1_RT, 100);
+    wait(500);
+    set_val(XB1_LT, 0); set_val(XB1_RT, 0);
+    wait(20000); // Round finish wait.
+    j = j + 1;
+}
+
+combo Blue {
+    //Hold A to run forward.
+    set_val(XB1_A, 100);
+    wait(3500);
+    set_val(XB1_A, 0);
+    wait(250);
+    //Move right direction
+    set_val(XB1_LX, 100);
+    wait(800);
+    set_val(XB1_LX, 0);
+    wait(250);
+    //Run forward
+    set_val(XB1_A, 100);
+    wait(1700);
+    set_val(XB1_A, 0);
+    wait(250);
+    //Walk left.
+    set_val(XB1_LX, -100);
+    wait(850);
+    set_val(XB1_LX, 0);
+    wait(850);
+    //Run Forward
+    set_val(XB1_A, 100);
+    wait(3200);
+    set_val(XB1_A, 0);
+    wait(250);
+    //Shoot first account
+    set_val(XB1_LT, 100);
+    wait(500);
+    set_val(XB1_LT, 100); set_val(XB1_RT, 100);
+    wait(500);
+    set_val(XB1_LT, 0); set_val(XB1_RT, 0);
+    wait(250);
+    //Adjust aim
+    set_val(XB1_RY, 100);
+    wait(50);
+    set_val(XB1_RY, 0);
+    wait(250);
+    //Walk right
+    set_val(XB1_LX, 100);
+    wait(1750);
+    set_val(XB1_LX, 0);
+    wait(250);
+    //Walk froward
+    set_val(XB1_LY, -100);
+    wait(1100);
+    set_val(XB1_LY, 0);
+    wait(500);
+    //Shoot second account
+    set_val(XB1_LT, 100);
+    wait(500);
+    set_val(XB1_LT, 100); set_val(XB1_RT, 100);
+    wait(500);
+    set_val(XB1_LT, 0); set_val(XB1_RT, 0);
+    wait(20000); //Round finish wait
+    j = j + 1;
+}
+
+combo newmatch {
+    // Wait for next match to start.
+    wait(25000);
+    wait(30000);
+    wait(30000);
+    j=1;
+}
