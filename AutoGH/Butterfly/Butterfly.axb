@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Butterfly</Game>
+    <Title>All Levels</Title>
+    <Description>Start,R2,A,R3,A
+R1,A,Start,R2,A,R3,A
+R2,A,Start,R2,A,R3,A
+R3,A,Start,R2,A,R3,A
+R4,A,Start,R2,A,R3,A
+R5,A,Start,R2,A,R3,A
+R6,A,Start,R2,A,R3,A
+R7,A,Start,R2,A,R3,A
+R8,A,Start,R2,A,R3,A
+R9,A,Start,R2,A,R3,A
+R10,A,Start,R2,A,R3,A
+R11,A,Start,R2,A,R3,A
+R12,A,Start,R2,A,R3,A
+R13,A,Start,R2,A,R3,A
+R14,A,Start,R2,A,R3,A
+R15,A,Start,R2,A,R3,A
+R16,A,Start,R2,A,R3,A
+R17,A,Start,R2,A,R3,A
+R18,A,Start,R2,A,R3,A
+R19,A,Start,R2,A,R3,A
+R20,A,Start,R2,A,R3,A
+R21,A,Start,R2,A,R3,A
+R22,A,Start,R2,A,R3,A
+R23,A,Start,R2,A,R3,A
+R24,A,Start,R2,A,R3,A
+</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="4" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="5" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="6" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="7" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="8" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="9" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="10" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="11" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="12" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="13" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="14" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="15" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="16" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="17" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="18" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="19" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="20" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="21" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="22" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="23" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="24" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="2" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="100" Wait="1000" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Wait Delay="1000" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
