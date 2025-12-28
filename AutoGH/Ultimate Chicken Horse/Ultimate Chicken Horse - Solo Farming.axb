@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Ultimate Chicken Horse</Game>
+    <Title>Solo Farming</Title>
+    <Description>Play on farm - creative
+set to 20 points for win and 50 rounds
+Need at least 3 players
+place teleporter just right of start
+place teleporter just left of flag
+place spikeball on the default start area (may as well make progress on the 1000 traps)</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="500" Repeat="6" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="2048" Hold="2000" Wait="4500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="2900" Wait="6500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="2900" Wait="6500" Repeat="1" />
+      <Wait Delay="3000" />
+      <Loop Target="0" Repeat="50" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>

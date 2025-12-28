@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Ultimate Chicken Horse</Game>
+    <Title>Trap Farming</Title>
+    <Description>Play on farm - creative
+set to 5 pieces for creative mode
+Need at least 4 players
+place spikeball on the default start area</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="500" Repeat="50" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="2900" Wait="6500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="2900" Wait="6500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="2900" Wait="6500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="2900" Wait="6500" Repeat="1" />
+      <Wait Delay="3000" />
+      <Loop Target="0" Repeat="25" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
