@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Ultimate Chicken Horse</Game>
+    <Title>Idle Showoff</Title>
+    <Description>Start online game
+Add 2 players (with a 2nd controller)
+Increase coin points
+Decrease Points to win
+turn off party box &amp; double party box
+Set run time limit of 15s
+load nckn-dbbd in party mode
+</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" ButtonMask="1040" Hold="500" Wait="25000" Repeat="1" />
+      <Press Controller="1" ButtonMask="1024" Hold="5000" Wait="40000" Repeat="1" />
+      <Loop Target="0" Repeat="20" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
