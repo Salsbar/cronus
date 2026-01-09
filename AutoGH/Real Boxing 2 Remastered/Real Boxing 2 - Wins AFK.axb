@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Real Boxing 2 Remastered</Game>
+    <Title>Wins AFK</Title>
+    <Description>Current progress is on mission #8. If starting from a different point, adjust lines 1 &amp; 2.
+My boxer is pretty strong. May need to adjust lines 9-11 if your boxer can't defeat the enemy quick enough.
+May want to keep an eye on the script in case it gets out of sync.</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Wait Delay="1500" />
+      <Press Controller="1" ButtonMask="1" Hold="150" Wait="1500" Repeat="1" />
+      <Press Controller="1" ButtonMask="1024" Hold="150" Wait="500" Repeat="4" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="1500" Repeat="1" />
+      <Press Controller="1" ButtonMask="1024" Hold="150" Wait="800" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="1500" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="150" Wait="3500" Repeat="1" />
+      <Press Controller="1" ButtonMask="32" Hold="150" Wait="1500" Repeat="5" />
+      <Group Name="Box" Repeat="8" />
+      <Press Controller="1" ButtonMask="1" Hold="3000" Wait="3500" Repeat="1" />
+      <Loop Target="8" Repeat="3" />
+      <Press Controller="1" ButtonMask="32" Hold="150" Wait="3500" Repeat="3" />
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="500" Repeat="1" />
+      <Loop Target="0" Repeat="50" />
+    </ActionGroup>
+    <ActionGroup>
+      <Name>Box</Name>
+      <Press Controller="1" RSX="32512" RSY="0" Hold="100" Wait="250" Repeat="1" />
+      <Press Controller="1" RSX="-32512" RSY="0" Hold="100" Wait="250" Repeat="1" />
+      <Press Controller="1" RSX="32512" RSY="0" Hold="100" Wait="250" Repeat="1" />
+      <Press Controller="1" RSX="32512" RSY="0" Hold="100" Wait="250" Repeat="1" />
+      <Press Controller="1" RSX="-32512" RSY="0" Hold="100" Wait="250" Repeat="1" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
