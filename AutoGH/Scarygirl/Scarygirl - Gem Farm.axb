@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Scarygirl</Game>
+    <Title>Gem Farm</Title>
+    <Description>From where you load into the tree house starting area this will repeat level one over and over</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" LSX="32512" LSY="0" Hold="250" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="31000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="500" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1500" Wait="1500" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="1000" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="100" Wait="100" Repeat="1" Comment="1st boxes" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="1250" Wait="1250" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1500" Wait="1500" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="2250" Wait="2250" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="100" Wait="100" Repeat="1" Comment="2nd boxes" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="1250" Wait="1250" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1000" Wait="1000" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="500" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1500" Wait="1500" Repeat="1" Comment="gap" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="500" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1500" Wait="1500" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="500" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1500" Wait="1500" Repeat="1" Comment="en 1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="4000" Wait="4000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1500" Wait="1500" Repeat="1" Comment="fish + gem" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="500" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1250" Wait="1250" Repeat="1" Comment="en2" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="750" Wait="750" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1500" Wait="1500" Repeat="1" Comment="en3" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="500" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1500" Wait="1500" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="4250" Wait="4250" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1000" Wait="1000" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="750" Wait="750" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1000" Wait="1000" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="750" Wait="750" Repeat="1" />
+      <Press Controller="1" LSX="-32512" LSY="0" Hold="250" Wait="250" Repeat="1" />
+      <Press Controller="1" ButtonMask="64" Hold="100" Wait="500" Repeat="2" />
+      <Press Controller="1" RT="255" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1500" Wait="1500" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="1000" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="100" Wait="100" Repeat="1" Comment="3rd boxes" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="1000" Wait="1000" Repeat="1" />
+      <Hold Controller="1" LSX="32512" LSY="0" />
+      <Press Controller="1" ButtonMask="64" Hold="100" Wait="600" Repeat="12" />
+      <Press Controller="1" LSX="-32512" LSY="0" Hold="750" Wait="750" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1500" Wait="1500" Repeat="1" />
+      <Hold Controller="1" LSX="-32512" LSY="0" />
+      <Press Controller="1" ButtonMask="64" Hold="100" Wait="600" Repeat="8" />
+      <Hold Controller="1" LSX="32512" LSY="0" />
+      <Press Controller="1" ButtonMask="64" Hold="100" Wait="600" Repeat="14" />
+      <Press Controller="1" ButtonMask="16" LSX="32512" LSY="0" Hold="1500" Wait="1500" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="10000" Wait="10000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="10000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="2000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="256" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="9000" Repeat="1" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="7000" Repeat="1" />
+      <Loop Target="0" Repeat="100" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
