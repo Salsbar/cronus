@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XBScript>
+  <Information>
+    <Game>Resident Evil Revelations</Game>
+    <Title>Kill Farm 2</Title>
+    <Description>Fill all your shock grenades (this script assumes at least 10 shock), be on level Trench 2, lower character level to 17 (Someone w/grenade bonus 1 if possible, 2 is too much)</Description>
+    <Version>2</Version>
+  </Information>
+  <ActionGroups>
+    <ActionGroup>
+      <Name>[Main]</Name>
+      <Press Controller="1" ButtonMask="16" Hold="150" Wait="9000" Repeat="1" />
+      <Press Controller="1" LSX="0" LSY="-32512" Hold="1750" Wait="1850" Repeat="1" />
+      <Press Controller="1" LSX="32512" LSY="0" Hold="1500" Wait="1600" Repeat="1" />
+      <Press Controller="1" LSX="0" LSY="-32512" Hold="500" Wait="600" Repeat="1" />
+      <Press Controller="1" LSX="-32512" LSY="0" Hold="4250" Wait="4350" Repeat="1" />
+      <Press Controller="1" LSX="0" LSY="-32512" Hold="1000" Wait="1100" Repeat="1" />
+      <Press Controller="1" ButtonMask="512" Hold="100" Wait="250" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="2000" Repeat="1" />
+      <Press Controller="1" RSX="32512" RSY="0" Hold="250" Wait="350" Repeat="1" />
+      <Press Controller="1" ButtonMask="2" Hold="100" Wait="750" Repeat="2" />
+      <Press Controller="1" RSX="-32512" RSY="0" Hold="450" Wait="550" Repeat="1" />
+      <Press Controller="1" LSX="0" LSY="-32512" Hold="900" Wait="1000" Repeat="1" />
+      <Press Controller="1" ButtonMask="2" Hold="100" Wait="750" Repeat="2" />
+      <Press Controller="1" LSX="0" LSY="32512" Hold="2100" Wait="2200" Repeat="1" />
+      <Press Controller="1" RSX="32512" RSY="0" Hold="600" Wait="700" Repeat="1" />
+      <Press Controller="1" LSX="0" LSY="-32512" Hold="1000" Wait="1100" Repeat="1" />
+      <Press Controller="1" ButtonMask="2" Hold="100" Wait="750" Repeat="2" />
+      <Wait Delay="1000" />
+      <Press Controller="1" LSX="0" LSY="-32512" Hold="1500" Wait="1600" Repeat="1" />
+      <Press Controller="1" ButtonMask="2" Hold="100" Wait="750" Repeat="2" />
+      <Wait Delay="1000" />
+      <Press Controller="1" LSX="0" LSY="-32512" Hold="1500" Wait="1600" Repeat="1" />
+      <Press Controller="1" ButtonMask="2" Hold="100" Wait="750" Repeat="2" />
+      <Wait Delay="4000" />
+      <Press Controller="1" ButtonMask="4096" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="256" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="1500" Repeat="1" />
+      <Press Controller="1" ButtonMask="256" Hold="100" Wait="500" Repeat="1" />
+      <Press Controller="1" ButtonMask="16" Hold="100" Wait="500" Repeat="40" />
+      <Wait Delay="6000" />
+      <Press Controller="1" ButtonMask="256" Hold="100" Wait="500" Repeat="1" />
+      <Loop Target="0" Repeat="1000" />
+    </ActionGroup>
+  </ActionGroups>
+</XBScript>
