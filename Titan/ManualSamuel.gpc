@@ -1,0 +1,81 @@
+#pragma METAINFO("ManualSamuel", 0, 9, "Parker")
+#include <xb1.gph>
+#include "common/ColorLED.gph"
+
+/**
+WORK IN PROGRESS
+I made this to make my life easier doing some of the challenge update e.g. Iron Lung
+Initially, there were a lot of issues with delayed or missed inputs.
+This was massively improved by reducing the polling rate 125hz
+
+What it does:
+Auto blinks (press A every 1s)  - Toggle with LS
+Auto stand (press up every 5s)  - Primarily toggled with LS, but can be overridden with RS. 
+                                - this is needed for the car sequence.
+Auto breathe (loops every ~45s) - Triggered with X press, do on a deep blue face.
+                                - Disable with B press (then restart with X when ready).
+                                - this is needed for cutscenes or otherwise manually resyncing
+                                - it can be pushed even longer but I tuned it down because it isn't worth the risk if you muck up a resync and don't get max breath
+*/
+
+int loop = 0;
+int breathing = 0;
+int standing = 0;
+
+main {
+    if (event_active(XB1_LS)) {
+        loop=!loop;
+        standing=loop; // by default, these want to be aligned
+    }
+    if (event_active(XB1_RS)) {standing=!standing;} // toggle standing - useful for car
+
+    if (event_active(XB1_X)) {breathing=1;} // assumes deep blue face
+    if (event_active(XB1_B)) {breathing=0;} // if you need to take over and exhale, the press X when deep blue
+
+    if (breathing) {
+        combo_run(breathe); 
+        ColorLED(CG);
+    }
+    if (!breathing) {
+        combo_stop(breathe);
+        ColorLED(CR);
+    }
+    
+    if (loop) {
+        combo_run(blink);
+        if (standing) { combo_run(stand); }
+    }
+    
+    if (!standing) { combo_stop(stand); }
+    
+    if (!loop) {
+        breathing = 0;
+        combo_stop(blink);
+        combo_stop(stand);
+    }
+    
+}
+
+combo breathe {
+    // in
+    set_val(XB1_X, 100);
+    wait(3000);
+    // wait until extreme red
+    wait(30000);
+    wait(10000);
+    //out
+    set_val(XB1_B, 100);
+    wait(1300);
+}
+
+combo blink {
+    set_val(XB1_A, 100);
+    wait(33);
+    wait(1000);
+}
+
+combo stand {
+    set_val(XB1_UP, 100);
+    wait(33);
+    wait(5000);
+}
