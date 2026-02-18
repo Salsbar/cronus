@@ -1,57 +1,76 @@
-#pragma METAINFO("ManualSamuel", 0, 9, "Parker")
+#pragma METAINFO("ManualSamuel", 1, 0, "Parker")
 #include <xb1.gph>
 #include "common/ColorLED.gph"
 
 /**
-WORK IN PROGRESS
 I made this to make my life easier doing some of the challenge update e.g. Iron Lung
 Initially, there were a lot of issues with delayed or missed inputs.
-This was massively improved by reducing the polling rate 125hz
+This was massively improved by reducing the polling rate 125hz.
+
+Use "New And Improved" control scheme (should be the default)
 
 What it does:
 Auto blinks (press A every 1s)  - Toggle with LS
+                                - This also acts as a master switch
 Auto stand (press up every 5s)  - Primarily toggled with LS, but can be overridden with RS. 
                                 - this is needed for the car sequence.
-Auto breathe (loops every ~45s) - Triggered with X press, do on a deep blue face.
-                                - Disable with B press (then restart with X when ready).
-                                - this is needed for cutscenes or otherwise manually resyncing
-                                - it can be pushed even longer but I tuned it down because it isn't worth the risk if you muck up a resync and don't get max breath
+Breath assist   - Whilst loop is enabled, press down on the dpad press to trigger
+                - Does a deep breath in then medium breath out
+                - Use when on deep blue face for maximum breath
+                - (Fully automating was highly unreliable due to accrued time error margin
+                
+Colour key:
+    Red = disabled
+    Green = enabled/blinking
+    Blue = enabled && doing a breath
+    Amber = ~40s since last breath
 */
 
 int loop = 0;
-int breathing = 0;
 int standing = 0;
+uint32 timer = 0;
 
-main {
+main {  
     if (event_active(XB1_LS)) {
         loop=!loop;
         standing=loop; // by default, these want to be aligned
-    }
-    if (event_active(XB1_RS)) {standing=!standing;} // toggle standing - useful for car
-
-    if (event_active(XB1_X)) {breathing=1;} // assumes deep blue face
-    if (event_active(XB1_B)) {breathing=0;} // if you need to take over and exhale, the press X when deep blue
-
-    if (breathing) {
-        combo_run(breathe); 
-        ColorLED(CG);
-    }
-    if (!breathing) {
-        combo_stop(breathe);
-        ColorLED(CR);
+        
+        // set on trigger, not every loop where true
+        if (loop) {
+            timer = 0;
+            ColorLED(CG); 
+        }
     }
     
+    // override standing - useful for car
+    if (event_active(XB1_RS)) {standing=!standing;}
+    if (!standing) { combo_stop(stand); }
+    
+    // main loop
     if (loop) {
         combo_run(blink);
         if (standing) { combo_run(stand); }
+        
+        if (event_active(XB1_DOWN)) { 
+            ColorLED(CB);
+            combo_run(breathe);
+        }
+        
+        // something I was playing about with but not too important
+        timer += elapsed_time();
+        if (timer >= 40000) {
+            ColorLED(CA);
+            timer = 0; // to stop Amber overwriting Blue during breath
+        }
     }
     
-    if (!standing) { combo_stop(stand); }
-    
-    if (!loop) {
-        breathing = 0;
+    // kill switch
+    if (!loop) { 
         combo_stop(blink);
         combo_stop(stand);
+        combo_stop(breathe);
+        timer = 0;
+        ColorLED(CR);
     }
     
 }
@@ -59,13 +78,15 @@ main {
 combo breathe {
     // in
     set_val(XB1_X, 100);
-    wait(3000);
-    // wait until extreme red
-    wait(30000);
-    wait(10000);
+    wait(2950);
+    wait(50);
     //out
     set_val(XB1_B, 100);
-    wait(1300);
+    wait(1200);
+    wait(50);
+    ColorLED(CG);
+    timer = 0;
+    combo_stop(breathe);
 }
 
 combo blink {
