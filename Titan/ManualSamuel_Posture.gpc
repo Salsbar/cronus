@@ -1,29 +1,27 @@
-#pragma METAINFO("ManualSamuel_Posture", 1, 0, "Parker")
+#pragma METAINFO("ManualSamuel_Posture", 1, 1, "Parker")
 #include <xb1.gph>
 #include "common/ColorLED.gph"
 
 /**
-I made this to make my life easier doing some of the challenge update e.g. Iron Lung
-Initially, there were a lot of issues with delayed or missed inputs.
-This was massively improved by reducing the polling rate 125hz.
+This is a tweaked version of ManualSamuel_IronLung to further help with Amazing Posture and Golden Hair
+Check that script out first for useful info (and it's entirely possible to get all 3 with in one go with it)
 
-Use "New And Improved" control scheme (should be the default)
+The main changes are:
+    - Auto breathe - now that we don't need to minimise breathes, 
+    we can generally handle it programmatically by triggering every 10s
+        - NOTE: Manual breathe with dpad down still exists and should be used as a backup.
+        - The auto breathe (timer) will reset automatically
+    - Toggle auto breathe with dpad right 
+        - you'll need to do this when drinking, talking, in the mech, and during cutscenes to avoid muck ups
+    - Drink assist - press dpad left
+        - during the section in the mech factory, you'll need to drink water to short circuit the door
+        - if you miss the timing, you'll fail Golden Hair
+        - use when the water is dispesned and ready to pick up via holding LB
 
-What it does:
-Auto blinks (press A every 1s)  - Toggle with LS
-                                - This also acts as a master switch
-Auto stand (press up every 5s)  - Primarily toggled with LS, but can be overridden with RS. 
-                                - this is needed for the car sequence.
-Breath assist   - Whilst loop is enabled, press down on the dpad press to trigger
-                - Does a deep breath in then medium breath out
-                - Use when on deep blue face for maximum breath
-                - (Fully automating was highly unreliable due to accrued time error margin
-                
 Colour key:
     Red = disabled
     Green = enabled/blinking
     Blue = enabled && doing a breath
-    Amber = ~40s since last breath
 */
 
 int loop = 0;
@@ -113,7 +111,7 @@ combo stand {
 
 combo drink {
     set_val(XB1_LB, 100);
-    wait(500);
+    wait(2000);
     set_val(XB1_Y, 100);
     set_val(XB1_LB, 100);
     wait(50);
