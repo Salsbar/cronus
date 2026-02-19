@@ -1,0 +1,122 @@
+#pragma METAINFO("ManualSamuel_Posture", 1, 0, "Parker")
+#include <xb1.gph>
+#include "common/ColorLED.gph"
+
+/**
+I made this to make my life easier doing some of the challenge update e.g. Iron Lung
+Initially, there were a lot of issues with delayed or missed inputs.
+This was massively improved by reducing the polling rate 125hz.
+
+Use "New And Improved" control scheme (should be the default)
+
+What it does:
+Auto blinks (press A every 1s)  - Toggle with LS
+                                - This also acts as a master switch
+Auto stand (press up every 5s)  - Primarily toggled with LS, but can be overridden with RS. 
+                                - this is needed for the car sequence.
+Breath assist   - Whilst loop is enabled, press down on the dpad press to trigger
+                - Does a deep breath in then medium breath out
+                - Use when on deep blue face for maximum breath
+                - (Fully automating was highly unreliable due to accrued time error margin
+                
+Colour key:
+    Red = disabled
+    Green = enabled/blinking
+    Blue = enabled && doing a breath
+    Amber = ~40s since last breath
+*/
+
+int loop = 0;
+int standing = 0;
+int autoBreathe = 0;
+uint32 timer = 0;
+
+main {  
+    if (event_active(XB1_LS)) {
+        loop=!loop;
+        standing=loop; // by default, these want to be aligned
+        autoBreathe=loop;
+        
+        // set on trigger, not every loop where true
+        if (loop) {
+            timer = 0;
+            ColorLED(CG); 
+        }
+    }
+    
+    // override standing - useful for car
+    if (event_active(XB1_RS)) {standing=!standing;}
+    if (!standing) { combo_stop(stand); }
+    
+    // main loop
+    if (loop) {
+        combo_run(blink);
+        if (standing) { combo_run(stand); }
+        
+        // manually trigger a breath loop
+        if (event_active(XB1_DOWN)) { 
+            combo_run(breathe);
+        }
+        // override auto breathe - useful for mech
+        if (event_active(XB1_RIGHT)) {
+            autoBreathe=!autoBreathe;
+        }
+        
+        // take a break every ~10s
+        timer += elapsed_time();
+        if (autoBreathe && timer >= 10000) {
+            combo_run(breathe);
+        }
+        
+        // drink the water in factory - useful for keeping golden hair
+        if (event_active(XB1_LEFT)) {
+            combo_run(drink);
+        }
+    }
+    
+    // kill switch
+    if (!loop) { 
+        combo_stop(blink);
+        combo_stop(stand);
+        combo_stop(breathe);
+        timer = 0;
+        ColorLED(CR);
+    }
+    
+}
+
+combo breathe {
+    ColorLED(CB);
+    // in
+    set_val(XB1_X, 100);
+    wait(2950);
+    wait(50);
+    //out
+    set_val(XB1_B, 100);
+    wait(1200);
+    wait(50);
+    ColorLED(CG);
+    timer = 0;
+}
+
+combo blink {
+    set_val(XB1_A, 100);
+    wait(33);
+    wait(1000);
+}
+
+combo stand {
+    set_val(XB1_UP, 100);
+    wait(33);
+    wait(5000);
+}
+
+combo drink {
+    set_val(XB1_LB, 100);
+    wait(500);
+    set_val(XB1_Y, 100);
+    set_val(XB1_LB, 100);
+    wait(50);
+    set_val(XB1_LB, 100);
+    wait(500);
+}

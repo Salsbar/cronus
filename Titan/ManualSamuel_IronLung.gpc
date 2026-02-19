@@ -23,7 +23,7 @@ Colour key:
     Red = disabled
     Green = enabled/blinking
     Blue = enabled && doing a breath
-    Amber = ~40s since last breath
+    Amber = ~40s since last breath (purely an indicator)
 */
 
 int loop = 0;
@@ -86,7 +86,6 @@ combo breathe {
     wait(50);
     ColorLED(CG);
     timer = 0;
-    combo_stop(breathe);
 }
 
 combo blink {
