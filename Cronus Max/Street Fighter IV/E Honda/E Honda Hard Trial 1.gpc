@@ -1,0 +1,138 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 E Honda Hard Trial 1", 1, 0, "XxFrAsZeRxX")
+
+//Push the characters all the way to the right. Take a couple steps back, and activate using LS.
+
+int i;
+
+define lk = XB360_A;
+define mk = XB360_B;
+define hk = XB360_RT;
+
+define lp = XB360_X;
+define mp = XB360_Y;
+define hp = XB360_RB;
+
+define LY = XB360_LY;
+define LX = XB360_LX;
+
+define d = XB360_DOWN;
+define r = XB360_RIGHT;
+define l = XB360_LEFT;
+define u = XB360_UP;
+
+define p = XB360_LB;
+define k = XB360_LT;
+
+main 
+{
+	if(get_val(XB360_LS))
+	{
+		i = 1;
+	}
+	if(get_val(XB360_RS))
+	{
+		i = 0;
+	}
+	
+	
+	if(i==1)
+	{
+		combo_run(move1);
+	}
+	if(i==0)
+	{
+		combo_stop(move1);
+	}
+}
+
+combo move1
+{
+	//Jump Heavy Punch
+	set(u);
+	set(r);
+	wait(25);
+	set(l);
+	wait(500);
+	//Heavy Hundred Hand Slap
+	set(hp);
+	set(l);
+	wait(50);
+	set(l);
+	rel(hp);
+	wait(50);
+	set(hp);
+	set(l);
+	wait(50);
+	rel(hp);
+	set(l);
+	wait(50);
+	set(hp);
+	set(l);
+	wait(50);
+	rel(hp);
+	set(l);
+	wait(50);
+	set(hp);
+	set(l);
+	wait(50);
+	rel(hp);
+	set(l);
+	wait(50);
+	set(hp);
+	set(l);
+	wait(50);
+	rel(hp);
+	set(l);
+	wait(50);
+	set(hp);
+	set(l);
+	wait(50);
+	rel(hp);
+	set(l);
+	wait(50);
+	set(hp);
+	set(l);
+	wait(50);
+	rel(hp);
+	set(l);
+	wait(50);
+	set(hp);
+	set(l);
+	wait(50);
+	rel(hp);
+	set(l);
+	wait(50);
+	//Super Killer Head Ram
+	set(r);
+	wait(25);
+	set(l);
+	wait(25);
+	set(r);
+	set(hp);
+	wait(100);
+	i = 0;
+}
+
+combo dashf
+{
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+}
+
+function set(button)
+{
+	set_val(button, 100);
+}
+
+function rel(button)
+{
+	set_val(button, 0);
+}

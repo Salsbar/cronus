@@ -1,0 +1,109 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Blanka Hard Trial 3", 1, 0, "XxFrAsZeRxX")
+
+//Push the characters all the way to the right. Back up one half of a large square and activate.
+int i;
+
+define lk = XB360_A;
+define mk = XB360_B;
+define hk = XB360_RT;
+
+define lp = XB360_X;
+define mp = XB360_Y;
+define hp = XB360_RB;
+
+define LY = XB360_LY;
+define LX = XB360_LX;
+
+define d = XB360_DOWN;
+define r = XB360_RIGHT;
+define l = XB360_LEFT;
+define u = XB360_UP;
+
+define p = XB360_LB;
+define k = XB360_LT;
+
+main 
+{
+	if(get_val(XB360_LS))
+	{
+		i = 1;
+	}
+	if(get_val(XB360_RS))
+	{
+		i = 0;
+	}
+	
+	
+	if(i==1)
+	{
+		combo_run(move1);
+	}
+	if(i==0)
+	{
+		combo_stop(move1);
+	}
+}
+
+combo move1
+{ 
+	wait(500);
+	set(u);
+	set(r);
+	wait(100);
+	set(l);
+	wait(300);
+	set(hk);
+	set(l);
+	wait(550);
+	//Crouch Light Punch
+	set(lp);
+	set(l);
+	set(d);
+	wait(50);
+	//Electric Thunder
+	set(mp);
+	set(l);
+	wait(50);
+	set(hp);
+	set(l);
+	wait(50);
+	set(mp);
+	set(l);
+	wait(50);
+	set(lp);
+	set(l);
+	wait(50);
+	//Ground Shave Roll
+	set(r);
+	wait(50);
+	set(l);
+	wait(50);
+	set(r);
+	set(hp);
+	wait(10);
+	i = 0;
+}
+
+combo dashf
+{
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+}
+
+function set(button)
+{
+	set_val(button, 100);
+}
+
+function rel(button)
+{
+	set_val(button, 0);
+}

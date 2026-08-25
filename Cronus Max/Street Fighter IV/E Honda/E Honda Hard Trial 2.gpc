@@ -1,0 +1,103 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 E Honda Hard Trial 2", 1, 0, "XxFrAsZeRxX")
+
+//Push the characters all the way to the right. Activate using LS.
+
+int i;
+
+main 
+{
+	if(get_val(XB360_LS))
+	{
+		i = 1;
+	}
+	if(get_val(XB360_RS))
+	{
+		i = 0;
+	}
+	
+	
+	if(i==1)
+	{
+		combo_run(move1);
+	}
+	if(i==0)
+	{
+		combo_stop(move1);
+	}
+}
+
+combo move1
+{
+	set_val(XB360_RIGHT, 100);
+    wait(500);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 100);
+    set_val(XB360_Y, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 0);
+    set_val(XB360_Y, 0);
+    wait(20);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 100);
+    set_val(XB360_Y, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 0);
+    set_val(XB360_Y, 0);
+    wait(20);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 100);
+    set_val(XB360_Y, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 0);
+    set_val(XB360_Y, 0);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 100);
+    set_val(XB360_Y, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 0);
+    set_val(XB360_Y, 0);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 100);
+    set_val(XB360_Y, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 0);
+    set_val(XB360_Y, 0);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 100);
+    set_val(XB360_Y, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 0);
+    set_val(XB360_Y, 0);
+    wait(1500);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_X, 100);
+    wait(50);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_X, 0);
+    wait(50);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_UP, 100);
+    set_val(XB360_LT, 100);
+    wait(50);
+    set_val(XB360_UP, 0);
+    set_val(XB360_LT, 0);
+	i = 0;
+}

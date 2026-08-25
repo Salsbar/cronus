@@ -1,0 +1,30 @@
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Ken Normal Trial 3-2", 1, 0, "XxFrAsZeRxX")
+main {
+    if(get_val(XB1_RS)) {
+        combo_run(Turbo_1);
+    }
+
+}
+
+combo Turbo_1 {
+	//crouch medium kick
+	set_val(XB1_DOWN, 100);
+	wait(200);
+	set_val(XB1_DOWN, 100);
+	set_val(XB1_B, 100);
+	wait(20);
+	set_val(XB1_DOWN, 0);
+	set_val(XB1_B, 0);
+	wait(10);
+	//Tatsumaki Senpukyaku
+	set_val(XB1_DOWN, 100);
+	wait(20);
+	set_val(XB1_DOWN, 100);
+	set_val(XB1_LEFT, 100);
+	wait(20);
+	set_val(XB1_LEFT, 100);
+	set_val(XB1_B, 100);
+	wait(200);
+}
+

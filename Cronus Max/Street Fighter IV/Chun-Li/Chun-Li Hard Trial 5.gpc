@@ -1,0 +1,135 @@
+//Push the characters all the way to the right. Take a couple steps back, and activate using LS.
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Chun-Li Hard Trial 5", 1, 0, "XxFrAsZeRxX")
+
+// Move Dan all the way to the right, back up a little, and activate
+
+int i;
+
+define lk = XB360_A;
+define mk = XB360_B;
+define hk = XB360_RT;
+
+define lp = XB360_X;
+define mp = XB360_Y;
+define hp = XB360_RB;
+
+define LY = XB360_LY;
+define LX = XB360_LX;
+
+define d = XB360_DOWN;
+define r = XB360_RIGHT;
+define l = XB360_LEFT;
+define u = XB360_UP;
+
+define p = XB360_LB;
+define k = XB360_LT;
+
+main 
+{
+	if(get_val(XB360_BACK))
+	{
+		i = 1;
+	}
+	if(get_val(XB360_RS))
+	{
+		i = 0;
+	}
+	
+	
+	if(i==1)
+	{
+		combo_run(move1);
+	}
+	if(i==0)
+	{
+		combo_stop(move1);
+	}
+}
+
+combo move1
+{
+	//Jump Heavy Kick
+	set(u);
+	set(r);
+	wait(100);
+	set(l);
+	wait(400);
+	set(hk);
+	set(l);
+	wait(500);
+	//Heavy Punch
+	set(l);
+	set(hp);
+	wait(20);
+	rel(hp);
+	set(l);
+	wait(100);
+	//EX Kikoken
+	set(r);
+	set(hp);
+	set(mp);
+	wait(50);
+	rel(mp);
+	rel(hp);
+	wait(200);
+	//EX Focus Attack
+	set(mp);
+	set(mk);
+	wait(500);
+	rel(mp);
+	rel(mk);
+	wait(200);
+	call(dashf);
+	wait(700);
+	//Kintekishu
+	set(l);
+	set(mk);
+	wait(25);
+	rel(mk);
+	wait(350);
+	//Tenkukyaku
+	set(mk);
+	wait(500);
+	set(d);
+	set(l);
+	wait(25);
+	set(u);
+	set(l);
+	wait(25);
+	set(mk);
+	set(l);
+	wait(1350);
+	set(l);
+	wait(25);
+	set(r);
+	wait(25);
+	set(l);
+	wait(25);
+	set(r);
+	set(k);
+	wait(100);
+	i = 0;
+}
+
+combo dashf
+{
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+}
+
+function set(button)
+{
+	set_val(button, 100);
+}
+
+function rel(button)
+{
+	set_val(button, 0);
+}

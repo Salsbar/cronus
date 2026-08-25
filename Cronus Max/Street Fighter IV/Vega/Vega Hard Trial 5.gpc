@@ -1,0 +1,48 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Vega Hard Trial 5", 1, 0, "XxFrAsZeRxX")
+
+main {  if(get_val(XB360_LS)) combo_run(trial); 
+        if(get_val(XB360_RS)) combo_stop(trial); 
+}
+
+combo trial {
+	//Jump Heavy Punch
+    set_val(XB360_UP, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_UP, 0);
+    set_val(XB360_RIGHT, 0);
+    set_val(XB360_DOWN, 100);
+    wait(525);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RB, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RB, 0);
+    wait(300);
+    //Crouch MED Kick
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_B, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_B, 0);
+    wait(510);
+    //Light Kick 2x
+    set_val(XB360_A, 100);
+    wait(20);
+    set_val(XB360_A, 0);
+    wait(325);
+    set_val(XB360_A, 100);
+    wait(20);
+    set_val(XB360_A, 0);
+    wait(350);
+    //Crouch MED Punch
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_Y, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_Y, 0);
+
+}
+

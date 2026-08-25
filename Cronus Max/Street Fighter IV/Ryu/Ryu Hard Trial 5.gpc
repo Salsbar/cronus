@@ -1,0 +1,122 @@
+//Push the characters all the way to the right. Take a few steps backwars and activate using LS.
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Ryu Hard Trial 5", 1, 0, "XxFrAsZeRxX")
+int i;
+
+define lk = XB360_A;
+define mk = XB360_B;
+define hk = XB360_RT;
+
+define lp = XB360_X;
+define mp = XB360_Y;
+define hp = XB360_RB;
+
+define LY = XB360_LY;
+define LX = XB360_LX;
+
+define d = XB360_DOWN;
+define r = XB360_RIGHT;
+define l = XB360_LEFT;
+define u = XB360_UP;
+
+define p = XB360_LB;
+define k = XB360_LT;
+
+main 
+{
+	if(get_val(XB360_BACK))
+	{
+		i = 1;
+	}
+	if(get_val(XB360_RS))
+	{
+		i = 0;
+	}
+	
+	
+	if(i==1)
+	{
+		combo_run(move1);
+	}
+	if(i==0)
+	{
+		combo_stop(move1);
+	}
+}
+
+combo move1
+{
+	//Jump Heavy Punch
+	set(u);
+	set(r);
+	wait(500);
+	set(hp);
+	wait(450);
+	//Crouch Medium Punch
+	set(d);
+	set(mp);
+	wait(425);
+	//Crouch Heavy Punch
+	set(d);
+	set(hp);
+	wait(200);
+	//EX Tatsumaki Senpukyaku
+	set(d);
+	wait(25);
+	set(d);
+	set(l);
+	wait(25);
+	set(l);
+	set(k);
+	wait(1200);
+	//EX Shoryuken
+	set(r);
+	wait(25);
+	set(d);
+	wait(25);
+	set(d);
+	set(r);
+	set(p);
+	wait(25);
+	rel(p);
+	wait(250);
+	//EX Focus General
+	set(mk);
+	set(mp);
+	wait(100);
+	set(r);
+	wait(20);
+	rel(r);
+	wait(20);
+	set(r);
+	wait(20);
+	rel(r);
+	wait(300);
+	//Metsu Hadoken
+	set(d);
+	wait(25);
+	set(d);
+	set(r);
+	wait(25);
+	set(r);
+	wait(25);
+	set(d);
+	wait(25);
+	set(d);
+	set(r);
+	wait(25);
+	set(r);
+	set(p);
+	wait(100);
+	i = 0;
+}
+
+function set(button)
+{
+	set_val(button, 100);
+}
+
+function rel(button)
+{
+	set_val(button, 0);
+}

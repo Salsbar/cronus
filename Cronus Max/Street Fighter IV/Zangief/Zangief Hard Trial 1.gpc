@@ -1,0 +1,80 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Zangief Hard Trial 1", 1, 0, "XxFrAsZeRxX")
+
+main {  if(get_val(XB360_LS)) combo_run(trial); 
+        if(get_val(XB360_RS)) combo_stop(trial); 
+}
+
+combo trial {
+    set_val(XB360_DOWN, 100);
+    wait(50);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_X, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_X, 0);
+    wait(295);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RB, 100);
+    wait(20);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_RB, 0);
+    wait(100);
+    set_val(XB360_DOWN, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_X, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_X, 0);
+    set_val(XB360_RIGHT, 0);
+    wait(300);
+    set_val(XB360_Y, 100);
+    set_val(XB360_B, 100);
+    wait(20);
+    set_val(XB360_Y, 0);
+    set_val(XB360_B, 0);
+    wait(20);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 0);
+    wait(20);
+    set_val(XB360_RIGHT, 100);
+    wait(50)
+    set_val(XB360_RIGHT, 0);
+    wait(360)
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_X, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_X, 0);
+    wait(300);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RB, 100);
+    wait(20);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_RB, 0);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 0);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_RB, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_RB, 0);
+    set_val(XB360_RIGHT, 0);
+    
+}

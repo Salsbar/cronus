@@ -1,0 +1,122 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Gen Hard Trial 1", 1, 0, "XxFrAsZeRxX")
+
+//Stay in the middle near the red line. Have the player stand over the red line and activate as Dan is beginning to jump up. Make sure Gen is in the regular stance 
+//upon activation.
+int i;
+
+define lk = XB360_A;
+define mk = XB360_B;
+define hk = XB360_RT;
+
+define lp = XB360_X;
+define mp = XB360_Y;
+define hp = XB360_RB;
+
+define LY = XB360_LY;
+define LX = XB360_LX;
+
+define d = XB360_DOWN;
+define r = XB360_RIGHT;
+define l = XB360_LEFT;
+define u = XB360_UP;
+
+define p = XB360_LB;
+define k = XB360_LT;
+
+main { // block start
+                                                       
+    if(event_press(XB360_LS))combo_run(move1);
+                                                       
+    if(event_press(XB360_RS))combo_stop(move1);
+                                                       
+}// main block end
+
+combo move1 
+{
+	set_val(PS4_L2, 100);
+	wait(10);
+	set_val(PS4_L1, 100);
+	set_val(PS4_L2, 100);
+	wait(140);
+	set_val(PS4_L1, 0);
+	set_val(PS4_L2, 100);
+	wait(20);
+	set_val(PS4_L2, 0);
+	wait(930);
+	set_val(PS4_LX, 100);
+	wait(220);
+	set_val(PS4_LX, 0);
+	wait(800);
+	set_val(PS4_LX, 100);
+	wait(60);
+	set_val(PS4_LX, 100);
+	set_val(PS4_LY, -100);
+	wait(210);
+	set_val(PS4_LX, 0);
+	set_val(PS4_LY, -100);
+	wait(10);
+	set_val(PS4_LY, 0);
+	wait(20);
+	set_val(PS4_R2, 100);
+	wait(120);
+	set_val(PS4_R2, 0);
+	wait(120);
+	set_val(PS4_R2, 100);
+	wait(80);
+	set_val(PS4_R2, 0);
+	wait(90);
+	set_val(PS4_R2, 100);
+	wait(50);
+	set_val(PS4_R2, 0);
+	wait(230);
+	set_val(PS4_LY, 100);
+	wait(110);
+	set_val(PS4_LX, 100);
+	set_val(PS4_LY, 100);
+	wait(10);
+	set_val(PS4_LX, 100);
+	set_val(PS4_LY, 0);
+	wait(90);
+	set_val(PS4_LX, 100);
+	set_val(PS4_LY, 100);
+	wait(10);
+	set_val(PS4_LX, 0);
+	set_val(PS4_LY, 100);
+	wait(60);
+	set_val(PS4_LX, 100);
+	set_val(PS4_LY, 100);
+	wait(30);
+	set_val(PS4_LX, 100);
+	set_val(PS4_LY, 0);
+	wait(10);
+	set_val(PS4_L2, 100);
+	set_val(PS4_LX, 100);
+	wait(50);
+	set_val(PS4_L2, 0);
+	set_val(PS4_LX, 0);
+	i = 0;
+}
+
+combo dashf
+{
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+}
+
+function set(button)
+{
+	set_val(button, 100);
+}
+
+function rel(button)
+{
+	set_val(button, 0);
+}

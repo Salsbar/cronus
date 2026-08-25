@@ -1,0 +1,54 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Dhalsim Hard Trial 5", 1, 0, "XxFrAsZeRxX")
+
+//Get as close as possible, move all the way to the right wall and activate.
+int i;
+
+main { // block start
+                                                       
+    if(event_press(XB360_LS   ))combo_run(move1);
+                                                       
+    if(event_press(XB360_RS))combo_stop(move1);
+                                                       
+}// main block end
+
+combo move1 {
+    set_val(XB360_LEFT, 100);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RB, 100);
+    wait(20);
+    set_val(XB360_LEFT, 100);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RB, 0);
+    wait(530);
+    set_val(XB360_LEFT, 100);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_A, 100);
+    wait(20);
+    set_val(XB360_LEFT, 0);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_A, 0);
+    wait(50);
+    set_val(XB360_DOWN, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 0);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_RB, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 0);
+    set_val(XB360_RB, 0);
+   i = 0;
+}

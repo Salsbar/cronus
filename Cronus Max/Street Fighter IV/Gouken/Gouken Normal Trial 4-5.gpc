@@ -1,0 +1,69 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Gouken Normal Trial 4-5", 1, 0, "XxFrAsZeRxX")
+
+//Created and/or amended by Dr Marty. 
+//I need to thank JayD101 for providing some of the source material.
+//Also thanks to XxFrAsZeRxX for a crash course in CronusMax scripting.
+//Lastly, thanks goes to James Nguyen (siky) for some details on game mechanics 
+
+//Push Dan into the corner. Stand 1.5 squares apart
+
+main {  if(get_val(XB360_LS)) combo_run(trial); 
+        if(get_val(XB360_RS)) combo_stop(trial); 
+}
+
+
+combo trial {
+	//Hyakkishu
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 0);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_A, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_A, 0);
+    wait(350);
+    //Hyakki Gojin
+    set_val(XB360_A, 100);
+    wait(20);
+    set_val(XB360_A, 0);
+    wait(700);
+    //Heavy Punch
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_RB, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 0);
+    set_val(XB360_RB, 0);
+    wait(50);
+    //Senkugoshoha
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 0);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 0);
+
+}
+

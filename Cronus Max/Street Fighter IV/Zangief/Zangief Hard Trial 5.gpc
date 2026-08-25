@@ -1,0 +1,163 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+#include <titanone.gph>
+#pragma METAINFO("SF4 Zangief Hard Trial 5", 1, 0, "XxFrAsZeRxX")
+
+//Walk next to the character, and against the wall. Activate it. This one is a bit finicky, if it doesn't work make sure you're as close as possible and retry.
+//May take a handful of attempts.
+int i;
+
+define lk = XB360_A;
+define mk = XB360_B;
+define hk = XB360_RT;
+
+define lp = XB360_X;
+define mp = XB360_Y;
+define hp = XB360_RB;
+
+define LY = XB360_LY;
+define LX = XB360_LX;
+
+define d = XB360_DOWN;
+define r = XB360_RIGHT;
+define l = XB360_LEFT;
+define u = XB360_UP;
+
+define p = XB360_LB;
+define k = XB360_LT;
+
+main 
+{
+	if(get_val(XB360_LS))
+	{
+		i = 1;
+	}
+	if(get_val(XB360_RS))
+	{
+		i = 0;
+	}
+	
+	
+	if(i==1)
+	{
+		combo_run(move1);
+	}
+	if(i==0)
+	{
+		combo_stop(move1);
+		combo_stop(dashf);
+	}
+}
+
+combo move1
+{ 
+	wait(500);
+	set(l);
+	wait(750);
+	rel(l);
+	wait(500);
+	set_val(PS4_UP, 100);
+	set_val(PS4_RIGHT, 100);
+	wait(200);
+	set_val(PS4_RIGHT, 0);
+	wait(300);
+	set_val(PS4_DOWN, 100);
+	wait(50);
+	set(lk);
+	set_val(PS4_DOWN, 100);
+	wait(200);
+	set_val(PS4_DOWN, 100);
+	wait(100);
+	set_val(PS4_DOWN, 100);
+	set(lk);
+	wait(60);
+	set_val(PS4_DOWN, 100);
+	rel(lk);
+	wait(90);
+	set_val(PS4_DOWN, 100);
+	set(lk);
+	wait(40);
+	set_val(PS4_DOWN, 100);
+	rel(lk);
+	wait(90);
+	set_val(PS4_DOWN, 100);
+	set(lk);
+	wait(50);
+	set_val(PS4_DOWN, 100);
+	rel(lk);
+	wait(80);
+	set_val(PS4_DOWN, 100);
+	set(lk);
+	wait(40);
+	set_val(PS4_DOWN, 100);
+	rel(lk);
+	wait(70);
+	set_val(PS4_DOWN, 100);
+	set(lk);
+	wait(60);
+	set_val(PS4_DOWN, 100);
+	rel(lk);
+	wait(50);
+	set_val(PS4_DOWN, 100);
+	set(lk);
+	wait(60);
+	set_val(PS4_DOWN, 100);
+	rel(lk);
+	wait(50);
+	set_val(PS4_DOWN, 100);
+	set(lk);
+	wait(40);
+	set_val(PS4_DOWN, 100);
+	rel(lk);
+	wait(70);
+	set_val(PS4_DOWN, 100);
+	set(lk);
+	wait(40);
+	set_val(PS4_DOWN, 100);
+	rel(lk);
+	wait(70);
+	set_val(PS4_DOWN, 100);
+	set(lk);
+	wait(40);
+	set_val(PS4_DOWN, 100);
+	rel(lk);
+	wait(70);
+	set_val(PS4_DOWN, 100);
+	set(lk);
+	wait(40);
+	set_val(PS4_DOWN, 100);
+	rel(lk);
+	wait(50);
+	set(r);
+	wait(25);
+	set(d);
+	wait(25);
+	set(d);
+	set(r);
+	wait(25);
+	set(lp);
+	set(mp);
+	wait(1000);
+	i = 0;
+}
+
+combo dashf
+{
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+}
+
+function set(button)
+{
+	set_val(button, 100);
+}
+
+function rel(button)
+{
+	set_val(button, 0);
+}

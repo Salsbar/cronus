@@ -1,0 +1,107 @@
+#include <titanone.gph>
+#pragma METAINFO("SF4 Ken Hard Trial 1", 1, 0, "XxFrAsZeRxX")
+
+int i;
+
+define lk = XB360_A;
+define mk = XB360_B;
+define hk = XB360_RT;
+
+define lp = XB360_X;
+define mp = XB360_Y;
+define hp = XB360_RB;
+
+define LY = XB360_LY;
+define LX = XB360_LX;
+
+define d = XB360_DOWN;
+define r = XB360_RIGHT;
+define l = XB360_LEFT;
+define u = XB360_UP;
+
+define p = XB360_LB;
+define k = XB360_LT;
+
+main 
+{
+	if(get_val(XB360_LS))
+	{
+		i = 1;
+	}
+	if(get_val(XB360_RS))
+	{
+		i = 0;
+	}
+	
+	
+	if(i==1)
+	{
+		combo_run(move1);
+	}
+	if(i==0)
+	{
+		combo_stop(move1);
+	}
+}
+
+combo move1
+{
+	//Jump Heavy Kick
+	set(u);
+	wait(550);
+	set(hk);
+	wait(450);
+	//Target Combo
+	set(mp);
+	wait(50);
+	set(hp);
+	wait(200);
+	//Light Shoryuken
+	set(r);
+	wait(25);
+	set(d);
+	wait(25);
+	set(r);
+	set(lp);
+	wait(300);
+	//EX Focus Cancel
+	set(mp);
+	set(mk);
+	wait(100);
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+	set(r);
+	wait(25);
+	rel(r);
+	wait(300);
+	//Shinyuken
+	set(d);
+	wait(25);
+	set(d);
+	set(r);
+	wait(25);
+	set(r);
+	wait(25);
+	set(d);
+	wait(25);
+	set(d);
+	set(r);
+	wait(25);
+	set(r);
+	wait(25);
+	set(p);
+	wait(50);
+	i = 0;
+}
+
+function set(button)
+{
+	set_val(button, 100);
+}
+
+function rel(button)
+{
+	set_val(button, 0);
+}

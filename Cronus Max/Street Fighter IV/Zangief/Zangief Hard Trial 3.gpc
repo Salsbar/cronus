@@ -1,0 +1,125 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Zangief Hard Trial 3", 1, 0, "XxFrAsZeRxX")
+
+//Walk next to the character, and against the wall. Must be activated a couple steps away from the character. If it is blocked you are too far to the left.
+//If you jump over him you are too close.
+int i;
+
+define lk = XB360_A;
+define mk = XB360_B;
+define hk = XB360_RT;
+
+define lp = XB360_X;
+define mp = XB360_Y;
+define hp = XB360_RB;
+
+define LY = XB360_LY;
+define LX = XB360_LX;
+
+define d = XB360_DOWN;
+define r = XB360_RIGHT;
+define l = XB360_LEFT;
+define u = XB360_UP;
+
+define p = XB360_LB;
+define k = XB360_LT;
+
+main 
+{
+	if(get_val(XB360_LS))
+	{
+		i = 1;
+	}
+	if(get_val(XB360_RS))
+	{
+		i = 0;
+	}
+	
+	
+	if(i==1)
+	{
+		combo_run(move1);
+	}
+	if(i==0)
+	{
+		combo_stop(move1);
+		combo_stop(dashf);
+	}
+}
+
+combo move1
+{ 
+	set_val(PS4_UP, 100);
+	set_val(PS4_RIGHT, 100);
+	wait(200);
+	set_val(PS4_RIGHT, 0);
+	wait(250);
+	set_val(PS4_DOWN, 100);
+	wait(10);
+	set_val(PS4_R1, 100);
+	set_val(PS4_DOWN, 100);
+	wait(360);
+	set_val(PS4_R1, 0);
+	set_val(PS4_DOWN, 100);
+	wait(10);
+	set_val(PS4_DOWN, 0);
+	wait(120);
+	set_val(PS4_SQUARE, 100);
+	wait(90);
+	set_val(PS4_SQUARE, 0);
+	wait(90);
+	set_val(PS4_SQUARE, 100);
+	wait(80);
+	set_val(PS4_SQUARE, 0);
+	wait(80);
+	set_val(PS4_SQUARE, 100);
+	wait(90);
+	set_val(PS4_SQUARE, 0);
+	wait(80);
+	set_val(PS4_SQUARE, 100);
+	wait(100);
+	set_val(PS4_SQUARE, 0);
+	wait(80);
+	set_val(PS4_SQUARE, 100);
+	wait(80);
+	set_val(PS4_SQUARE, 0);
+	wait(80);
+	set_val(PS4_SQUARE, 100);
+	wait(80);
+	set_val(PS4_SQUARE, 0);
+	wait(90);
+	set_val(PS4_SQUARE, 100);
+	wait(70);
+	set_val(PS4_SQUARE, 0);
+	wait(90);
+	set_val(PS4_SQUARE, 100);
+	wait(70);
+	set_val(PS4_SQUARE, 0);
+	wait(75);
+	set(mp);
+	wait(50);
+	i = 0;
+}
+
+combo dashf
+{
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+	set(r);
+	wait(25);
+	rel(r);
+	wait(25);
+}
+
+function set(button)
+{
+	set_val(button, 100);
+}
+
+function rel(button)
+{
+	set_val(button, 0);
+}

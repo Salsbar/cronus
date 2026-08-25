@@ -1,0 +1,48 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 M Bison Normal Trial 4-1", 1, 0, "XxFrAsZeRxX")
+
+//Created and/or amended by Dr Marty. 
+//I need to thank JayD101 for providing some of the source material.
+//Also thanks to XxFrAsZeRxX for a crash course in CronusMax scripting.
+//Lastly, thanks goes to James Nguyen (siky) for some details on game mechanics 
+
+main {  if(get_val(XB360_LS)) combo_run(trial); 
+        if(get_val(XB360_RS)) combo_stop(trial); 
+}
+
+
+combo trial {
+	//Jump Medium Kick
+    set_val(XB360_UP, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_UP, 0);
+    set_val(XB360_RIGHT, 0);
+    set_val(XB360_LEFT, 100);
+    wait(500);
+    set_val(XB360_B, 100);
+    set_val(XB360_LEFT, 100);
+    wait(20);
+    set_val(XB360_B, 0);
+    set_val(XB360_LEFT, 100);
+    wait(450);
+    //Crouch MED Kick
+    set_val(XB360_B, 100);
+    set_val(XB360_LEFT, 100);
+    set_val(XB360_DOWN, 100);
+    wait(20);
+    set_val(XB360_B, 0);
+    set_val(XB360_LEFT, 100);
+    set_val(XB360_DOWN, 0);
+    wait(50);
+    //Double Knee Press
+    set_val(XB360_LEFT, 0);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_B, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 0);
+    set_val(XB360_B, 0);
+
+}
+

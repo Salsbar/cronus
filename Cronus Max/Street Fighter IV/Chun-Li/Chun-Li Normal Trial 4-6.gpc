@@ -1,0 +1,99 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Chun-Li Normal Trial 4-6", 1, 0, "XxFrAsZeRxX")
+
+//Created and/or amended by Dr Marty. 
+//I need to thank JayD101 for providing some of the source material.
+//Also thanks to XxFrAsZeRxX for a crash course in CronusMax scripting.
+//Lastly, thanks goes to James Nguyen (siky) for some details on game mechanics 
+
+main {  if(get_val(XB360_LS)) combo_run(trial); 
+        if(get_val(XB360_RS)) combo_stop(trial); 
+}
+
+
+combo trial {
+
+    set_val(XB1_UP, 100);
+    set_val(XB1_RIGHT, 100);
+    wait(20);
+    set_val(XB1_UP, 0);
+    set_val(XB1_RIGHT, 0);
+    wait(600);
+    set_val(XB1_RT, 100);
+    wait(20);
+    set_val(XB1_RT, 0);
+    wait(400);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_B, 100);
+    wait(20);
+    set_val(XB1_LEFT, 0);
+    set_val(XB1_B, 0);
+    wait(75);
+    set_val(XB1_LEFT, 0);
+    set_val(XB1_B, 100);
+    wait(20);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_B, 0);
+    wait(400);
+	
+	
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 100);
+    wait(75);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 0);
+    wait(75);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 100);
+    wait(75);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 0);
+    wait(75);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 100);
+    wait(75);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 0);
+    wait(75);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 100);
+    wait(75);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 0);
+    wait(70);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 100);
+    wait(70);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 0);
+    wait(70);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 100);
+    wait(70);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 0);
+	wait(70);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 100);
+    wait(70);
+    set_val(XB1_LEFT, 100);
+    set_val(XB1_LT, 0);
+	
+	
+    wait(750);
+    set_val(XB1_RIGHT, 100);
+    wait(20);
+    set_val(XB1_RIGHT, 0);
+    wait(20);
+    set_val(XB1_LEFT, 100);
+    wait(20);
+    set_val(XB1_LEFT, 0);
+    wait(20);
+    set_val(XB1_RIGHT, 100);
+    set_val(XB1_LT, 100);
+    wait(20);
+    set_val(XB1_LEFT, 0);
+    set_val(XB1_LT, 0);
+}
+

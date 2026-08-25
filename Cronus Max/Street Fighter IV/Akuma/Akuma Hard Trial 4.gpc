@@ -1,0 +1,89 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Akuma Hard Trial 4", 1, 0, "XxFrAsZeRxX")
+
+//Created and/or amended by Dr Marty. 
+//I need to thank JayD101 for providing some of the source material.
+//Also thanks to XxFrAsZeRxX for a crash course in CronusMax scripting.
+//Lastly, thanks goes to James Nguyen (siky) for some details on game mechanics 
+
+// Push Dan into the corner. Stand 1 square apart
+
+main {  if(get_val(XB360_LS)) combo_run(trial); 
+        if(get_val(XB360_RS)) combo_stop(trial); 
+}
+
+
+combo trial {
+	//Hyakkishu > Hyakki Gojin
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 0);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_A, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 0);
+    set_val(XB360_A, 0);
+    wait(500);
+    //Hyakki Gojin
+    set_val(XB360_A, 100);
+    wait(20);
+    set_val(XB360_A, 0);
+    wait(600);
+    //Light Punch
+    set_val(XB360_X, 100);
+    wait(20);
+    set_val(XB360_X, 0);
+    wait(300);
+    //Crouch Heavy Punch
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RB, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RB, 0);
+    wait(50);
+    //Light Tatsumaki Zankukyaku
+    set_val(XB360_DOWN, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_LEFT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_LEFT, 100);
+    set_val(XB360_A, 100);
+    wait(20);
+    set_val(XB360_LEFT, 0);
+    set_val(XB360_A, 0);
+    wait(950);
+    //Heavy Goshoryuken
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 0);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_RB, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 0);
+    set_val(XB360_RB, 0);
+    wait(300);
+        
+
+}
+

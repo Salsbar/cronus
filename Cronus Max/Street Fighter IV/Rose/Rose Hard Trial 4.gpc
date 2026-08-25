@@ -1,0 +1,91 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Rose Hard Trial 4", 1, 0, "XxFrAsZeRxX")
+
+//Created and/or amended by Dr Marty. 
+//I need to thank JayD101 for providing some of the source material.
+//Also thanks to XxFrAsZeRxX for a crash course in CronusMax scripting.
+//Lastly, thanks goes to James Nguyen (siky) for some details on game mechanics 
+
+main {  if(get_val(XB360_LS)) combo_run(trial); 
+        if(get_val(XB360_RS)) combo_stop(trial); 
+}
+
+combo trial {
+	//Jump Heavy Kick
+    set_val(XB360_UP, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_UP, 0);
+    set_val(XB360_RIGHT, 0);
+    wait(500);
+    set_val(XB360_RT, 100);
+    wait(20);
+    set_val(XB360_RT, 0);
+    wait(400);
+    //Heavy Kick
+    set_val(XB360_RT, 100);
+    wait(20);
+    set_val(XB360_RT, 0);
+    wait(50);
+    //EX Soul Spark
+    set_val(XB360_LEFT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_LEFT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_LEFT, 0);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_LB, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 0);
+    set_val(XB360_LB, 0);
+    wait(300);
+    //EX Focus Cancel
+    set_val(XB360_Y, 100);
+    set_val(XB360_B, 100);
+    wait(50);
+    set_val(XB360_Y, 0);
+    set_val(XB360_B, 0);
+    wait(50);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 0);
+    wait(20);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 0);
+    wait(400);
+    //Heavy Kick
+    set_val(XB360_RT, 100);
+    wait(20);
+    set_val(XB360_RT, 0);
+    wait(50);
+    //EX Soul Spark
+    set_val(XB360_LEFT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_LEFT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_LEFT, 0);
+    wait(20);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_DOWN, 0);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_LB, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 0);
+    set_val(XB360_LB, 0);
+    
+
+}
+

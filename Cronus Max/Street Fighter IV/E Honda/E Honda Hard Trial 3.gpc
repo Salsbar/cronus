@@ -1,0 +1,59 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 E Honda Hard Trial 3", 1, 0, "XxFrAsZeRxX")
+
+//Push the characters all the way to the right. Take a couple steps back, just over two of the large squares away. Activate as Dan hits the ground from
+//his jump.
+
+int i;
+
+main 
+{
+	if(get_val(XB360_LS))
+	{
+		i = 1;
+	}
+	if(get_val(XB360_RS))
+	{
+		i = 0;
+	}
+	
+	
+	if(i==1)
+	{
+		combo_run(move1);
+	}
+	if(i==0)
+	{
+		combo_stop(move1);
+	}
+}
+
+combo move1
+{ 
+	set_val(XB360_LEFT, 100);
+    set_val(XB360_DOWN, 100);
+    wait(2000);
+    set_val(XB360_LEFT, 100);
+    set_val(XB360_UP, 100);
+    set_val(XB360_RT, 100);
+    wait(20);
+    set_val(XB360_LEFT, 100);
+    set_val(XB360_UP, 0);
+    set_val(XB360_RT, 0);
+    wait(1245);
+    set_val(XB360_RIGHT, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 0);
+    wait(20);
+    set_val(XB360_LEFT, 100);
+    wait(20);
+    set_val(XB360_LEFT, 0);
+    wait(20);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_RB, 100);
+    wait(20);
+    set_val(XB360_RIGHT, 0);
+    set_val(XB360_RB, 0);
+	i = 0;
+}

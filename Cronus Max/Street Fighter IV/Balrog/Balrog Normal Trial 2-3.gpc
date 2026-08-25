@@ -1,0 +1,21 @@
+// REMOVE SLASHES ON LINE 2 AND 3 FOR TITAN TWO COMPATIBILITY!
+//#include <titanone.gph>
+//#pragma METAINFO("SF4 Balrog Normal Trial 2-3", 1, 0, "XxFrAsZeRxX")
+
+main {  if(get_val(XB360_LS)) combo_run(trial); 
+        if(get_val(XB360_RS)) combo_stop(trial); 
+}
+
+
+combo trial {
+	//Dash Low Straight
+	set_val(XB360_DOWN, 100);
+    set_val(XB360_LEFT, 100);
+    wait(2000);
+    set_val(XB360_DOWN, 100);
+    set_val(XB360_RIGHT, 100);
+    set_val(XB360_X, 100);
+    wait(20);
+
+}
+
